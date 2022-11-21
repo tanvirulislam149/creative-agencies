@@ -1,12 +1,25 @@
 import React from 'react';
 import styles from "./Navbar.module.css"
+import logo from "../../images/logos/logo.png"
+import Image from 'next/image'
+import Link from 'next/link';
+
 
 const Navbar = () => {
   return (
     <div>
       <nav className={styles.navbar}>
         {/* <!-- LOGO --> */}
-        <div className={styles.logo}>MUO</div>
+        <div className={styles.logo}>
+          <Link href="/">
+            <Image
+              src={logo}
+              alt="Picture of logo"
+              width={150}
+              height={47}
+            />
+          </Link>
+        </div>
         {/* <!-- NAVIGATION MENU --> */}
         <ul className={styles.navLinks}>
           {/* <!-- USING CHECKBOX HACK --> */}
@@ -14,21 +27,10 @@ const Navbar = () => {
           <label for="checkbox_toggle" className={styles.hamburger}>&#9776;</label>
           {/* <!-- NAVIGATION MENUS --> */}
           <div className={styles.menu}>
-            <li><a href="/">Home</a></li>
-            <li><a href="/">About</a></li>
-            <li className={styles.services}>
-              <a href="/">Services</a>
-              {/* <!-- DROPDOWN MENU --> */}
-              <ul className={styles.dropdown}>
-                <li><a href="/">Dropdown 1 </a></li>
-                <li><a href="/">Dropdown 2</a></li>
-                <li><a href="/">Dropdown 2</a></li>
-                <li><a href="/">Dropdown 3</a></li>
-                <li><a href="/">Dropdown 4</a></li>
-              </ul>
-            </li>
-            <li><a href="/">Pricing</a></li>
-            <li><a href="/">Contact</a></li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/">About</Link></li>
+            <li><Link href="/">Pricing</Link></li>
+            <li><Link href="/login">login</Link></li>
           </div>
         </ul>
       </nav>

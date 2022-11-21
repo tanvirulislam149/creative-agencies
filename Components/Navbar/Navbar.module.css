@@ -22,12 +22,12 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-  background-color: teal;
-  color: #fff;
+  padding: 20px 100px;
+  background-color: #fbd062;
+  color: black;
 }
 .navLinks a {
-  color: #fff;
+  color: #474747;
 }
 /* LOGO */
 .logo {
@@ -40,7 +40,7 @@ li {
   font-size: 18px;
 }
 .menu li:hover {
-  background-color: #4c9e9e;
+  background-color: lightgray;
   border-radius: 5px;
   transition: 0.3s ease;
 }
