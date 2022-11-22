@@ -15,6 +15,30 @@ const CompanyName = () => {
         width={130}
         height={45}
       />
+      <Image
+        src={airbnb}
+        alt="Picture of the author"
+        width={130}
+        height={45}
+      />
+      <Image
+        src={netflix}
+        alt="Picture of the author"
+        width={130}
+        height={45}
+      />
+      <Image
+        src={slack}
+        alt="Picture of the author"
+        width={130}
+        height={45}
+      />
+      <Image
+        src={uber}
+        alt="Picture of the author"
+        width={130}
+        height={45}
+      />
     </div>
   )
 }
