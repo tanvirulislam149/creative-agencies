@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Banner from '../Components/Banner/Banner'
+import CompanyName from '../Components/CompanyName/CompanyName'
 import Navbar from '../Components/Navbar/Navbar'
 import styles from '../styles/Home.module.css'
 
@@ -15,6 +16,7 @@ export default function Home() {
 
       <main>
         <Banner />
+        <CompanyName />
       </main>
     </div>
   )
