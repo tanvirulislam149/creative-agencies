@@ -2,7 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Banner from '../Components/Banner/Banner'
 import CompanyName from '../Components/CompanyName/CompanyName'
+import Feedback from '../Components/Feedback/Feedback'
 import Navbar from '../Components/Navbar/Navbar'
+import Services from '../Components/Services/Services'
+import Works from '../Components/Works/Works'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -17,6 +20,9 @@ export default function Home() {
       <main>
         <Banner />
         <CompanyName />
+        <Services />
+        <Works />
+        <Feedback />
       </main>
     </div>
   )

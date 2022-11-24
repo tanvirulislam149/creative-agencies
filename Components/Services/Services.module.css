@@ -1,0 +1,28 @@
+.container {
+  margin-bottom: 50px;
+}
+
+.serviceHeader {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 43px;
+  text-align: center;
+  letter-spacing: 0.396px;
+  color: #2d2d2d;
+}
+
+.serviceHeader > span {
+  color: #7ab259;
+}
+
+.serviceContainer {
+  display: grid;
+  grid-template-columns: 370px 370px 370px;
+  justify-content: center;
+  grid-gap: 30px;
+  width: 100%;
+}

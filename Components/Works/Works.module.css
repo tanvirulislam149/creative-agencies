@@ -1,0 +1,29 @@
+.container {
+  background-color: #111430;
+  /* height: 100vh; */
+  padding: 100px 20px;
+}
+
+.header {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 43px;
+  text-align: center;
+  letter-spacing: 0.396px;
+  color: #ffffff;
+  margin-bottom: 80px;
+}
+
+.header > span {
+  color: #7ab259;
+}
+.slides {
+  color: white;
+}
+
+.image {
+  width: 500px;
+  height: 350px;
+}
