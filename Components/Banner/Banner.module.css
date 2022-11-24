@@ -3,7 +3,6 @@
 
 .container {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
   background-color: #fbd062;
   clip-path: polygon(0 0, 100% 0, 100% 74%, 0 100%);
@@ -15,7 +14,6 @@
 
 .banner_text {
   width: 35%;
-  padding-right: 0px;
   padding-left: 50px;
   padding-top: 0px;
 }
