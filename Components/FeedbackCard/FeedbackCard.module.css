@@ -1,0 +1,50 @@
+.container {
+  border: 1px solid #bfbfbf;
+  border-radius: 4px;
+  padding: 15px;
+}
+.header {
+  display: flex;
+  align-items: center;
+}
+.header > p {
+  margin: 0px;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+.imgContainer > img {
+  width: 64px;
+  height: 64px;
+}
+.name {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000000;
+  margin: 0px;
+}
+.company {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  margin: 0px;
+}
+.description {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.005em;
+  color: #707070;
+}
