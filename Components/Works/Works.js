@@ -54,12 +54,12 @@ const Works = () => {
     },
     dots: true,
     infinite: true,
-    className: "center",
+    // className: "center",
     centerMode: true,
     speed: 500,
     slidesToShow: 2,
     centerPadding: "60px",
-    // slidesToScroll: 1,
+    slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />
   };
@@ -68,49 +68,39 @@ const Works = () => {
       <h1 className={styles.header}>Here are some of <span>our works</span></h1>
       <div style={{ margin: "50px" }}>
         <Slider {...settings}>
-          <div>
+          <div className={styles.slide}>
             <Image
               className={styles.image}
               src={img1}
               alt="image"
-            // width={465}
-            // height={335}
             />
           </div>
-          <div>
+          <div className={styles.slide}>
             <Image
               className={styles.image}
               src={img5}
               alt="image"
-            // width={465}
-            // height={335}
             />
           </div>
-          <div>
+          <div className={styles.slide}>
             <Image
               className={styles.image}
               src={img3}
               alt="image"
-            // width={465}
-            // height={335}
             />
           </div>
-          <div>
+          <div className={styles.slide}>
             <Image
               className={styles.image}
               src={img4}
               alt="image"
-            // width={465}
-            // height={335}
             />
           </div>
-          <div>
+          <div className={styles.slide}>
             <Image
               className={styles.image}
               src={img2}
               alt="image"
-            // width={465}
-            // height={335}
             />
           </div>
         </Slider>

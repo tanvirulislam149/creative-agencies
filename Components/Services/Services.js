@@ -1,8 +1,5 @@
 import React from 'react'
 import styles from "./Services.module.css"
-import webDesign from "../../images/icons/webDesign.png"
-import graphicDes from "../../images/icons/graphicDes.png"
-import webDev from "../../images/icons/webDev.png"
 import ServiceCard from "../ServiceCard/ServiceCard"
 
 
@@ -21,7 +18,7 @@ const Services = () => {
       <h1 className={styles.serviceHeader}>Provide awesome <span>services</span></h1>
       <div className={styles.serviceContainer}>
         {
-          data.map(d => <ServiceCard data={d} />)
+          data.map(d => <ServiceCard key={d.id} data={d} />)
         }
       </div>
     </div>

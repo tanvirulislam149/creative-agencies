@@ -19,11 +19,15 @@
 .header > span {
   color: #7ab259;
 }
-.slides {
+/* .slides {
   color: white;
-}
+} */
 
 .image {
   width: 500px;
   height: 350px;
+}
+
+.slide:focus {
+  outline: none;
 }
