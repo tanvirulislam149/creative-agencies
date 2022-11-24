@@ -16,6 +16,7 @@ li {
 
 .menu > li {
   list-style: none;
+  padding: auto 14px;
 }
 
 .navbar {
@@ -28,6 +29,7 @@ li {
 }
 .navLinks a {
   color: #474747;
+  margin: auto;
 }
 /* LOGO */
 .logo {
@@ -45,7 +47,7 @@ li {
   transition: 0.3s ease;
 }
 .menu li {
-  padding: 5px 14px;
+  padding: 10px 14px;
 }
 /* DROPDOWN MENU */
 .services {
@@ -117,4 +119,16 @@ li {
   .dropdown li:hover {
     background-color: #4c9e9e;
   }
+}
+.button {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: #111430;
+  color: #ffffff;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 5px;
 }

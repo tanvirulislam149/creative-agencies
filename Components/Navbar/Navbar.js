@@ -30,7 +30,8 @@ const Navbar = () => {
             <li><Link href="/">Home</Link></li>
             <li><Link href="/">About</Link></li>
             <li><Link href="/">Pricing</Link></li>
-            <li><Link href="/login">Login</Link></li>
+            {/* <li><Link href="/login">Login</Link></li> */}
+            <button className={styles.button}>Login</button>
           </div>
         </ul>
       </nav>
