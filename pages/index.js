@@ -4,6 +4,7 @@ import Banner from '../Components/Banner/Banner'
 import CompanyName from '../Components/CompanyName/CompanyName'
 import Contact from '../Components/Contact/Contact'
 import Feedback from '../Components/Feedback/Feedback'
+import Footer from '../Components/Footer/Footer'
 import Navbar from '../Components/Navbar/Navbar'
 import Services from '../Components/Services/Services'
 import Works from '../Components/Works/Works'
@@ -25,6 +26,7 @@ export default function Home() {
         <Works />
         <Feedback />
         <Contact />
+        <Footer />
       </main>
     </div>
   )
