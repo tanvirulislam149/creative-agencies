@@ -3,6 +3,7 @@
 
 .container {
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
   background-color: #fbd062;
   clip-path: polygon(0 0, 100% 0, 100% 74%, 0 100%);
@@ -13,9 +14,10 @@
 }
 
 .banner_text {
-  width: 50%;
-  padding-right: 50px;
-  padding-top: 70px;
+  width: 35%;
+  padding-right: 0px;
+  padding-left: 50px;
+  padding-top: 0px;
 }
 
 .banner_text > h1 {
@@ -35,4 +37,17 @@
   line-height: 24px;
   letter-spacing: 0.005em;
   color: #111430;
+}
+.button {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: #111430;
+  color: #ffffff;
+  border: none;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin-top: 20px;
 }

@@ -1,0 +1,57 @@
+.container {
+  padding: 100px;
+  background-color: #fbd062;
+  display: flex;
+  justify-content: space-around;
+}
+.header {
+  width: 35%;
+}
+.mainHeader {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 43px;
+  letter-spacing: 0.396px;
+  color: #2d2d2d;
+}
+.secondHeader {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.396px;
+  color: rgba(0, 0, 0, 0.7);
+}
+.inputCont {
+  width: 45%;
+}
+.inputField {
+  width: 100%;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0.396px;
+  padding: 20px;
+  margin-bottom: 16px;
+  border: none;
+  color: rgba(0, 0, 0);
+  border-radius: 5px;
+}
+
+.button {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: #111430;
+  color: #ffffff;
+  border: none;
+  padding: 10px 60px;
+  border-radius: 5px;
+}

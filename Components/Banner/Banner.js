@@ -9,6 +9,7 @@ const Banner = () => {
       <div className={styles.banner_text}>
         <h1>Let's Grow Your Brand To The Next Level</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat </p>
+        <button className={styles.button}>Hire Us</button>
       </div>
       <div className={styles.banner_img}>
         <Image
