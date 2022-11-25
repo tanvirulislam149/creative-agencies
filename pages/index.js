@@ -21,12 +21,12 @@ export default function Home() {
 
       <main>
         <Banner />
-        <CompanyName />
+        {/* <CompanyName />
         <Services />
         <Works />
         <Feedback />
         <Contact />
-        <Footer />
+        <Footer /> */}
       </main>
     </div>
   )
