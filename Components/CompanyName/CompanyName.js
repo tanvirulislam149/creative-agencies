@@ -10,36 +10,45 @@ import styles from "./CompanyName.module.css"
 const CompanyName = () => {
   return (
     <div className={styles.container}>
-      <Image
-        src={google}
-        alt="Picture of the author"
-        width={130}
-        height={45}
-      />
-      <Image
-        src={airbnb}
-        alt="Picture of the author"
-        width={160}
-        height={51}
-      />
-      <Image
-        src={netflix}
-        alt="Picture of the author"
-        width={120}
-        height={67}
-      />
-      <Image
-        src={slack}
-        alt="Picture of the author"
-        width={140}
-        height={36}
-      />
-      <Image
-        src={uber}
-        alt="Picture of the author"
-        width={99}
-        height={56}
-      />
+      <marquee width="85%" direction="left" height="100px">
+        <div className={styles.imgContainer}>
+          <Image
+            className={styles.img}
+            src={google}
+            alt="Picture of the author"
+            width={130}
+            height={45}
+          />
+          <Image
+            className={styles.img}
+            src={airbnb}
+            alt="Picture of the author"
+            width={160}
+            height={51}
+          />
+          <Image
+            className={styles.img}
+            src={netflix}
+            alt="Picture of the author"
+            width={120}
+            height={67}
+          />
+          <Image
+            className={styles.img}
+            src={slack}
+            alt="Picture of the author"
+            width={140}
+            height={36}
+          />
+          <Image
+            className={styles.img}
+            src={uber}
+            alt="Picture of the author"
+            width={99}
+            height={56}
+          />
+        </div >
+      </marquee>
     </div>
   )
 }

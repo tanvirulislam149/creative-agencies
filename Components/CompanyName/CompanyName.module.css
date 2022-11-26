@@ -1,6 +1,12 @@
 .container {
-  margin: 90px 100px;
+  margin: 60px 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+}
+.imgContainer {
+  display: flex;
   align-items: center;
+}
+.img {
+  margin-right: 50px;
 }
