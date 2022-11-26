@@ -21,8 +21,20 @@
 
 .serviceContainer {
   display: grid;
-  grid-template-columns: 370px 370px 370px;
+  grid-template-columns: 25% 25% 25%;
   justify-content: center;
   grid-gap: 30px;
   width: 100%;
+}
+
+@media (max-width: 900px) {
+  .serviceContainer {
+    grid-template-columns: 30% 30% 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceContainer {
+    display: block;
+  }
 }

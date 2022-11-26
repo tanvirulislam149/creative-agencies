@@ -10,7 +10,7 @@ import styles from "./CompanyName.module.css"
 const CompanyName = () => {
   return (
     <div className={styles.container}>
-      <marquee width="85%" direction="left" height="100px">
+      <marquee width="85%" direction="left" height="100px" scrollamount="8">
         <div className={styles.imgContainer}>
           <Image
             className={styles.img}

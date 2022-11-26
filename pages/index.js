@@ -22,8 +22,8 @@ export default function Home() {
       <main>
         <Banner />
         <CompanyName />
-        {/* <Services />
-        <Works />
+        <Services />
+        {/* <Works />
         <Feedback />
         <Contact />
         <Footer /> */}
