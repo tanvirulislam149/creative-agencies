@@ -139,19 +139,39 @@ function Navbar() {
                 </MenuItem>
               </Menu>
             </Box>
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              <Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block' }}
-              >
-                Home
-              </Button>
-              <Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block' }}
-              >
-                Home
-              </Button>
+            <Box className={styles.linkContainer} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+              <Link href="/">
+                <p
+                  className={styles.link}
+                  onClick={handleCloseNavMenu}
+                >
+                  Home
+                </p>
+              </Link>
+              <Link href="/">
+                <p
+                  className={styles.link}
+                  onClick={handleCloseNavMenu}
+                >
+                  Contact
+                </p>
+              </Link>
+              <Link href="/">
+                <p
+                  className={styles.link}
+                  onClick={handleCloseNavMenu}
+                >
+                  About
+                </p>
+              </Link>
+              <Link href="/login">
+                <p
+                  className={styles.button}
+                  onClick={handleCloseNavMenu}
+                >
+                  Login
+                </p>
+              </Link>
             </Box>
           </div>
           {/* </div> */}
