@@ -25,7 +25,7 @@ const Works = () => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "none", background: "red" }}
+        style={{ ...style, display: "block", backgroundColor: "yellow" }}
         onClick={onClick}
       />
     );
@@ -36,7 +36,7 @@ const Works = () => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "none", background: "green" }}
+        style={{ ...style, display: "block", backgroundColor: "yellow" }}
         onClick={onClick}
       />
     );
@@ -47,7 +47,6 @@ const Works = () => {
     customPaging: function (i) {
       return (
         <a>
-          {/* <img src={`${baseUrl}/abstract0${i + 1}.jpg`} /> */}
           <div style={{ width: "12px", height: "12px", borderRadius: "50%", backgroundColor: "#FBD062", marginTop: "50px" }}></div>
         </a>
       );
@@ -55,13 +54,24 @@ const Works = () => {
     dots: true,
     infinite: true,
     // className: "center",
-    centerMode: true,
+    // centerMode: true,
     speed: 500,
     slidesToShow: 2,
     centerPadding: "60px",
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1
+        }
+      }
+    ],
+    // nextArrow: <SampleNextArrow />,
+    // prevArrow: <SamplePrevArrow />
   };
   return (
     <div className={styles.container}>
