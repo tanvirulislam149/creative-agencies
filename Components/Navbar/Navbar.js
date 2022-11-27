@@ -83,7 +83,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar className={styles.container} position="static">
+    <AppBar className={styles.container} position="fixed">
       <Container maxWidth="xl">
         <Toolbar style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }} disableGutters>
           {/* <div style={{ display: "flex", justifyContent: "space-between" }}> */}
@@ -129,13 +129,16 @@ function Navbar() {
                 }}
               >
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Home</Typography>
+                  <Link href="/"><Typography className={styles.link} >Home</Typography></Link>
                 </MenuItem>
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">contact</Typography>
+                  <Link href="/"><Typography className={styles.link} >Contact</Typography></Link>
                 </MenuItem>
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Home</Typography>
+                  <Link href="/"><Typography className={styles.link} >About</Typography></Link>
+                </MenuItem>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Link href="/login"><Typography className={styles.button} textAlign="center">Login</Typography></Link>
                 </MenuItem>
               </Menu>
             </Box>
