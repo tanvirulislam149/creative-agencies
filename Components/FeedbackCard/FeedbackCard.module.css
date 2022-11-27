@@ -48,3 +48,9 @@
   letter-spacing: 0.005em;
   color: #707070;
 }
+
+@media (max-width: 768px) {
+  .container {
+    margin-bottom: 30px;
+  }
+}

@@ -18,7 +18,19 @@
 }
 .cardContainer {
   display: grid;
-  grid-template-columns: 370px 370px 370px;
+  grid-template-columns: 25% 25% 25%;
   justify-content: center;
   grid-gap: 30px;
+}
+
+@media (max-width: 1000px) {
+  .cardContainer {
+    grid-template-columns: 30% 30% 30%;
+  }
+}
+@media (max-width: 768px) {
+  .cardContainer {
+    display: block;
+    margin: 0 10px;
+  }
 }
