@@ -4,7 +4,7 @@ import styles from "./Footer.module.css"
 const Footer = () => {
   return (
     <div className={styles.container}>
-      <p>copyright Orange labs {new Date().getFullYear()}</p>
+      <p>Copyright Creative Agency by tanvir {new Date().getFullYear()}</p>
     </div>
   )
 }

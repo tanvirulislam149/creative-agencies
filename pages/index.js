@@ -25,8 +25,8 @@ export default function Home() {
         <Services />
         <Works />
         <Feedback />
-        {/* <Contact />
-        <Footer /> */}
+        <Contact />
+        <Footer />
       </main>
     </div>
   )
