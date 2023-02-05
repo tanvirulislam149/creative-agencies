@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.container {
+  margin: auto;
+}
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.image {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.loginContainer {
+  background: #ffffff;
+  border: 1px solid #ababab;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: auto;
+}
+.loginText {
+  text-align: center;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.label {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.inputField {
+  background: rgba(241, 240, 240, 0.562);
+  font-family: "Montserrat";
+  font-size: 16px;
+  line-height: 20px;
+  color: black;
+  border: none;
+  border-bottom: 3px solid #ffcd4f;
+  padding: 10px;
+  margin: 10px 0;
+  width: 300px;
+}
+.inputField:focus {
+  outline: none;
+}
+
+.loginBtn {
+  border: 0px;
+  background-color: #fbd062;
+  width: 100%;
+  padding: 10px;
+  font-family: "Montserrat";
+  font-size: 16px;
+  line-height: 20px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.loginBtn:active {
+  transform: translateY(3px);
+}
+.googleBtn {
+  background: #ffffff;
+  border: 1px solid #c7c7c7;
+  border-radius: 57px;
+  width: 100%;
+  padding: 5px;
+  font-family: "Montserrat";
+  font-size: 16px;
+  line-height: 20px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+}
+.icon {
+  width: 31px;
+  height: 31.74px;
+}

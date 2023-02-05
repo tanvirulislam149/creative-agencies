@@ -20,6 +20,7 @@ export default function Home() {
       </Head>
 
       <main>
+        {/* <Navbar /> */}
         <Banner />
         <CompanyName />
         <Services />
