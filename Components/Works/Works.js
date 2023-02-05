@@ -53,6 +53,7 @@ const Works = () => {
     },
     dots: true,
     infinite: true,
+    autoplay: true,
     // className: "center",
     // centerMode: true,
     speed: 500,
