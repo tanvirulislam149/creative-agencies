@@ -3,6 +3,7 @@ import React from 'react'
 import styles from "./Register.module.css"
 import logo from "../../images/logos/logo.png"
 import { FcGoogle } from "react-icons/fc";
+import Link from 'next/link';
 
 const Register = () => {
   return (
@@ -27,6 +28,7 @@ const Register = () => {
           <br />
           <input className={styles.inputField} type="password" placeholder='Confirm Your Password' />
           <br />
+          <Link href="/login"><small><b><u>Already Have An Account?</u></b></small></Link>
           <button className={styles.loginBtn}>Register</button>
         </div>
       </div>

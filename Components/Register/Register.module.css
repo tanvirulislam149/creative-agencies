@@ -100,3 +100,9 @@
   width: 31px;
   height: 31.74px;
 }
+
+@media screen and (max-width: 900px) {
+  .loginContainer {
+    width: 90%;
+  }
+}

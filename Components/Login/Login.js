@@ -3,6 +3,7 @@ import React from 'react'
 import styles from "./Login.module.css"
 import logo from "../../images/logos/logo.png"
 import { FcGoogle } from "react-icons/fc";
+import Link from 'next/link';
 
 const Login = () => {
   return (
@@ -24,7 +25,7 @@ const Login = () => {
           <input className={styles.inputField} type="text" placeholder='Enter Your Password' />
           <br />
           <div className={styles.forgotPass}>
-            <small><b><u>Create An Account?</u></b></small>
+            <Link href="/register"><small><b><u>Create An Account?</u></b></small></Link>
             <small><b><u>Forgot Password?</u></b></small>
           </div>
           <br />
