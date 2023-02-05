@@ -23,6 +23,11 @@ const Login = () => {
           <br />
           <input className={styles.inputField} type="text" placeholder='Enter Your Password' />
           <br />
+          <div className={styles.forgotPass}>
+            <small><b><u>Create An Account?</u></b></small>
+            <small><b><u>Forgot Password?</u></b></small>
+          </div>
+          <br />
           <button className={styles.loginBtn}>Login</button>
           <button className={styles.googleBtn}>< FcGoogle className={styles.icon} /> Continue With Google</button>
         </div>
