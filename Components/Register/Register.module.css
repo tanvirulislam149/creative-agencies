@@ -20,13 +20,13 @@
   justify-content: center;
   width: 40%;
   margin: auto;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
 }
 .loginText {
   text-align: center;
   font-family: "Montserrat";
   font-style: normal;
-  font-weight: 700;
+  font-weight: 900;
   font-size: 24px;
   line-height: 29px;
   color: #000000;

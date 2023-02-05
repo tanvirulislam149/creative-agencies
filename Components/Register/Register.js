@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
-import styles from "./Login.module.css"
+import styles from "./Register.module.css"
 import logo from "../../images/logos/logo.png"
 import { FcGoogle } from "react-icons/fc";
 
-const Login = () => {
+const Register = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
@@ -18,22 +18,20 @@ const Login = () => {
       </div>
       <div className={styles.loginContainer}>
         <div>
-          <p className={styles.loginText}>Login With</p>
+          <h1 className={styles.loginText}>Register</h1>
+          <input className={styles.inputField} type="text" placeholder='Enter Your Name' />
+          <br />
           <input className={styles.inputField} type="text" placeholder='Enter Your Email' />
           <br />
-          <input className={styles.inputField} type="text" placeholder='Enter Your Password' />
+          <input className={styles.inputField} type="password" placeholder='Enter Your Password' />
           <br />
-          <div className={styles.forgotPass}>
-            <small><b><u>Create An Account?</u></b></small>
-            <small><b><u>Forgot Password?</u></b></small>
-          </div>
+          <input className={styles.inputField} type="password" placeholder='Confirm Your Password' />
           <br />
-          <button className={styles.loginBtn}>Login</button>
-          <button className={styles.googleBtn}>< FcGoogle className={styles.icon} /> Continue With Google</button>
+          <button className={styles.loginBtn}>Register</button>
         </div>
       </div>
     </div>
   )
 }
 
-export default Login
+export default Register
