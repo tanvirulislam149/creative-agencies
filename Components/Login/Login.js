@@ -1,11 +1,21 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "./Login.module.css"
 import logo from "../../images/logos/logo.png"
 import { FcGoogle } from "react-icons/fc";
 import Link from 'next/link';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.config';
 
 const Login = () => {
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [email, setEmail] = useState("");
+
+
+
+
+
+
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
@@ -20,7 +30,7 @@ const Login = () => {
       <div className={styles.loginContainer}>
         <div>
           <p className={styles.loginText}>Login With</p>
-          <input className={styles.inputField} type="text" placeholder='Enter Your Email' />
+          <input className={styles.inputField} onChange={(e) => setEmail(e.target.value)} type="text" placeholder='Enter Your Email' />
           <br />
           <input className={styles.inputField} type="text" placeholder='Enter Your Password' />
           <br />
@@ -30,7 +40,7 @@ const Login = () => {
           </div>
           <br />
           <button className={styles.loginBtn}>Login</button>
-          <button className={styles.googleBtn}>< FcGoogle className={styles.icon} /> Continue With Google</button>
+          <button onClick={() => signInWithGoogle()} className={styles.googleBtn}>< FcGoogle className={styles.icon} /> Continue With Google</button>
         </div>
       </div>
     </div>
