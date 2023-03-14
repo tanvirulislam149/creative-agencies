@@ -8,10 +8,12 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import ErrorModal from '../ErrorModal/ErrorModal';
+import { useRouter } from 'next/router';
 
 const Login = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
   const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+  const router = useRouter();
 
   const [passError, setPassError] = useState("");
   const [open, setOpen] = useState(true);
@@ -24,7 +26,12 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     signInWithEmailAndPassword(email, password);
+  }
 
+  const handleGoogleSignIn = () => {
+    setOpen(true);
+    setPassError("");
+    signInWithGoogle();
   }
 
   if (googleLoading || loading) {
@@ -37,9 +44,8 @@ const Login = () => {
     console.log(googleError || error);
     passError ? "" : setPassError(googleError?.message || error?.message);
   }
-  console.log(passError);
   if (googleUser || user) {
-    console.log(googleUser || user);
+    router.push('/')
   }
 
 
@@ -69,7 +75,7 @@ const Login = () => {
           </div>
           <br />
           <input className={styles.loginBtn} type="submit" value="Login" />
-          <button onClick={() => signInWithGoogle()} className={styles.googleBtn}>< FcGoogle className={styles.icon} /> Continue With Google</button>
+          <button onClick={() => handleGoogleSignIn()} className={styles.googleBtn}>< FcGoogle className={styles.icon} /> Continue With Google</button>
         </form>
         {passError ? <ErrorModal open={open} setOpen={setOpen} passError={passError}></ErrorModal> : ""}
       </div>
