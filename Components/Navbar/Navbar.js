@@ -12,8 +12,14 @@ import styles from "./Navbar.module.css"
 import Link from 'next/link';
 import Image from 'next/image'
 import logo from "../../images/logos/logo.png"
+import auth from "../../firebase.init"
+import { useAuthState, useSignOut } from 'react-firebase-hooks/auth';
+import Loading from "../Loading/Loading"
 
 function Navbar() {
+  const [user, loading, error] = useAuthState(auth);
+  const [signOut, signOutLoading, signOutError] = useSignOut(auth);
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -31,6 +37,12 @@ function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  // if (loading || signOutLoading) {
+  //   return (
+  //     <Loading></Loading>
+  //   )
+  // }
 
   return (
     <AppBar className={styles.container} position="fixed">
@@ -116,14 +128,16 @@ function Navbar() {
                   About
                 </p>
               </Link>
-              <Link href="/login">
-                <p
-                  className={styles.button}
-                  onClick={handleCloseNavMenu}
-                >
-                  Login
-                </p>
-              </Link>
+              {user ? <button onClick={async () => await signOut()} className={styles.button}>Log Out</button> :
+                <Link href="/login">
+                  <p
+                    className={styles.button}
+                    onClick={handleCloseNavMenu}
+                  >
+                    Login
+                  </p>
+                </Link>
+              }
             </Box>
           </div>
           {/* </div> */}
