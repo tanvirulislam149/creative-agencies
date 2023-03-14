@@ -5,7 +5,7 @@ import logo from "../../images/logos/logo.png"
 import { FcGoogle } from "react-icons/fc";
 import Link from 'next/link';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.config';
+import auth from '../../firebase.init';
 
 const Login = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);

@@ -33,7 +33,7 @@ const ErrorModal = ({ open, setOpen, passError }) => {
         <Box sx={style}>
           <div>
             <MdError className={styles.icon} />
-            <h2 className={styles.heading}>{passError}</h2>
+            <h2 className={styles.heading}>{passError?.split("/")[1]?.split(")")[0]?.toUpperCase() || passError}</h2>
           </div>
         </Box>
       </Modal>

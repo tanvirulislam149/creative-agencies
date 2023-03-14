@@ -2,15 +2,11 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import styles from "./Register.module.css"
 import logo from "../../images/logos/logo.png"
-import { FcGoogle } from "react-icons/fc";
 import Link from 'next/link';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.config';
-import { Box } from '@mui/system';
-import { Button, CircularProgress } from '@mui/material';
+import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import ErrorModal from '../ErrorModal/ErrorModal';
-import { PasswordRounded } from '@mui/icons-material';
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
