@@ -60,7 +60,6 @@ const Register = () => {
     //   </div>
     // );
   }
-  console.log(passError);
 
   return (
     <div className={styles.container}>
