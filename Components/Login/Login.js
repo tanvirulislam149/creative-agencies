@@ -10,6 +10,7 @@ import auth from '../../firebase.config';
 const Login = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const [email, setEmail] = useState("");
+  console.log(user);
 
 
 

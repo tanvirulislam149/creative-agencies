@@ -8,6 +8,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import auth from '../../firebase.config';
 import { Box } from '@mui/system';
 import { CircularProgress } from '@mui/material';
+import Loading from '../Loading/Loading';
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
@@ -32,22 +33,11 @@ const Register = () => {
 
   if (loading || updating) {
     return (
-      <Box>
-        <CircularProgress
-          sx={{
-            color: "#fbd062",
-            animationDuration: '2000ms',
-            position: 'absolute',
-            left: "50%",
-            top: "50%"
-          }}
-          size={50}
-          thickness={8}
-        />
-      </Box>
+      <Loading></Loading>
     );
   }
   if (user) {
+    console.log(user);
     return (
       <div>
         <p>Registered User: {user.user.email}</p>
@@ -77,7 +67,7 @@ const Register = () => {
         />
       </div>
       <div className={styles.loginContainer}>
-        <div>
+        <form onSubmit={() => handleRegister()}>
           <h1 className={styles.loginText}>Register</h1>
           <input className={styles.inputField} type="text" onChange={(e) => setName(e.target.value)} required placeholder='Enter Your Name' />
           <br />
@@ -88,8 +78,9 @@ const Register = () => {
           <input className={styles.inputField} type="password" onChange={(e) => setConfirmPass(e.target.value)} required placeholder='Confirm Your Password' />
           <br />
           <Link href="/login"><small><b><u>Already Have An Account?</u></b></small></Link>
-          <button onClick={handleRegister} className={styles.loginBtn}>Register</button>
-        </div>
+          {/* <input type="submit" >Register</input> */}
+          <input className={styles.loginBtn} type="submit" value="Register" />
+        </form>
       </div>
     </div>
   )
