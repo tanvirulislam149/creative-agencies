@@ -7,10 +7,12 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import ErrorModal from '../ErrorModal/ErrorModal';
+import { useRouter } from 'next/router';
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  const router = useRouter()
 
   const [passError, setPassError] = useState("");
   const [open, setOpen] = useState(true);
@@ -39,11 +41,12 @@ const Register = () => {
     );
   }
   if (user) {
-    return (
-      <div>
-        <p>Registered User: {user.user.email}</p>
-      </div>
-    );
+    router.push('/')
+    // return (
+    //   <div>
+    //     <p>Registered User: {user.user.email}</p>
+    //   </div>
+    // );
   }
 
   if (error || updateError) {
