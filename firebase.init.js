@@ -6,18 +6,18 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  // apiKey: process.env.REACT_APP_apiKey,
-  // authDomain: process.env.REACT_APP_authDomain,
-  // projectId: process.env.REACT_APP_projectId,
-  // storageBucket: process.env.REACT_APP_storageBucket,
-  // messagingSenderId: process.env.REACT_APP_messagingSenderId,
-  // appId: process.env.REACT_APP_appId,
-  apiKey: "AIzaSyBsXpeNiK1VfyXit_5ZzMWzGiuopw4xTes",
-  authDomain: "creative-agencies-75119.firebaseapp.com",
-  projectId: "creative-agencies-75119",
-  storageBucket: "creative-agencies-75119.appspot.com",
-  messagingSenderId: "892197459152",
-  appId: "1:892197459152:web:8a2163e3357915e9417ad5",
+  apiKey: process.env.NEXT_PUBLIC_apiKey,
+  authDomain: process.env.NEXT_PUBLIC_authDomain,
+  projectId: process.env.NEXT_PUBLIC_projectId,
+  storageBucket: process.env.NEXT_PUBLIC_storageBucket,
+  messagingSenderId: process.env.NEXT_PUBLIC_messagingSenderId,
+  appId: process.env.NEXT_PUBLIC_appId,
+  // apiKey: "AIzaSyBsXpeNiK1VfyXit_5ZzMWzGiuopw4xTes",
+  // authDomain: "creative-agencies-75119.firebaseapp.com",
+  // projectId: "creative-agencies-75119",
+  // storageBucket: "creative-agencies-75119.appspot.com",
+  // messagingSenderId: "892197459152",
+  // appId: "1:892197459152:web:8a2163e3357915e9417ad5",
 
 };
 // Initialize Firebase
