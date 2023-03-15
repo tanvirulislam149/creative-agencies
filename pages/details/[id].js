@@ -10,15 +10,12 @@ const index = () => {
   const [loading, setLoading] = useState(true);
 
   const router = useRouter();
-  console.log(user);
 
   useEffect(() => {
     if (!user && !userLoading) {
       router.push('/login')
-      console.log("no user");
     }
     else if (user) {
-      console.log("user");
       setLoading(false)
     }
   }, [user, userLoading])

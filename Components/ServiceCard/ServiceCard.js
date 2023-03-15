@@ -1,9 +1,11 @@
+import { useRouter } from 'next/router';
 import React from 'react'
 import styles from "./ServiceCard.module.css"
 
 
 const ServiceCard = ({ data }) => {
-  const { name, img, des } = data;
+  const router = useRouter();
+  const { id, name, img, des } = data;
   return (
     <div className={styles.card}>
       <div className={styles.imgContainer}>
@@ -12,7 +14,7 @@ const ServiceCard = ({ data }) => {
       <p className={styles.cardTitle}>{name}</p>
       <p className={styles.cardText}>{des}</p>
       <div className={styles.btnContainer}>
-        <button className={styles.detailsBtn}>See Details</button>
+        <button onClick={() => router.push(`/details/${id}`)} className={styles.detailsBtn}>See Details</button>
       </div>
     </div>
   )
