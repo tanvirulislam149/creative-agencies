@@ -42,3 +42,28 @@
   letter-spacing: 0.396px;
   color: rgba(0, 0, 0, 0.7);
 }
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.detailsBtn {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  background-color: #111430;
+  color: #ffffff;
+  border: 2px solid black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.detailsBtn:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #000000;
+  border: 2px solid black;
+}
