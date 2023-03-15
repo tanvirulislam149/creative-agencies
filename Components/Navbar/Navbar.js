@@ -22,6 +22,7 @@ function Navbar() {
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  // console.log(user);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -43,6 +44,10 @@ function Navbar() {
   //     <Loading></Loading>
   //   )
   // }
+
+  if (error || signOutError) {
+    console.log(error?.message || signOutError?.message);
+  }
 
   return (
     <AppBar className={styles.container} position="fixed">
