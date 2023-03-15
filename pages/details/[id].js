@@ -1,9 +1,10 @@
 import React from 'react'
+import DetailsPage from '../../Components/DetailPage/DetailsPage';
 
 const index = () => {
   return (
     <div style={{ marginTop: "90px" }}>
-      <h1>check</h1>
+      <DetailsPage></DetailsPage>
     </div>
   )
 }
