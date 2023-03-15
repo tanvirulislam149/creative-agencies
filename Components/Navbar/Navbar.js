@@ -99,7 +99,9 @@ function Navbar() {
                   <Link href="/"><Typography className={styles.link}>About</Typography></Link>
                 </MenuItem>
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Link href="/login"><Typography className={styles.button} textAlign="center">Login</Typography></Link>
+                  {user ? <button onClick={async () => await signOut()} className={styles.button}>Log Out</button> :
+                    <Link href="/login"><Typography className={styles.button} textAlign="center">Login</Typography></Link>
+                  }
                 </MenuItem>
               </Menu>
             </Box>
