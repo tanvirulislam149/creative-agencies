@@ -4,11 +4,37 @@ import React, { useEffect, useState } from 'react'
 import styles from "./DetailsPage.module.css"
 import { MdLanguage } from "react-icons/md";
 import { TiTick } from "react-icons/ti";
+import { Modal } from '@mui/material';
+import { Box } from '@mui/system';
+import auth from '../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: '#fbd062',
+  border: '2px solid #fbd062',
+  boxShadow: 24,
+  p: 4,
+  textAlign: "center"
+};
 
 const DetailsPage = () => {
+  const [user, loading, error] = useAuthState(auth);
   const router = useRouter();
   const { id } = router.query;
   const [course, setCourse] = useState([]);
+
+  const [paymentModal, setPaymentModal] = useState(false);
+  const handlePaymentModalOpen = () => setPaymentModal(true);
+  const handlePaymentModalClose = () => setPaymentModal(false);
+
+  const [courseModal, setCourseModal] = useState(false);
+  const handleCourseModalOpen = () => setCourseModal(true);
+  const handleCourseModalClose = () => setCourseModal(false);
 
   useEffect(() => {
     axios.get(`http://localhost:5000/courses/${id}`)
@@ -46,8 +72,8 @@ const DetailsPage = () => {
               </div>
               <div className={styles.priceContainer}>
                 <h2 className={styles.price}>Price: ${course.price}</h2>
-                <button className={styles.buyBtn}>Buy Now</button>
-                <button className={styles.buyBtn}>Start Course</button>
+                <button onClick={handlePaymentModalOpen} className={styles.buyBtn}>Buy Now</button>
+                <button onClick={handleCourseModalOpen} className={styles.buyBtn}>Start Course</button>
               </div>
               <div className={styles.info}>
                 <p>Created by <u>{course.author}</u></p>
@@ -80,6 +106,30 @@ const DetailsPage = () => {
               }
             </div>
           </div>
+          {/* Payment Modal  */}
+          <Modal
+            open={paymentModal}
+            onClose={handlePaymentModalClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <h1>Pay your money here</h1>
+              <p>{user.email}</p>
+              <p>{course.name_details}</p>
+            </Box>
+          </Modal>
+          {/* Start course Modal  */}
+          <Modal
+            open={courseModal}
+            onClose={handleCourseModalClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <h1>You haven't paid for the course yet</h1>
+            </Box>
+          </Modal>
         </div> :
         <div>
           <h1>No data available</h1>
