@@ -85,3 +85,31 @@
   height: 22px;
   margin-right: 5px;
 }
+
+.description {
+  margin: 50px 0 50px 0;
+  text-align: center;
+}
+.desContainer {
+  margin: 10px;
+}
+.details {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 20px;
+}
+
+.detailsElement > p {
+  width: 80%;
+  margin: 0 0 0 20px;
+}
+
+.detailsElement {
+  display: flex;
+  align-items: center;
+}
+
+.tickIcon {
+  width: 23px;
+  height: 23px;
+}

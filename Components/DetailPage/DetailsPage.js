@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
 import styles from "./DetailsPage.module.css"
 import { MdLanguage } from "react-icons/md";
+import { TiTick } from "react-icons/ti";
 
 const DetailsPage = () => {
   const router = useRouter();
@@ -48,16 +49,37 @@ const DetailsPage = () => {
               <div className={styles.info}>
                 <p>Created by <u>{course.author}</u></p>
                 <p className={styles.language}><MdLanguage className={styles.langIcon} /> {course.language}</p>
-                <p>Students: {course.students}</p>
+                <p>{course.students}+ Students</p>
               </div>
             </div>
             <div className={styles.bannerContent}>
               <img className={styles.bannerImg} src={course.details_img} alt="" />
             </div>
           </div>
-
-
-          <p>{course.details}</p>
+          <div className={styles.desContainer}>
+            <h1 className={styles.description}>What you'll learn</h1>
+            <div className={styles.details}>
+              {
+                course?.details?.map(c =>
+                  <div className={styles.detailsElement}>
+                    <TiTick className={styles.tickIcon} />
+                    <p>{c}</p>
+                  </div>)
+              }
+            </div>
+          </div>
+          <div className={styles.desContainer}>
+            <h1 className={styles.description}>Requirements</h1>
+            <div className={styles.details}>
+              {
+                course?.requirements?.map(c =>
+                  <div className={styles.detailsElement}>
+                    <TiTick className={styles.tickIcon} />
+                    <p>{c}</p>
+                  </div>)
+              }
+            </div>
+          </div>
         </div> :
         <div>
           <h1>No data available</h1>
