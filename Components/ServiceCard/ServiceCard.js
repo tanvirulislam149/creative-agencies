@@ -3,18 +3,19 @@ import React from 'react'
 import styles from "./ServiceCard.module.css"
 
 
-const ServiceCard = ({ data }) => {
+const ServiceCard = ({ course }) => {
   const router = useRouter();
-  const { id, name, img, des } = data;
+  const { _id, name, picture, short_des } = course;
+  console.log(course);
   return (
     <div className={styles.card}>
       <div className={styles.imgContainer}>
-        <img className={styles.img} src={img} alt="graphic-Des" />
+        <img className={styles.img} src={picture} alt="graphic-Des" />
       </div>
       <p className={styles.cardTitle}>{name}</p>
-      <p className={styles.cardText}>{des}</p>
+      <p className={styles.cardText}>{short_des}</p>
       <div className={styles.btnContainer}>
-        <button onClick={() => router.push(`/details/${id}`)} className={styles.detailsBtn}>See Details</button>
+        <button onClick={() => router.push(`/details/${_id}`)} className={styles.detailsBtn}>See Details</button>
       </div>
     </div>
   )
