@@ -13,7 +13,6 @@ const DetailsPage = () => {
   const router = useRouter();
   const { id } = router.query;
   const [course, setCourse] = useState([]);
-  console.log(course);
 
   useEffect(() => {
     axios.get(`http://localhost:5000/courses/${id}`)
@@ -31,12 +30,35 @@ const DetailsPage = () => {
   return (
     <div>
       {course ?
-        <div>
-          <img src={course.details_img} alt="" />
-          <h1>{course.name}</h1>
+        <div className={styles.container}>
+          <div className={styles.banner}>
+            <div className={styles.bannerContent}>
+              {/* <h3 className={styles.bannerText}>Want to be successful in life after learning</h3> */}
+              <h1 className={styles.bannerText}>{course.name_details}</h1>
+              <p className={styles.shortDetails}>{course.short_details}</p>
+              <div className={styles.boxContainer}>
+                <div className={styles.box}>
+                  <h3 className={styles.boxText}>Course Duration</h3>
+                  <h1 className={styles.boxText}>{course.duration} hrs</h1>
+                </div>
+                <div className={styles.box}>
+                  <h3 className={styles.boxText}>Course Projects</h3>
+                  <h1 className={styles.boxText}>{course.project}+</h1>
+                </div>
+              </div>
+              <h2>Price: ${course.price}</h2>
+            </div>
+            <div className={styles.bannerContent}>
+              <img className={styles.bannerImg} src={course.details_img} alt="" />
+            </div>
+          </div>
+
+
           <p>{course.details}</p>
         </div> :
-        <h1>No data available</h1>
+        <div>
+          <h1>No data available</h1>
+        </div>
       }
     </div>
   )
