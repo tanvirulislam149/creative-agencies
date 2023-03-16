@@ -6,7 +6,7 @@ import styles from "./ServiceCard.module.css"
 const ServiceCard = ({ course }) => {
   const router = useRouter();
   const { _id, name, picture, short_des } = course;
-  console.log(course);
+
   return (
     <div className={styles.card}>
       <div className={styles.imgContainer}>

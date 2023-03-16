@@ -1,5 +1,6 @@
+import axios from 'axios';
 import { useRouter } from 'next/router';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./DetailsPage.module.css"
 
 const data = [
@@ -11,19 +12,31 @@ const data = [
 const DetailsPage = () => {
   const router = useRouter();
   const { id } = router.query;
+  const [course, setCourse] = useState([]);
+  console.log(course);
 
-  const course = data.find(e => {
-    return e.id == id;
-  })
+  useEffect(() => {
+    axios.get(`http://localhost:5000/courses/${id}`)
+      .then(res => {
+        // handle success
+        console.log(res.data);
+        setCourse(res.data)
+      })
+      .catch(err => {
+        // handle error
+        console.log(err);
+      })
+  }, [])
 
   return (
     <div>
-      {course &&
-        <>
-          <img src={course.img} alt="" />
+      {course ?
+        <div>
+          <img src={course.details_img} alt="" />
           <h1>{course.name}</h1>
-          <p>{course.des}</p>
-        </>
+          <p>{course.details}</p>
+        </div> :
+        <h1>No data available</h1>
       }
     </div>
   )
