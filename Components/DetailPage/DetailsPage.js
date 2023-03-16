@@ -29,16 +29,19 @@ const DetailsPage = () => {
         <div className={styles.container}>
           <div className={styles.banner}>
             <div className={styles.bannerContent}>
+              <img className={styles.bannerImg} src={course.details_img} alt="" />
+            </div>
+            <div className={styles.bannerContent}>
               <h1 className={styles.bannerText}>{course.name_details}</h1>
               <p className={styles.shortDetails}>{course.short_details}</p>
               <div className={styles.boxContainer}>
                 <div className={styles.box}>
                   <h3 className={styles.boxText}>Course Duration</h3>
-                  <h1 className={styles.boxText}>{course.duration} hrs</h1>
+                  <h2 className={styles.boxText}>{course.duration} hrs</h2>
                 </div>
                 <div className={styles.box}>
                   <h3 className={styles.boxText}>Course Projects</h3>
-                  <h1 className={styles.boxText}>{course.project}+</h1>
+                  <h2 className={styles.boxText}>{course.project}+</h2>
                 </div>
               </div>
               <div className={styles.priceContainer}>
@@ -52,9 +55,6 @@ const DetailsPage = () => {
                 <p>{course.students}+ Students</p>
               </div>
             </div>
-            <div className={styles.bannerContent}>
-              <img className={styles.bannerImg} src={course.details_img} alt="" />
-            </div>
           </div>
           <div className={styles.desContainer}>
             <h1 className={styles.description}>What you'll learn</h1>
@@ -63,7 +63,7 @@ const DetailsPage = () => {
                 course?.details?.map(c =>
                   <div className={styles.detailsElement}>
                     <TiTick className={styles.tickIcon} />
-                    <p>{c}</p>
+                    <p className={styles.detailsText}>{c}</p>
                   </div>)
               }
             </div>
@@ -75,7 +75,7 @@ const DetailsPage = () => {
                 course?.requirements?.map(c =>
                   <div className={styles.detailsElement}>
                     <TiTick className={styles.tickIcon} />
-                    <p>{c}</p>
+                    <p className={styles.detailsText}>{c}</p>
                   </div>)
               }
             </div>

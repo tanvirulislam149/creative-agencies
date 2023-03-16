@@ -5,6 +5,7 @@
 .banner {
   display: flex;
   justify-content: space-between;
+  flex-direction: row-reverse;
 }
 
 .bannerContent {
@@ -72,6 +73,7 @@
 .info {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .info > p {
   margin-right: 40px;
@@ -95,8 +97,9 @@
 }
 .details {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 48% 48%;
   grid-gap: 20px;
+  justify-content: center;
 }
 
 .detailsElement > p {
@@ -112,4 +115,27 @@
 .tickIcon {
   width: 23px;
   height: 23px;
+}
+
+.detailsText {
+  text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 10px 10px 50px 10px;
+  }
+  .banner {
+    display: block;
+  }
+  .bannerContent {
+    width: 100%;
+    margin: 0px;
+  }
+  .bannerImg {
+    height: 350px;
+  }
+  .detailsElement > p {
+    margin: 0 0 0 10px;
+  }
 }
