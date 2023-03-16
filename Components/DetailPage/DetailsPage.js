@@ -2,12 +2,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
 import styles from "./DetailsPage.module.css"
-
-const data = [
-  { id: 1, name: "Web Design", img: "https://i.ibb.co/6J8zTnL/web-Design.png", des: "We craft stunning and amazing web UI, using a well drrafted UX to fit your product." },
-  { id: 2, name: "Graphics Design", img: "https://i.ibb.co/kJgrYtG/graphic-Des.png", des: "Amazing flyers, social media posts and brand representations that would make your brand stand out." },
-  { id: 3, name: "Web Development", img: "https://i.ibb.co/3YkgpJH/webDev.png", des: "With well written codes, we build amazing apps for all platforms, mobile and web apps in general." }
-]
+import { MdLanguage } from "react-icons/md";
 
 const DetailsPage = () => {
   const router = useRouter();
@@ -33,7 +28,6 @@ const DetailsPage = () => {
         <div className={styles.container}>
           <div className={styles.banner}>
             <div className={styles.bannerContent}>
-              {/* <h3 className={styles.bannerText}>Want to be successful in life after learning</h3> */}
               <h1 className={styles.bannerText}>{course.name_details}</h1>
               <p className={styles.shortDetails}>{course.short_details}</p>
               <div className={styles.boxContainer}>
@@ -46,7 +40,16 @@ const DetailsPage = () => {
                   <h1 className={styles.boxText}>{course.project}+</h1>
                 </div>
               </div>
-              <h2>Price: ${course.price}</h2>
+              <div className={styles.priceContainer}>
+                <h2 className={styles.price}>Price: ${course.price}</h2>
+                <button className={styles.buyBtn}>Buy Now</button>
+                <button className={styles.buyBtn}>Start Course</button>
+              </div>
+              <div className={styles.info}>
+                <p>Created by <u>{course.author}</u></p>
+                <p className={styles.language}><MdLanguage className={styles.langIcon} /> {course.language}</p>
+                <p>Students: {course.students}</p>
+              </div>
             </div>
             <div className={styles.bannerContent}>
               <img className={styles.bannerImg} src={course.details_img} alt="" />
