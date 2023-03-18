@@ -16,9 +16,9 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Link } from '@mui/material';
 import logo from "../../images/logos/logo.png"
 import Image from 'next/image';
+import Link from "next/link";
 
 const drawerWidth = 200;
 
@@ -56,7 +56,7 @@ const SideNav = (props) => {
           <ListItemButton>
             <MailIcon />
             <ListItemText>
-              <Link className={styles.link} href="/dashboard/MakeAdmin">Make Admin</Link>
+              <Link className={styles.link} href="/dashboard/makeAdmin">Make Admin</Link>
             </ListItemText>
           </ListItemButton>
         </ListItem>

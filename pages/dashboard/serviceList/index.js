@@ -1,11 +1,12 @@
 import React from 'react'
+import ServiceList from '../../../Components/ServiceList/ServiceList'
 
-const ServiceList = () => {
+const ServiceListPage = () => {
   return (
-    <div style={{ marginTop: "90px" }}>
-      ServiceList
+    <div>
+      <ServiceList />
     </div>
   )
 }
 
-export default ServiceList
+export default ServiceListPage
