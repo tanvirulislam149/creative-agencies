@@ -93,7 +93,7 @@ const SideNav = (props) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Dashboard
+            Admin Dashboard
           </Typography>
         </Toolbar>
       </AppBar>

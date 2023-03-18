@@ -4,6 +4,7 @@
   margin-top: 80px;
   color: black;
   display: none;
+  padding: 5px 10px;
 }
 
 .boxContainer {
@@ -42,7 +43,7 @@
 
 @media (max-width: 600px) {
   .menuBar {
-    background-color: pink;
+    background-color: white;
     display: block;
   }
   .logo {
