@@ -1,0 +1,54 @@
+.menuBar {
+  background-color: transparent;
+  box-shadow: none;
+  margin-top: 80px;
+  color: black;
+  display: none;
+}
+
+.boxContainer {
+  margin-top: 20px;
+}
+
+.sideNav > div {
+  background-color: transparent;
+  margin-top: 90px;
+  border: none;
+}
+
+.logo {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.boxContent {
+  background-color: #eff5ff;
+  height: 100vh;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  margin-left: 15px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+
+@media (max-width: 600px) {
+  .menuBar {
+    background-color: pink;
+    display: block;
+  }
+  .logo {
+    display: block;
+  }
+  .boxContainer {
+    margin-top: 60px;
+  }
+}
