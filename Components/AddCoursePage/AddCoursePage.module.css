@@ -25,7 +25,10 @@
 
 .boxContent {
   background-color: #eff5ff;
-  height: 100vh;
+}
+
+.form > input {
+  margin: 20px;
 }
 
 @media (max-width: 600px) {
