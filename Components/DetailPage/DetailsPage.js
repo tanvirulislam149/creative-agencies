@@ -55,10 +55,10 @@ const DetailsPage = () => {
         <div className={styles.container}>
           <div className={styles.banner}>
             <div className={styles.bannerContent}>
-              <img className={styles.bannerImg} src={course.details_img} alt="" />
+              <img className={styles.bannerImg} src={course.picture} alt="" />
             </div>
             <div className={styles.bannerContent}>
-              <h1 className={styles.bannerText}>{course.name_details}</h1>
+              <h1 className={styles.bannerText}>{course.course_name}</h1>
               <p className={styles.shortDetails}>{course.short_details}</p>
               <div className={styles.boxContainer}>
                 <div className={styles.box}>

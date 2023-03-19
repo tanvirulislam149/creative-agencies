@@ -29,12 +29,12 @@ const AddCoursePage = () => {
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <div className={styles.formContainer}>
               <div className={styles.leftColumn}>
-                <label htmlFor="name">Title</label><br />
-                <input {...register("name", { required: true, })} /> <br />
-                <label htmlFor="name_details">Course Name</label><br />
-                <input {...register("name_details", { required: true, })} /> <br />
-                <label htmlFor="short_des">Short Description</label><br />
-                <textarea {...register("short_des", { required: true })} /> <br />
+                <label htmlFor="title">Title</label><br />
+                <input {...register("title", { required: true, })} /> <br />
+                <label htmlFor="course_name">Course Name</label><br />
+                <input {...register("course_name", { required: true, })} /> <br />
+                <label htmlFor="description">Description</label><br />
+                <textarea {...register("description", { required: true })} /> <br />
                 <label htmlFor="short_details">Short Details</label><br />
                 <textarea {...register("short_details", { required: true })} /> <br />
                 <label htmlFor="details">Details</label><br />
@@ -55,10 +55,10 @@ const AddCoursePage = () => {
                 <input type="number" {...register("price", { required: true })} /> <br />
                 <label htmlFor="students">Students</label><br />
                 <input type="number" {...register("students", { required: true })} /> <br />
-                <label htmlFor="details_img">Image for Details</label><br />
-                <input {...register("details_img", { required: true })} /> <br />
                 <label htmlFor="picture">Picture</label><br />
                 <input {...register("picture", { required: true })} /> <br />
+                <label htmlFor="icon">Icon</label><br />
+                <input {...register("icon", { required: true })} /> <br />
                 <label htmlFor="video_link">Video Link</label><br />
                 <input {...register("video_link", { required: true, })} /> <br />
               </div>
