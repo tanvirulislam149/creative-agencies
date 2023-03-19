@@ -24,11 +24,81 @@
 }
 
 .boxContent {
-  background-color: #eff5ff;
+  background-color: #f4f7fc;
 }
 
-.form > input {
+.addCourse {
+  font-size: 27px;
+  text-align: center;
+}
+
+.formContainer {
+  display: flex;
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
   margin: 20px;
+}
+
+.leftColumn {
+  width: 50%;
+}
+
+.leftColumn > label {
+  color: black;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 24px;
+}
+
+.leftColumn > input {
+  margin-bottom: 20px;
+  margin-top: 5px;
+  border: none;
+  background: #ffffff;
+  border: 0.666667px solid #c9c9c9;
+  border-radius: 3.33333px;
+  font-family: "Poppins";
+  padding: 10px;
+  width: 80%;
+  font-size: 15px;
+  color: black;
+}
+
+.leftColumn > textarea {
+  margin-bottom: 20px;
+  margin-top: 5px;
+  border: none;
+  background: #ffffff;
+  font-family: "Poppins";
+  border: 0.666667px solid #c9c9c9;
+  border-radius: 3.33333px;
+  padding: 10px;
+  width: 80%;
+  font-size: 15px;
+  color: black;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: end;
+}
+
+.submitBtn {
+  margin-right: 20px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  background: #009444;
+  border-radius: 5px;
+  color: #ffffff;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
@@ -41,5 +111,18 @@
   }
   .boxContainer {
     margin-top: 80px;
+  }
+  .formContainer {
+    display: block;
+    margin: 0px;
+  }
+  .leftColumn {
+    width: 100%;
+  }
+  .leftColumn > input {
+    width: 100%;
+  }
+  .leftColumn > textarea {
+    width: 100%;
   }
 }
