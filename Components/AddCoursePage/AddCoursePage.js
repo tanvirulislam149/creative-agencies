@@ -14,23 +14,34 @@ const AddCoursePage = () => {
   const [detailsField, setDetailsField] = React.useState([""]);
   const [requirementField, setRequirementField] = React.useState([""]);
 
+  const handleDetailsChange = (onChangeValue, i) => {
+    const inputData = [...detailsField]
+    inputData[i] = onChangeValue.target.value;
+    setDetailsField(inputData);
+  }
+
+  const handleRequirementChange = (onChangeValue, i) => {
+    const inputData = [...requirementField]
+    inputData[i] = onChangeValue.target.value;
+    setRequirementField(inputData);
+  }
+
   const onSubmit = data => {
-    console.log(data)
-    // axios.post(`http://localhost:5000/addProduct`, data)
-    //   .then(res => {
-    //     // handle success
-    //     console.log(res.data);
-    //   })
-    //   .catch(err => {
-    //     // handle error
-    //     console.log(err);
-    //   })
-    // reset();
+    const result = { ...data, details: detailsField, requirements: requirementField }
+    axios.post(`http://localhost:5000/addProduct`, result)
+      .then(res => {
+        // handle success
+        console.log(res.data);
+      })
+      .catch(err => {
+        // handle error
+        console.log(err);
+      })
+    reset();
   };
 
   const handleDetailsField = () => {
     setDetailsField([...detailsField, ""])
-
   }
 
   const handleRequirementField = () => {
@@ -64,14 +75,26 @@ const AddCoursePage = () => {
                   <input type="button" onClick={handleDetailsField} className={styles.addField} value="Add Field" />
                 </div>
                 {
-                  detailsField.map((d, index) => <div key={index}><textarea className={styles.textArea} placeholder='Enter Details' {...register("details", { required: true })} /> <br /></div>)
+                  detailsField.map((data, i) => {
+                    return (
+                      <div key={i}>
+                        <textarea className={styles.textArea} value={data} onChange={e => handleDetailsChange(e, i)} placeholder="Enter Details" />
+                      </div>
+                    )
+                  })
                 }
                 <div className={styles.details}>
                   <label htmlFor="requirement">Requirements</label>
                   <input type="button" onClick={handleRequirementField} className={styles.addField} value="Add Field" />
                 </div>
                 {
-                  requirementField.map((d, index) => <div key={index}><textarea className={styles.textArea} placeholder='Enter Requirements' {...register("requirements", { required: true })} /> <br /></div>)
+                  requirementField.map((data, i) => {
+                    return (
+                      <div key={i}>
+                        <textarea className={styles.textArea} value={data} onChange={e => handleRequirementChange(e, i)} placeholder="Enter Requirement" />
+                      </div>
+                    )
+                  })
                 }
               </div>
               <div className={styles.leftColumn}>
