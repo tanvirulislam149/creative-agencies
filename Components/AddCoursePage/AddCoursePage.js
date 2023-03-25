@@ -32,12 +32,14 @@ const AddCoursePage = () => {
       .then(res => {
         // handle success
         console.log(res.data);
+        reset();
+        setDetailsField([""]);
+        setRequirementField([""]);
       })
       .catch(err => {
         // handle error
         console.log(err);
       })
-    reset();
   };
 
   const handleDetailsField = () => {
