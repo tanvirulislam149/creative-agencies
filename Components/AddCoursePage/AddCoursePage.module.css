@@ -83,7 +83,7 @@
 
 .btnContainer {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .submitBtn {
@@ -99,6 +99,27 @@
   border: none;
   padding: 10px 30px;
   cursor: pointer;
+}
+
+.addField {
+  margin-left: auto;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  background: #009444;
+  border-radius: 5px;
+  color: #ffffff;
+  border: none;
+  padding: 3px 7px;
+  cursor: pointer;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
 }
 
 @media (max-width: 600px) {
@@ -123,6 +144,9 @@
     width: 100%;
   }
   .leftColumn > textarea {
+    width: 100%;
+  }
+  .details {
     width: 100%;
   }
 }
