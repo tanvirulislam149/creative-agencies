@@ -17,7 +17,6 @@ const Services = () => {
     axios.get('http://localhost:5000/courses')
       .then(res => {
         // handle success
-        console.log(res.data);
         setCourses(res.data)
       })
       .catch(err => {

@@ -64,18 +64,17 @@ const AddCoursePage = () => {
                   <input type="button" onClick={handleDetailsField} className={styles.addField} value="Add Field" />
                 </div>
                 {
-                  detailsField.map(d => <><textarea placeholder='Enter Details' {...register("details", { required: true })} /> <br /></>)
+                  detailsField.map((d, index) => <div key={index}><textarea className={styles.textArea} placeholder='Enter Details' {...register("details", { required: true })} /> <br /></div>)
                 }
                 <div className={styles.details}>
                   <label htmlFor="requirement">Requirements</label>
                   <input type="button" onClick={handleRequirementField} className={styles.addField} value="Add Field" />
                 </div>
                 {
-                  requirementField.map(d => <><textarea placeholder='Enter Requirements' {...register("requirements", { required: true })} /> <br /></>)
+                  requirementField.map((d, index) => <div key={index}><textarea className={styles.textArea} placeholder='Enter Requirements' {...register("requirements", { required: true })} /> <br /></div>)
                 }
               </div>
               <div className={styles.leftColumn}>
-
                 <label htmlFor="language">Language</label><br />
                 <input placeholder='Enter Language' {...register("language", { required: true, })} /> <br />
                 <label htmlFor="author">Author</label> <br />

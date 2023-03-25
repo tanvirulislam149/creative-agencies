@@ -116,6 +116,20 @@
   cursor: pointer;
 }
 
+.textArea {
+  margin-bottom: 20px;
+  margin-top: 5px;
+  border: none;
+  background: #ffffff;
+  font-family: "Poppins";
+  border: 0.666667px solid #c9c9c9;
+  border-radius: 3.33333px;
+  padding: 10px;
+  width: 80%;
+  font-size: 15px;
+  color: black;
+}
+
 .details {
   display: flex;
   justify-content: space-between;

@@ -40,7 +40,6 @@ const DetailsPage = () => {
     axios.get(`http://localhost:5000/courses/${id}`)
       .then(res => {
         // handle success
-        console.log(res.data);
         setCourse(res.data)
       })
       .catch(err => {
@@ -86,8 +85,8 @@ const DetailsPage = () => {
             <h1 className={styles.description}>What you'll learn</h1>
             <div className={styles.details}>
               {
-                course?.details?.map(c =>
-                  <div className={styles.detailsElement}>
+                course?.details?.map((c, index) =>
+                  <div key={index} className={styles.detailsElement}>
                     <TiTick className={styles.tickIcon} />
                     <p className={styles.detailsText}>{c}</p>
                   </div>)
@@ -98,8 +97,8 @@ const DetailsPage = () => {
             <h1 className={styles.description}>Requirements</h1>
             <div className={styles.details}>
               {
-                course?.requirements?.map(c =>
-                  <div className={styles.detailsElement}>
+                course?.requirements?.map((c, index) =>
+                  <div key={index} className={styles.detailsElement}>
                     <TiTick className={styles.tickIcon} />
                     <p className={styles.detailsText}>{c}</p>
                   </div>)
