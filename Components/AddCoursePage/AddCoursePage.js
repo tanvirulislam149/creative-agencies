@@ -6,13 +6,32 @@ import styles from "./AddCoursePage.module.css"
 import SideNav from '../SideNav/SideNav';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
+import { Modal } from '@mui/material';
 
 const drawerWidth = 200;
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: '#fbd062',
+  border: '2px solid #fbd062',
+  boxShadow: 24,
+  p: 4,
+  textAlign: "center"
+};
 
 const AddCoursePage = () => {
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const [detailsField, setDetailsField] = React.useState([""]);
   const [requirementField, setRequirementField] = React.useState([""]);
+
+  // modal
+  const [paymentModal, setPaymentModal] = React.useState(false);
+  const handlePaymentModalOpen = () => setPaymentModal(true);
+  const handlePaymentModalClose = () => setPaymentModal(false);
 
   const handleDetailsChange = (onChangeValue, i) => {
     const inputData = [...detailsField]
@@ -32,6 +51,7 @@ const AddCoursePage = () => {
       .then(res => {
         // handle success
         console.log(res.data);
+        handlePaymentModalOpen();
         reset();
         setDetailsField([""]);
         setRequirementField([""]);
@@ -126,6 +146,17 @@ const AddCoursePage = () => {
           </form>
         </div>
       </Box>
+      {/* Success modal */}
+      <Modal
+        open={paymentModal}
+        onClose={handlePaymentModalClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <h1>Course Added SuccessFully</h1>
+        </Box>
+      </Modal>
     </Box>
   );
 }
