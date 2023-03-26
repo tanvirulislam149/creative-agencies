@@ -8,6 +8,7 @@ import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import ErrorModal from '../ErrorModal/ErrorModal';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
@@ -42,11 +43,16 @@ const Register = () => {
   }
   if (user) {
     router.push('/')
-    // return (
-    //   <div>
-    //     <p>Registered User: {user.user.email}</p>
-    //   </div>
-    // );
+    const data = { name: user.user.displayName, email: user.user.email }
+    axios.post(`http://localhost:5000/addUser`, data)
+      .then(res => {
+        // handle success
+        console.log(res.data);
+      })
+      .catch(err => {
+        // handle error
+        console.log(err);
+      })
   }
 
   if (error || updateError) {
