@@ -9,6 +9,7 @@ import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import ErrorModal from '../ErrorModal/ErrorModal';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 
 const Login = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
@@ -22,7 +23,6 @@ const Login = () => {
     setOpen(true);
     setPassError("");
     e.preventDefault();
-    console.log(e.target.email.value);
     const email = e.target.email.value;
     const password = e.target.password.value;
     signInWithEmailAndPassword(email, password);
@@ -44,8 +44,23 @@ const Login = () => {
     console.log(googleError || error);
     passError ? "" : setPassError(googleError?.message || error?.message);
   }
-  if (googleUser || user) {
+
+  if (user) {
     router.push('/')
+  }
+
+  if (googleUser) {
+    router.push('/')
+    const data = { name: googleUser.user.displayName, email: googleUser.user.email }
+    axios.post(`http://localhost:5000/addUser`, data)
+      .then(res => {
+        // handle success
+        console.log(res.data);
+      })
+      .catch(err => {
+        // handle error
+        console.log(err);
+      })
   }
 
 

@@ -135,6 +135,16 @@ function Navbar() {
                   About
                 </p>
               </Link>
+              {/* {user ?
+                <Link href="dashboard/addCourse">
+                  <p
+                    className={styles.link}
+                    onClick={handleCloseNavMenu}
+                  >
+                    Dashboard
+                  </p>
+                </Link> : ""
+              } */}
               {user ? <button onClick={async () => await signOut()} className={styles.button}>Log Out</button> :
                 <Link href="/login">
                   <p
