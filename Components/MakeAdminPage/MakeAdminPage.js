@@ -10,7 +10,21 @@ import axios from 'axios'
 const drawerWidth = 200;
 
 const MakeAdminPage = () => {
+  const [user, setUser] = useState([]);
+  console.log(user);
 
+
+  useEffect(() => {
+    axios.get(`http://localhost:5000/users`)
+      .then(res => {
+        // handle success
+        setUser(res.data)
+      })
+      .catch(err => {
+        // handle error
+        console.log(err);
+      })
+  }, [])
 
 
   return (
@@ -26,13 +40,16 @@ const MakeAdminPage = () => {
           <p className={styles.makeAdmin}>Make Admin</p>
           <div className={styles.formContainer}>
             <p className={styles.email}>Email</p>
-            <Autocomplete
-              disablePortal
-              id="combo-box-demo"
-              options={options}
-              sx={{ width: 300 }}
-              renderInput={(params) => <TextField {...params} label="Select Email" />}
-            />
+            <div className={styles.inputCont}>
+              <Autocomplete
+                disablePortal
+                id="combo-box-demo"
+                options={user}
+                sx={{ width: 300 }}
+                renderInput={(params) => <TextField {...params} label="Select Email" />}
+              />
+              <button className={styles.submitBtn}>Submit</button>
+            </div>
           </div>
         </Box>
       </Box>
@@ -40,6 +57,9 @@ const MakeAdminPage = () => {
   )
 }
 
-const options = ['The Godfather', 'Pulp Fiction'];
+const options = [
+  { name: 'The Godfather', id: 1 },
+  { name: 'Pulp Fiction', id: 2 },
+];
 
 export default MakeAdminPage
