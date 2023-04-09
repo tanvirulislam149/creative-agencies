@@ -135,9 +135,11 @@ function Navbar() {
                   About
                 </p>
               </Link>
-              <p className={styles.name}>
-                {user.displayName}
-              </p>
+              {user &&
+                <p className={styles.name}>
+                  {user?.displayName}
+                </p>
+              }
               {user ? <button onClick={async () => await signOut()} className={styles.button}>Log Out</button> :
                 <Link href="/login">
                   <p

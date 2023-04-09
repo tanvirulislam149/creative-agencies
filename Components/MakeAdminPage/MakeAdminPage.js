@@ -17,7 +17,6 @@ const MakeAdminPage = () => {
   const [loadingModal, setLoadingModal] = useState(false);
   const [successMessage, setSuccessmessage] = useState("");
   const [successModalOpen, setSuccessModalOpen] = useState(false);
-  console.log(user);
 
 
   useEffect(() => {
