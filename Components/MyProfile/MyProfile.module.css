@@ -1,0 +1,17 @@
+.boxContainer {
+  margin-top: 20px;
+}
+.boxContent {
+  background-color: #f4f7fc;
+}
+
+.myProfile {
+  font-size: 27px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .boxContainer {
+    margin-top: 80px;
+  }
+}

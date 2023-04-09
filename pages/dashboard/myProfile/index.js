@@ -1,8 +1,11 @@
 import React from 'react'
+import MyProfile from '../../../Components/MyProfile/MyProfile'
 
 const myProfile = () => {
   return (
-    <div style={{ marginTop: "90px" }}>myProfile</div>
+    <div>
+      <MyProfile />
+    </div>
   )
 }
 
