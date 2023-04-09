@@ -2,7 +2,7 @@ import React from 'react'
 
 const addReview = () => {
   return (
-    <div>addReview</div>
+    <div style={{ marginTop: "90px" }}>addReview</div>
   )
 }
 

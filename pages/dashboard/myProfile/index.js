@@ -2,7 +2,7 @@ import React from 'react'
 
 const myProfile = () => {
   return (
-    <div>myProfile</div>
+    <div style={{ marginTop: "90px" }}>myProfile</div>
   )
 }
 

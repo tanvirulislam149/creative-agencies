@@ -1,8 +1,11 @@
 import React from 'react'
+import MyOrders from '../../../Components/MyOrders/MyOrders'
 
 const myOrders = () => {
   return (
-    <div>myOrders</div>
+    <div>
+      <MyOrders />
+    </div>
   )
 }
 
