@@ -1,8 +1,11 @@
 import React from 'react'
+import AddReview from '../../../Components/AddReview/AddReview'
 
 const addReview = () => {
   return (
-    <div style={{ marginTop: "90px" }}>addReview</div>
+    <div>
+      <AddReview />
+    </div>
   )
 }
 
