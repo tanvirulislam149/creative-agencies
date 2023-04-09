@@ -19,12 +19,17 @@ import Typography from '@mui/material/Typography';
 import logo from "../../images/logos/logo.png"
 import Image from 'next/image';
 import Link from "next/link";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import axios from "axios";
+import { GrAddCircle } from "react-icons/gr";
+import { MdPersonAddAlt1, MdList, MdShoppingCart, MdMessage } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
 
 const drawerWidth = 200;
 
 const SideNav = (props) => {
-
-  const { window } = props;
+  const { window, admin } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -43,32 +48,72 @@ const SideNav = (props) => {
           />
         </Link>
       </div>
-      <List>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <InboxIcon />
-            <ListItemText>
-              <Link className={styles.link} href="/dashboard/addCourse">Add Course</Link>
-            </ListItemText>
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <MailIcon />
-            <ListItemText>
-              <Link className={styles.link} href="/dashboard/makeAdmin">Make Admin</Link>
-            </ListItemText>
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <InboxIcon />
-            <ListItemText>
-              <Link className={styles.link} href="/dashboard/serviceList">Service List</Link>
-            </ListItemText>
-          </ListItemButton>
-        </ListItem>
-      </List>
+      {admin ?
+        <List>
+          <Link href="/dashboard/addCourse">
+            <ListItem disablePadding>
+              <ListItemButton>
+                <GrAddCircle />
+                <ListItemText>
+                  Add Course
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </Link>
+          <Link href="/dashboard/makeAdmin">
+            <ListItem disablePadding>
+              <ListItemButton>
+                <MdPersonAddAlt1 />
+                <ListItemText>
+                  Make Admin
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </Link>
+          <Link href="/dashboard/serviceList">
+            <ListItem disablePadding>
+              <ListItemButton>
+                <MdList />
+                <ListItemText>
+                  Service List
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </Link>
+        </List> :
+        <List>
+          <Link href="/dashboard/myOrders">
+            <ListItem disablePadding>
+              <ListItemButton>
+                <MdShoppingCart />
+                <ListItemText>
+                  My Orders
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </Link>
+          <Link href="/dashboard/addReview">
+            <ListItem disablePadding>
+              <ListItemButton>
+                <MdMessage />
+                <ListItemText>
+                  Add Review
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </Link>
+          <Link href="/dashboard/myProfile">
+            <ListItem disablePadding>
+              <ListItemButton>
+                <CgProfile />
+                <ListItemText>
+                  My Profile
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </Link>
+        </List>
+      }
     </div>
   );
 

@@ -10,6 +10,7 @@ const ServiceListPage = () => {
 
   const [user, userLoading, error] = useAuthState(auth);
   const [loading, setLoading] = useState(true);
+  const [admin, setAdmin] = useState(false);
 
   const router = useRouter();
 
@@ -23,6 +24,7 @@ const ServiceListPage = () => {
           // handle success
           if (res.data) {
             setLoading(false)
+            setAdmin(true)
           }
           else {
             router.push('/')
@@ -46,7 +48,7 @@ const ServiceListPage = () => {
 
   return (
     <div>
-      <ServiceList />
+      <ServiceList admin={admin} />
     </div>
   )
 }

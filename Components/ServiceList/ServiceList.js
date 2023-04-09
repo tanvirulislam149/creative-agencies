@@ -6,10 +6,10 @@ import styles from "./ServiceList.module.css"
 
 const drawerWidth = 200;
 
-const ServiceList = () => {
+const ServiceList = ({ admin }) => {
   return (
     <Box className={styles.boxContainer} sx={{ display: 'flex' }}>
-      <SideNav></SideNav>
+      <SideNav admin={admin}></SideNav>
       <Box
         className={styles.boxContent}
         component="main"

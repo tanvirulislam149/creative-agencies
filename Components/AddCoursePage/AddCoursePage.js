@@ -25,7 +25,7 @@ const style = {
   textAlign: "center"
 };
 
-const AddCoursePage = () => {
+const AddCoursePage = ({ admin }) => {
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const [detailsField, setDetailsField] = React.useState([""]);
   const [requirementField, setRequirementField] = React.useState([""]);
@@ -78,7 +78,7 @@ const AddCoursePage = () => {
 
   return (
     <Box className={styles.boxContainer} sx={{ display: 'flex' }}>
-      <SideNav></SideNav>
+      <SideNav admin={admin}></SideNav>
       <Box
         className={styles.boxContent}
         component="main"

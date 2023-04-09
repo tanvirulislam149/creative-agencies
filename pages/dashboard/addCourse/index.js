@@ -9,6 +9,7 @@ import axios from 'axios';
 const AddCourse = () => {
   const [user, userLoading, error] = useAuthState(auth);
   const [loading, setLoading] = useState(true);
+  const [admin, setAdmin] = useState(false);
 
   const router = useRouter();
 
@@ -22,6 +23,7 @@ const AddCourse = () => {
           // handle success
           if (res.data) {
             setLoading(false)
+            setAdmin(true);
           }
           else {
             router.push('/')
@@ -43,7 +45,7 @@ const AddCourse = () => {
 
   return (
     <div>
-      <AddCoursePage></AddCoursePage>
+      <AddCoursePage admin={admin}></AddCoursePage>
     </div>
   )
 }
