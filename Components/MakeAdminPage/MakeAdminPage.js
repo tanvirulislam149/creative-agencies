@@ -7,6 +7,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import axios from 'axios'
 import LoadingModal from '../LoadingModal/LoadingModal'
+import SuccessModal from '../SuccessModal/SuccessModal'
 
 const drawerWidth = 200;
 
@@ -14,6 +15,9 @@ const MakeAdminPage = () => {
   const [user, setUser] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
   const [loadingModal, setLoadingModal] = useState(false);
+  const [successMessage, setSuccessmessage] = useState("");
+  const [successModalOpen, setSuccessModalOpen] = useState(false);
+  console.log(user);
 
 
   useEffect(() => {
@@ -26,17 +30,18 @@ const MakeAdminPage = () => {
         // handle error
         console.log(err);
       })
-  }, [])
+  }, [selectedUser])
 
   const handleSubmit = () => {
     setLoadingModal(true);
     axios.patch(`http://localhost:5000/makeAdmin`, { email: selectedUser })
       .then(res => {
         // handle success
-        console.log(res.data);
         if (res.data.acknowledged) {
           setSelectedUser(null);
           setLoadingModal(false);
+          setSuccessmessage("Admin making successful.")
+          setSuccessModalOpen(true);
         }
 
       })
@@ -76,6 +81,7 @@ const MakeAdminPage = () => {
         </Box>
       </Box>
       <LoadingModal loadingModal={loadingModal}></LoadingModal>
+      <SuccessModal successMessage={successMessage} successModalOpen={successModalOpen} setSuccessModalOpen={setSuccessModalOpen}></SuccessModal>
     </div>
   )
 }
