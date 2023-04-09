@@ -11,7 +11,7 @@ const drawerWidth = 200;
 
 const MakeAdminPage = () => {
   const [user, setUser] = useState([]);
-  console.log(user);
+  const [selectedUser, setSelectedUser] = useState(null);
 
 
   useEffect(() => {
@@ -25,6 +25,19 @@ const MakeAdminPage = () => {
         console.log(err);
       })
   }, [])
+
+  const handleSubmit = () => {
+    axios.patch(`http://localhost:5000/makeAdmin`, { email: selectedUser })
+      .then(res => {
+        // handle success
+        console.log(res);
+        setSelectedUser(null);
+      })
+      .catch(err => {
+        // handle error
+        console.log(err);
+      })
+  }
 
 
   return (
@@ -44,11 +57,13 @@ const MakeAdminPage = () => {
               <Autocomplete
                 disablePortal
                 id="combo-box-demo"
+                onChange={(event, value) => setSelectedUser(value)}
+                value={selectedUser}
                 options={user}
                 sx={{ width: 300 }}
                 renderInput={(params) => <TextField {...params} label="Select Email" />}
               />
-              <button className={styles.submitBtn}>Submit</button>
+              <button onClick={handleSubmit} className={styles.submitBtn}>Submit</button>
             </div>
           </div>
         </Box>
@@ -56,10 +71,5 @@ const MakeAdminPage = () => {
     </div>
   )
 }
-
-const options = [
-  { name: 'The Godfather', id: 1 },
-  { name: 'Pulp Fiction', id: 2 },
-];
 
 export default MakeAdminPage
