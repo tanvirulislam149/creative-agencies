@@ -6,12 +6,14 @@ import styles from "./MakeAdminPage.module.css"
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import axios from 'axios'
+import LoadingModal from '../LoadingModal/LoadingModal'
 
 const drawerWidth = 200;
 
 const MakeAdminPage = () => {
   const [user, setUser] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
+  const [loadingModal, setLoadingModal] = useState(false);
 
 
   useEffect(() => {
@@ -27,11 +29,16 @@ const MakeAdminPage = () => {
   }, [])
 
   const handleSubmit = () => {
+    setLoadingModal(true);
     axios.patch(`http://localhost:5000/makeAdmin`, { email: selectedUser })
       .then(res => {
         // handle success
-        console.log(res);
-        setSelectedUser(null);
+        console.log(res.data);
+        if (res.data.acknowledged) {
+          setSelectedUser(null);
+          setLoadingModal(false);
+        }
+
       })
       .catch(err => {
         // handle error
@@ -68,6 +75,7 @@ const MakeAdminPage = () => {
           </div>
         </Box>
       </Box>
+      <LoadingModal loadingModal={loadingModal}></LoadingModal>
     </div>
   )
 }
