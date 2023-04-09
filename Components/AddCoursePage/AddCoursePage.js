@@ -7,6 +7,8 @@ import SideNav from '../SideNav/SideNav';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { Modal } from '@mui/material';
+import SuccessModal from '../SuccessModal/SuccessModal';
+import LoadingModal from "../LoadingModal/LoadingModal"
 
 const drawerWidth = 200;
 
@@ -27,11 +29,12 @@ const AddCoursePage = () => {
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const [detailsField, setDetailsField] = React.useState([""]);
   const [requirementField, setRequirementField] = React.useState([""]);
+  const [loadingModal, setLoadingModal] = React.useState(false);
 
   // modal
-  const [paymentModal, setPaymentModal] = React.useState(false);
-  const handlePaymentModalOpen = () => setPaymentModal(true);
-  const handlePaymentModalClose = () => setPaymentModal(false);
+  const [successModalOpen, setSuccessModalOpen] = React.useState(false);
+  const [successMessage, setSuccessMessage] = React.useState("");
+
 
   const handleDetailsChange = (onChangeValue, i) => {
     const inputData = [...detailsField]
@@ -46,12 +49,15 @@ const AddCoursePage = () => {
   }
 
   const onSubmit = data => {
+    setLoadingModal(true);
     const result = { ...data, details: detailsField, requirements: requirementField }
     axios.post(`http://localhost:5000/addProduct`, result)
       .then(res => {
         // handle success
         console.log(res.data);
-        handlePaymentModalOpen();
+        setSuccessModalOpen(true);
+        setSuccessMessage("Course Added Successfully");
+        setLoadingModal(false);
         reset();
         setDetailsField([""]);
         setRequirementField([""]);
@@ -147,16 +153,8 @@ const AddCoursePage = () => {
         </div>
       </Box>
       {/* Success modal */}
-      <Modal
-        open={paymentModal}
-        onClose={handlePaymentModalClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <h1>Course Added SuccessFully</h1>
-        </Box>
-      </Modal>
+      <SuccessModal successMessage={successMessage} successModalOpen={successModalOpen} setSuccessModalOpen={setSuccessModalOpen}></SuccessModal>
+      <LoadingModal loadingModal={loadingModal}></LoadingModal>
     </Box>
   );
 }
