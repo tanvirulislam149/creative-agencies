@@ -15,6 +15,7 @@ import logo from "../../images/logos/logo.png"
 import auth from "../../firebase.init"
 import { useAuthState, useSignOut } from 'react-firebase-hooks/auth';
 import Loading from "../Loading/Loading"
+import { Avatar } from '@mui/material';
 
 function Navbar() {
   const [user, loading, error] = useAuthState(auth);
@@ -22,7 +23,7 @@ function Navbar() {
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  // console.log(user);
+  console.log(user);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -103,6 +104,14 @@ function Navbar() {
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Link href="/"><Typography className={styles.link}>About</Typography></Link>
                 </MenuItem>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  {
+                    user ?
+                      user.photoURL ? <Avatar alt="Remy Sharp" src={user.photoURL} /> :
+                        <Avatar style={{ backgroundColor: "black", color: "white" }}>{user?.displayName[0]}</Avatar> :
+                      <Avatar style={{ backgroundColor: "black" }} alt="" src="" />
+                  }
+                </div>
                 <MenuItem onClick={handleCloseNavMenu}>
                   {user ? <button onClick={async () => await signOut()} className={styles.button}>Log Out</button> :
                     <Link href="/login"><Typography className={styles.button} textAlign="center">Login</Typography></Link>
@@ -135,10 +144,11 @@ function Navbar() {
                   About
                 </p>
               </Link>
-              {user &&
-                <p className={styles.name}>
-                  {user?.displayName}
-                </p>
+              {
+                user ?
+                  user.photoURL ? <Avatar alt="Remy Sharp" src={user.photoURL} /> :
+                    <Avatar style={{ backgroundColor: "black", color: "white" }}>{user?.displayName[0]}</Avatar> :
+                  <Avatar style={{ backgroundColor: "black" }} alt="" src="" />
               }
               {user ? <button onClick={async () => await signOut()} className={styles.button}>Log Out</button> :
                 <Link href="/login">
