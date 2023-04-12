@@ -146,7 +146,7 @@ function Navbar() {
               </Link>
               {
                 user ?
-                  user.photoURL ? <Avatar alt="Remy Sharp" src={user.photoURL} /> :
+                  user.photoURL ? <Avatar alt="" src={user.photoURL} /> :
                     <Avatar style={{ backgroundColor: "black", color: "white" }}>{user?.displayName[0]}</Avatar> :
                   <Avatar style={{ backgroundColor: "black" }} alt="" src="" />
               }

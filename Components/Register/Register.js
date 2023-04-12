@@ -85,6 +85,8 @@ const Register = () => {
           <br />
           <input className={styles.inputField} type="email" name='email' required placeholder='Enter Your Email' />
           <br />
+          <input className={styles.picture} type="file" name="picture" id="picture" />
+          <br />
           <input className={styles.inputField} type="password" name='password' required placeholder='Enter Your Password' />
           <br />
           <input className={styles.inputField} type="password" name='confirmPassword' required placeholder='Confirm Your Password' />

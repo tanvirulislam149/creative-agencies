@@ -101,6 +101,27 @@
   height: 31.74px;
 }
 
+.picture {
+  background-color: rgba(241, 240, 240, 0.6);
+  /* width: 100%; */
+  font-size: 16px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  font-family: "Montserrat";
+  width: 300px;
+  border-bottom: 3px solid #ffcd4f;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.picture::-webkit-file-upload-button {
+  background-color: #fbd062;
+  font-size: 16px;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+}
+
 @media screen and (max-width: 900px) {
   .loginContainer {
     width: 90%;
