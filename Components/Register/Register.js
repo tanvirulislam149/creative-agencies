@@ -17,18 +17,39 @@ const Register = () => {
 
   const [passError, setPassError] = useState("");
   const [open, setOpen] = useState(true);
+  const [photoURL, setPhotoURL] = useState();
 
   const handleRegister = async (e) => {
     setOpen(true);
+    setPhotoURL("");
+    setPassError("");
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+    const image = e.target.picture.files[0];
     const confirmPass = e.target.confirmPassword.value;
+    const data = new FormData();
+    data.append("file", image);
+    data.append("upload_preset", "creative_agencies")
+    data.append("cloud_name", "tanvirulislam149")
     if (confirmPass === password) {
-      setPassError("");
-      await createUserWithEmailAndPassword(email, password);
-      await updateProfile({ displayName: name });
+      axios.post("https://api.cloudinary.com/v1_1/tanvirulislam149/image/upload", data)
+        .then(async res => {
+          // console.log(res);
+          if (res.data.url) {
+            setPassError("");
+            await createUserWithEmailAndPassword(email, password);
+            await updateProfile({ displayName: name, photoURL: res.data.url });
+            // setPhotoURL(res.data.url);
+          }
+        })
+        .catch(err => {
+          // console.log(err.message);
+          if (err.message === "Request failed with status code 401") {
+            setPassError("Image upload failed. Please try again.");
+          }
+        })
     }
     else {
       setPassError("Password didn't match")
@@ -42,7 +63,7 @@ const Register = () => {
     );
   }
   if (user) {
-    router.push('/')
+    // router.push('/')
     const data = { name: user.user.displayName, email: user.user.email }
     axios.post(`http://localhost:5000/addUser`, data)
       .then(res => {
@@ -85,7 +106,7 @@ const Register = () => {
           <br />
           <input className={styles.inputField} type="email" name='email' required placeholder='Enter Your Email' />
           <br />
-          <input className={styles.picture} type="file" name="picture" id="picture" />
+          <input className={styles.picture} type="file" name="picture" id="picture" required />
           <br />
           <input className={styles.inputField} type="password" name='password' required placeholder='Enter Your Password' />
           <br />

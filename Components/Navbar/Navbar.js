@@ -19,11 +19,11 @@ import { Avatar } from '@mui/material';
 
 function Navbar() {
   const [user, loading, error] = useAuthState(auth);
+  console.log(user);
   const [signOut, signOutLoading, signOutError] = useSignOut(auth);
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  console.log(user);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -106,9 +106,7 @@ function Navbar() {
                 </MenuItem>
                 <div style={{ display: "flex", justifyContent: "center" }}>
                   {
-                    user ?
-                      user.photoURL ? <Avatar alt="Remy Sharp" src={user.photoURL} /> :
-                        <Avatar style={{ backgroundColor: "black", color: "white" }}>{user?.displayName[0]}</Avatar> :
+                    user ? <Avatar alt="Remy Sharp" src={user.photoURL} /> :
                       <Avatar style={{ backgroundColor: "black" }} alt="" src="" />
                   }
                 </div>
@@ -145,9 +143,7 @@ function Navbar() {
                 </p>
               </Link>
               {
-                user ?
-                  user.photoURL ? <Avatar alt="" src={user.photoURL} /> :
-                    <Avatar style={{ backgroundColor: "black", color: "white" }}>{user?.displayName[0]}</Avatar> :
+                user ? <Avatar alt="" src={user.photoURL} /> :
                   <Avatar style={{ backgroundColor: "black" }} alt="" src="" />
               }
               {user ? <button onClick={async () => await signOut()} className={styles.button}>Log Out</button> :

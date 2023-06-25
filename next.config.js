@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   env: {
     NEXT_PUBLIC_apiKey: "AIzaSyBsXpeNiK1VfyXit_5ZzMWzGiuopw4xTes",
     NEXT_PUBLIC_authDomain: "creative-agencies-75119.firebaseapp.com",
