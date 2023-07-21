@@ -9,6 +9,7 @@ import Navbar from '../Components/Navbar/Navbar'
 import Services from '../Components/Services/Services'
 import Works from '../Components/Works/Works'
 import styles from '../styles/Home.module.css'
+import NavbarLayout from '../Layouts/NavbarLayout'
 
 export default function Home() {
   return (
@@ -20,14 +21,15 @@ export default function Home() {
       </Head>
 
       <main>
-        {/* <Navbar /> */}
-        <Banner />
-        <CompanyName />
-        <Services />
-        <Works />
-        <Feedback />
-        <Contact />
-        <Footer />
+        <NavbarLayout>
+          <Banner />
+          <CompanyName />
+          <Services />
+          <Works />
+          <Feedback />
+          <Contact />
+          <Footer />
+        </NavbarLayout>
       </main>
     </div>
   )

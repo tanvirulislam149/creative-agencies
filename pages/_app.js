@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick-theme.css";
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <Navbar />
       <Component {...pageProps} />
     </div>
   )

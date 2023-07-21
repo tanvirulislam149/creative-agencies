@@ -1,11 +1,12 @@
 import React from 'react'
 import Login from '../../Components/Login/Login'
+import NavbarLayout from '../../Layouts/NavbarLayout'
 
 const index = () => {
   return (
-    <div style={{ marginTop: "92px" }}>
+    <NavbarLayout>
       <Login />
-    </div>
+    </NavbarLayout>
   )
 }
 

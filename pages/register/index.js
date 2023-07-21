@@ -1,11 +1,12 @@
 import React from 'react'
 import Register from "../../Components/Register/Register"
+import NavbarLayout from '../../Layouts/NavbarLayout'
 
 const index = () => {
   return (
-    <div style={{ marginTop: "92px" }}>
+    <NavbarLayout>
       <Register />
-    </div>
+    </NavbarLayout>
   )
 }
 
