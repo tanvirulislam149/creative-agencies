@@ -114,7 +114,7 @@ const DetailsPage = () => {
           >
             <Box sx={style}>
               <h1>Pay your money here</h1>
-              <p>{user.email}</p>
+              <p>{user?.email}</p>
               <p>{course.name_details}</p>
             </Box>
           </Modal>

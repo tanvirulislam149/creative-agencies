@@ -10,11 +10,14 @@ import Loading from '../Loading/Loading';
 import ErrorModal from '../ErrorModal/ErrorModal';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import { usePreviousUrl } from '../../pages/_app';
 
 const Login = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
   const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
   const router = useRouter();
+  const previousURL = usePreviousUrl();
+  console.log(previousURL);
 
   const [passError, setPassError] = useState("");
   const [open, setOpen] = useState(true);
@@ -46,19 +49,17 @@ const Login = () => {
   }
 
   if (user) {
-    router.push('/')
+    router.push(previousURL.previous);
   }
 
   if (googleUser) {
-    router.push('/')
+    router.push(previousURL.previous);
     const data = { name: googleUser.user.displayName, email: googleUser.user.email }
     axios.post(`http://localhost:5000/addUser`, data)
       .then(res => {
-        // handle success
         console.log(res.data);
       })
       .catch(err => {
-        // handle error
         console.log(err);
       })
   }

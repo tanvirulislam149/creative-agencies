@@ -19,7 +19,6 @@ import { Avatar } from '@mui/material';
 
 function Navbar() {
   const [user, loading, error] = useAuthState(auth);
-  console.log(user);
   const [signOut, signOutLoading, signOutError] = useSignOut(auth);
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
