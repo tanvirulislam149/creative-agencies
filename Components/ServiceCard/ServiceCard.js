@@ -14,9 +14,6 @@ const ServiceCard = ({ course }) => {
       </div>
       <p className={styles.cardTitle}>{title}</p>
       <p className={styles.cardText}>{description}</p>
-      <div className={styles.btnContainer}>
-        <button onClick={() => router.push(`/details/${_id}`)} className={styles.detailsBtn}>See Details</button>
-      </div>
     </div>
   )
 }

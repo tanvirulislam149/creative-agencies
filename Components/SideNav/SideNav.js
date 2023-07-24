@@ -50,12 +50,22 @@ const SideNav = (props) => {
       </div>
       {admin ?
         <List>
+          <Link href="/dashboard/serviceList">
+            <ListItem disablePadding>
+              <ListItemButton>
+                <MdList />
+                <ListItemText>
+                  Service List
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </Link>
           <Link href="/dashboard/addCourse">
             <ListItem disablePadding>
               <ListItemButton>
                 <GrAddCircle />
                 <ListItemText>
-                  Add Course
+                  Add Service
                 </ListItemText>
               </ListItemButton>
             </ListItem>
@@ -70,24 +80,24 @@ const SideNav = (props) => {
               </ListItemButton>
             </ListItem>
           </Link>
-          <Link href="/dashboard/serviceList">
-            <ListItem disablePadding>
-              <ListItemButton>
-                <MdList />
-                <ListItemText>
-                  Service List
-                </ListItemText>
-              </ListItemButton>
-            </ListItem>
-          </Link>
         </List> :
         <List>
-          <Link href="/dashboard/myOrders">
+          <Link href="/dashboard/order">
             <ListItem disablePadding>
               <ListItemButton>
                 <MdShoppingCart />
                 <ListItemText>
-                  My Orders
+                  Order
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </Link>
+          <Link href="/dashboard/orderList">
+            <ListItem disablePadding>
+              <ListItemButton>
+                <CgProfile />
+                <ListItemText>
+                  Service List
                 </ListItemText>
               </ListItemButton>
             </ListItem>
@@ -98,16 +108,6 @@ const SideNav = (props) => {
                 <MdMessage />
                 <ListItemText>
                   Add Review
-                </ListItemText>
-              </ListItemButton>
-            </ListItem>
-          </Link>
-          <Link href="/dashboard/myProfile">
-            <ListItem disablePadding>
-              <ListItemButton>
-                <CgProfile />
-                <ListItemText>
-                  My Profile
                 </ListItemText>
               </ListItemButton>
             </ListItem>
