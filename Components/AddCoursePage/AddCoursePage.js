@@ -80,7 +80,7 @@ const AddCoursePage = () => {
 
   return (
     <Box className={styles.boxContainer} sx={{ display: 'flex' }}>
-      <SideNav admin={true}></SideNav>
+      {/* <SideNav admin={true}></SideNav> */}
       <Box
         className={styles.boxContent}
         component="main"

@@ -8,7 +8,6 @@ import { useSelector } from 'react-redux';
 const PrivateUserRoute = ({ children }) => {
   const user = useSelector((state) => state.user.user);
   const [loading, setLoading] = useState(true);
-  console.log(user);
   const router = useRouter();
 
   useEffect(() => {

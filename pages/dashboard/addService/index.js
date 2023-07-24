@@ -10,6 +10,7 @@ import { getAdmin } from '../../../Redux/features/Auth/adminSlice';
 import Navbar from '../../../Components/Navbar/Navbar';
 import PrivateAdminRoute from '../../../Layouts/PrivateAdminRoute';
 import PrivateUserRoute from '../../../Layouts/PrivateUserRoute';
+import DashboardLayout from '../../../Layouts/DashboardLayout';
 
 const AddCourse = () => {
 
@@ -17,7 +18,9 @@ const AddCourse = () => {
     <div>
       <PrivateUserRoute>
         <PrivateAdminRoute>
-          <AddCoursePage></AddCoursePage>
+          <DashboardLayout>
+            <AddCoursePage></AddCoursePage>
+          </DashboardLayout>
         </PrivateAdminRoute>
       </PrivateUserRoute>
     </div>

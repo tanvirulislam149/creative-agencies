@@ -25,11 +25,13 @@ import axios from "axios";
 import { GrAddCircle } from "react-icons/gr";
 import { MdPersonAddAlt1, MdList, MdShoppingCart, MdMessage } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
+import { useSelector } from "react-redux";
 
 const drawerWidth = 200;
 
 const SideNav = (props) => {
-  const { window, admin } = props;
+  const { window } = props;
+  const admin = useSelector((state) => state.admin.admin);
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {

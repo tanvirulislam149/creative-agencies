@@ -6,7 +6,7 @@ import Loading from '../Components/Loading/Loading';
 import axios from 'axios';
 
 const PrivateAdminRoute = ({ children }) => {
-  const email = useSelector((state) => state.user.user.email);
+  const email = useSelector((state) => state?.user?.user?.email);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
   const router = useRouter();
