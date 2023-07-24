@@ -17,7 +17,6 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
   const router = useRouter();
   const previousURL = usePreviousUrl();
-  console.log(previousURL);
 
   const [passError, setPassError] = useState("");
   const [open, setOpen] = useState(true);

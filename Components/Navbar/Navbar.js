@@ -103,6 +103,12 @@ function Navbar() {
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Link href="/"><Typography className={styles.link}>About</Typography></Link>
                 </MenuItem>
+                {
+                  user ?
+                    <MenuItem onClick={handleCloseNavMenu}>
+                      <Link href="/dashboard/myOrders"><Typography className={styles.link}>Dashboard</Typography></Link>
+                    </MenuItem> : ""
+                }
                 <div style={{ display: "flex", justifyContent: "center" }}>
                   {
                     user ? <Avatar alt="Remy Sharp" src={user.photoURL} /> :
@@ -141,6 +147,17 @@ function Navbar() {
                   About
                 </p>
               </Link>
+              {
+                user ?
+                  <Link href="/dashboard/myOrders">
+                    <p
+                      className={styles.link}
+                      onClick={handleCloseNavMenu}
+                    >
+                      Dashboard
+                    </p>
+                  </Link> : ""
+              }
               {
                 user ? <Avatar alt="" src={user.photoURL} /> :
                   <Avatar style={{ backgroundColor: "black" }} alt="" src="" />
