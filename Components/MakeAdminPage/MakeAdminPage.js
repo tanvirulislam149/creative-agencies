@@ -11,7 +11,7 @@ import SuccessModal from '../SuccessModal/SuccessModal'
 
 const drawerWidth = 200;
 
-const MakeAdminPage = ({ admin }) => {
+const MakeAdminPage = () => {
   const [user, setUser] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
   const [loadingModal, setLoadingModal] = useState(false);
@@ -54,7 +54,6 @@ const MakeAdminPage = ({ admin }) => {
   return (
     <div>
       <Box className={styles.boxContainer} sx={{ display: 'flex' }}>
-        <SideNav admin={admin}></SideNav>
         <Box
           className={styles.boxContent}
           component="main"

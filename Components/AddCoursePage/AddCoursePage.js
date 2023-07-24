@@ -1,12 +1,9 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import styles from "./AddCoursePage.module.css"
-import SideNav from '../SideNav/SideNav';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
-import { Modal, useScrollTrigger } from '@mui/material';
 import SuccessModal from '../SuccessModal/SuccessModal';
 import LoadingModal from "../LoadingModal/LoadingModal"
 import { useSelector } from 'react-redux';
@@ -88,7 +85,7 @@ const AddCoursePage = () => {
       >
         <Toolbar />
         <div>
-          <p className={styles.addCourse}>Add Course</p>
+          <p className={styles.addCourse}>Add Services</p>
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <div className={styles.formContainer}>
               <div className={styles.leftColumn}>

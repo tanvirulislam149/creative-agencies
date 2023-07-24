@@ -19,7 +19,7 @@ const AddCourse = () => {
       <PrivateUserRoute>
         <PrivateAdminRoute>
           <DashboardLayout>
-            <AddCoursePage></AddCoursePage>
+            <AddCoursePage />
           </DashboardLayout>
         </PrivateAdminRoute>
       </PrivateUserRoute>

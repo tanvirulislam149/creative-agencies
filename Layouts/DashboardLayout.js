@@ -1,11 +1,10 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import SideNav from '../Components/SideNav/SideNav'
+import NavbarLayout from "./NavbarLayout"
 
 const DashboardLayout = ({ children }) => {
   return (
-    <div>
-      <Navbar></Navbar>
+    <NavbarLayout>
       <div style={{ display: "flex" }}>
         <div>
           <SideNav></SideNav>
@@ -14,7 +13,7 @@ const DashboardLayout = ({ children }) => {
           {children}
         </div>
       </div>
-    </div>
+    </NavbarLayout>
   )
 }
 

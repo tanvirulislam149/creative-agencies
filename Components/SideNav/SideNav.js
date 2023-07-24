@@ -52,7 +52,7 @@ const SideNav = (props) => {
       </div>
       {admin ?
         <List>
-          <Link href="/dashboard/serviceList">
+          <Link href="/dashboard/allServiceList">
             <ListItem disablePadding>
               <ListItemButton>
                 <MdList />
@@ -62,7 +62,7 @@ const SideNav = (props) => {
               </ListItemButton>
             </ListItem>
           </Link>
-          <Link href="/dashboard/addCourse">
+          <Link href="/dashboard/addService">
             <ListItem disablePadding>
               <ListItemButton>
                 <GrAddCircle />

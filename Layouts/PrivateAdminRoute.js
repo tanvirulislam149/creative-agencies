@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const PrivateAdminRoute = ({ children }) => {
   const email = useSelector((state) => state?.user?.user?.email);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -20,7 +20,7 @@ const PrivateAdminRoute = ({ children }) => {
         .then(res => {
           // handle success
           if (res.data) {
-            setLoading(false)
+            // setLoading(false)
             dispatch(getAdmin(res.data));
           }
           else {
@@ -34,11 +34,11 @@ const PrivateAdminRoute = ({ children }) => {
     }
   }, [email])
 
-  if (loading) {
-    return (
-      <Loading></Loading>
-    )
-  }
+  // if (loading) {
+  //   return (
+  //     <Loading></Loading>
+  //   )
+  // }
 
   return children;
 
