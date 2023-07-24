@@ -1,14 +1,16 @@
 import '../styles/globals.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useRouter } from 'next/router';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { Provider } from 'react-redux';
+import { store } from '../Redux/store';
 
 function MyApp({ Component, pageProps }) {
 
   return (
     <div>
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </div>
   )
 }

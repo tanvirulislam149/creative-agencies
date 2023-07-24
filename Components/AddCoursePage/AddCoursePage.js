@@ -6,9 +6,10 @@ import styles from "./AddCoursePage.module.css"
 import SideNav from '../SideNav/SideNav';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
-import { Modal } from '@mui/material';
+import { Modal, useScrollTrigger } from '@mui/material';
 import SuccessModal from '../SuccessModal/SuccessModal';
 import LoadingModal from "../LoadingModal/LoadingModal"
+import { useSelector } from 'react-redux';
 
 const drawerWidth = 200;
 
@@ -25,7 +26,8 @@ const style = {
   textAlign: "center"
 };
 
-const AddCoursePage = ({ admin }) => {
+const AddCoursePage = () => {
+  const admin = useSelector((state) => state.admin.admin);
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const [detailsField, setDetailsField] = React.useState([""]);
   const [requirementField, setRequirementField] = React.useState([""]);
@@ -78,7 +80,7 @@ const AddCoursePage = ({ admin }) => {
 
   return (
     <Box className={styles.boxContainer} sx={{ display: 'flex' }}>
-      <SideNav admin={admin}></SideNav>
+      <SideNav admin={true}></SideNav>
       <Box
         className={styles.boxContent}
         component="main"

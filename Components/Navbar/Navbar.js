@@ -16,10 +16,21 @@ import auth from "../../firebase.init"
 import { useAuthState, useSignOut } from 'react-firebase-hooks/auth';
 import Loading from "../Loading/Loading"
 import { Avatar } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUser, removeUser } from '../../Redux/features/Auth/userSlice';
+import { useEffect } from 'react';
+import { getAdmin } from '../../Redux/features/Auth/adminSlice';
 
 function Navbar() {
   const [user, loading, error] = useAuthState(auth);
   const [signOut, signOutLoading, signOutError] = useSignOut(auth);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (user) {
+      dispatch(getUser(user));
+    }
+  }, [user])
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -116,7 +127,7 @@ function Navbar() {
                   }
                 </div>
                 <MenuItem onClick={handleCloseNavMenu}>
-                  {user ? <button onClick={async () => await signOut()} className={styles.button}>Log Out</button> :
+                  {user ? <button onClick={async () => { dispatch(removeUser()); await signOut() }} className={styles.button}>Log Out</button> :
                     <Link href="/login"><Typography className={styles.button} textAlign="center">Login</Typography></Link>
                   }
                 </MenuItem>
@@ -148,21 +159,22 @@ function Navbar() {
                 </p>
               </Link>
               {
-                user ?
-                  <Link href="/dashboard/myOrders">
-                    <p
-                      className={styles.link}
-                      onClick={handleCloseNavMenu}
-                    >
-                      Dashboard
-                    </p>
-                  </Link> : ""
+                // user ?
+                <Link href="/dashboard/addService">
+                  <p
+                    className={styles.link}
+                    onClick={handleCloseNavMenu}
+                  >
+                    Dashboard
+                  </p>
+                </Link>
+                // : ""
               }
               {
                 user ? <Avatar alt="" src={user.photoURL} /> :
                   <Avatar style={{ backgroundColor: "black" }} alt="" src="" />
               }
-              {user ? <button onClick={async () => await signOut()} className={styles.button}>Log Out</button> :
+              {user ? <button onClick={async () => { dispatch(removeUser()); await signOut() }} className={styles.button}>Log Out</button> :
                 <Link href="/login">
                   <p
                     className={styles.button}

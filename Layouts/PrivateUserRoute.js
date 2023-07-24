@@ -3,27 +3,29 @@ import auth from '../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useRouter } from 'next/router';
 import Loading from '../Components/Loading/Loading';
+import { useSelector } from 'react-redux';
 
 const PrivateUserRoute = ({ children }) => {
-  const [user, userLoading, error] = useAuthState(auth);
+  const user = useSelector((state) => state.user.user);
   const [loading, setLoading] = useState(true);
-
+  console.log(user);
   const router = useRouter();
 
   useEffect(() => {
-    if (!user && !userLoading) {
+    if (!user) {
       router.push('/login')
     }
     else if (user) {
       setLoading(false)
     }
-  }, [user, userLoading])
+  }, [user])
 
-  if (loading || userLoading) {
+  if (loading) {
     return (
       <Loading></Loading>
     )
   }
+
   return children;
 }
 

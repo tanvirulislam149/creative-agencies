@@ -16,7 +16,6 @@ const Login = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
   const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
   const router = useRouter();
-  const previousURL = usePreviousUrl();
 
   const [passError, setPassError] = useState("");
   const [open, setOpen] = useState(true);
@@ -48,11 +47,11 @@ const Login = () => {
   }
 
   if (user) {
-    router.push(previousURL.previous);
+    router.push("/");
   }
 
   if (googleUser) {
-    router.push(previousURL.previous);
+    router.push("/");
     const data = { name: googleUser.user.displayName, email: googleUser.user.email }
     axios.post(`http://localhost:5000/addUser`, data)
       .then(res => {
