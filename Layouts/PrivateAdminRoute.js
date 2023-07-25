@@ -4,23 +4,28 @@ import { getAdmin } from '../Redux/features/Auth/adminSlice';
 import { useRouter } from 'next/router';
 import Loading from '../Components/Loading/Loading';
 import axios from 'axios';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../firebase.init';
 
 const PrivateAdminRoute = ({ children }) => {
-  const email = useSelector((state) => state?.user?.user?.email);
-  // const [loading, setLoading] = useState(true);
+  // const email = useSelector((state) => state?.user?.user?.email);
+  const [user, userLoading, error] = useAuthState(auth);
+  const [loading, setLoading] = useState(true);
+  const [admin, setAdmin] = useState(false);
   const dispatch = useDispatch();
   const router = useRouter();
 
   useEffect(() => {
-    if (!email) {
+    if (!user) {
       router.push('/login')
     }
-    else if (email) {
-      axios.get(`http://localhost:5000/isAdmin?email=${email}`)
+    else if (user) {
+      axios.get(`http://localhost:5000/isAdmin?email=${user.email}`)
         .then(res => {
           // handle success
           if (res.data) {
-            // setLoading(false)
+            setLoading(false)
+            setAdmin(true);
             dispatch(getAdmin(res.data));
           }
           else {
@@ -32,15 +37,17 @@ const PrivateAdminRoute = ({ children }) => {
           console.log(err);
         })
     }
-  }, [email])
+  }, [user])
 
-  // if (loading) {
-  //   return (
-  //     <Loading></Loading>
-  //   )
-  // }
+  if (loading || userLoading) {
+    return (
+      <Loading></Loading>
+    )
+  }
 
-  return children;
+  if (user) {
+    return children;
+  }
 
 }
 

@@ -8,13 +8,13 @@ const AddCourse = () => {
 
   return (
     <div>
-      <PrivateUserRoute>
-        <PrivateAdminRoute>
-          <DashboardLayout>
+      <DashboardLayout>
+        <PrivateUserRoute>
+          <PrivateAdminRoute>
             <AddService />
-          </DashboardLayout>
-        </PrivateAdminRoute>
-      </PrivateUserRoute>
+          </PrivateAdminRoute>
+        </PrivateUserRoute>
+      </DashboardLayout>
     </div>
   )
 }

@@ -6,25 +6,25 @@ import Loading from '../Components/Loading/Loading';
 import { useSelector } from 'react-redux';
 
 const PrivateUserRoute = ({ children }) => {
-  const user = useSelector((state) => state.user.user);
-  // const [loading, setLoading] = useState(true);
+  const [user, userLoading, error] = useAuthState(auth);
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
   console.log(user);
 
   useEffect(() => {
-    if (!user) {
+    if (!user && !userLoading) {
       router.push('/login')
     }
-    // else if (user) {
-    //   setLoading(false)
-    // }
+    else if (user) {
+      setLoading(false)
+    }
   }, [user])
 
-  // if (loading) {
-  //   return (
-  //     <Loading></Loading>
-  //   )
-  // }
+  if (loading || userLoading) {
+    return (
+      <Loading></Loading>
+    )
+  }
 
   return children;
 }
