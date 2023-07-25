@@ -5,22 +5,20 @@ import SideNav from '../SideNav/SideNav'
 
 const drawerWidth = 200;
 
-const MyProfile = () => {
+const AddOrder = () => {
   return (
     <Box className={styles.boxContainer} sx={{ display: 'flex' }}>
-      <SideNav></SideNav>
       <Box
         className={styles.boxContent}
         component="main"
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
-        <Toolbar />
         <div>
-          <h1 className={styles.myProfile}>My Profile</h1>
+          <h1 className={styles.myProfile}>Add Order</h1>
         </div>
       </Box>
     </Box>
   )
 }
 
-export default MyProfile
+export default AddOrder
