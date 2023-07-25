@@ -8,10 +8,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 
 const PrivateAdminRoute = ({ children }) => {
-  // const email = useSelector((state) => state?.user?.user?.email);
-  const [user, userLoading, error] = useAuthState(auth);
-  const [loading, setLoading] = useState(true);
-  const [admin, setAdmin] = useState(false);
+  const user = useSelector((state) => state?.user?.user);
+  const admin = useSelector(state => state.admin.admin);
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -19,13 +17,10 @@ const PrivateAdminRoute = ({ children }) => {
     if (!user && !userLoading) {
       router.push('/login')
     }
-    else if (user) {
+    else if (user && !admin) {
       axios.get(`http://localhost:5000/isAdmin?email=${user.email}`)
         .then(res => {
-          // handle success
           if (res.data) {
-            setLoading(false)
-            setAdmin(true);
             dispatch(getAdmin(res.data));
           }
           else {
@@ -33,21 +28,12 @@ const PrivateAdminRoute = ({ children }) => {
           }
         })
         .catch(err => {
-          // handle error
           console.log(err);
         })
     }
   }, [user])
 
-  if (loading || userLoading) {
-    return (
-      <Loading></Loading>
-    )
-  }
-
-  if (admin) {
-    return children;
-  }
+  return children;
 
 }
 

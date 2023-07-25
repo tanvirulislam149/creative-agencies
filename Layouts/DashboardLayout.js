@@ -4,16 +4,14 @@ import NavbarLayout from "./NavbarLayout"
 
 const DashboardLayout = ({ children }) => {
   return (
-    <NavbarLayout>
-      <div style={{ display: "flex" }}>
-        <div>
-          <SideNav></SideNav>
-        </div>
-        <div style={{ width: "100%" }}>
-          {children}
-        </div>
+    <div style={{ display: "flex" }}>
+      <div>
+        <SideNav></SideNav>
       </div>
-    </NavbarLayout>
+      <div style={{ width: "100%" }}>
+        {children}
+      </div>
+    </div>
   )
 }
 

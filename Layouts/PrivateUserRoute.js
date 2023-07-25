@@ -6,7 +6,8 @@ import Loading from '../Components/Loading/Loading';
 import { useSelector } from 'react-redux';
 
 const PrivateUserRoute = ({ children }) => {
-  const [user, userLoading, error] = useAuthState(auth);
+  const user = useSelector((state) => state?.user?.user);
+  const userLoading = useSelector(state => state.user.loading)
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 

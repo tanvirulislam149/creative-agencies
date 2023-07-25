@@ -8,10 +8,12 @@ import axios from 'axios';
 import PrivateUserRoute from '../../../Layouts/PrivateUserRoute';
 import PrivateAdminRoute from '../../../Layouts/PrivateAdminRoute';
 import DashboardLayout from '../../../Layouts/DashboardLayout';
+import NavbarLayout from '../../../Layouts/NavbarLayout';
 
 const MakeAdmin = () => {
   return (
     <div>
+      {/* <NavbarLayout> */}
       <PrivateUserRoute>
         <PrivateAdminRoute>
           <DashboardLayout>
@@ -19,6 +21,7 @@ const MakeAdmin = () => {
           </DashboardLayout>
         </PrivateAdminRoute>
       </PrivateUserRoute>
+      {/* </NavbarLayout> */}
     </div>
   )
 }

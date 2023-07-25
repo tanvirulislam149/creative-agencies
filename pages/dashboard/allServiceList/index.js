@@ -8,10 +8,12 @@ import Loading from '../../../Components/Loading/Loading';
 import PrivateUserRoute from '../../../Layouts/PrivateUserRoute';
 import PrivateAdminRoute from '../../../Layouts/PrivateAdminRoute';
 import DashboardLayout from '../../../Layouts/DashboardLayout';
+import NavbarLayout from '../../../Layouts/NavbarLayout';
 
 const ServiceListPage = () => {
   return (
     <div>
+      {/* <NavbarLayout> */}
       <PrivateUserRoute>
         <PrivateAdminRoute>
           <DashboardLayout>
@@ -19,6 +21,7 @@ const ServiceListPage = () => {
           </DashboardLayout>
         </PrivateAdminRoute>
       </PrivateUserRoute>
+      {/* </NavbarLayout> */}
     </div>
   )
 }
