@@ -59,7 +59,7 @@ const MakeAdminPage = () => {
           component="main"
           sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
         >
-          <Toolbar />
+          {/* <Toolbar /> */}
           <p className={styles.makeAdmin}>Make Admin</p>
           <div className={styles.formContainer}>
             <p className={styles.email}>Email</p>
