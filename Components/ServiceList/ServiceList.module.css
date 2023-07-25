@@ -23,9 +23,59 @@
   display: none;
 }
 
+.header {
+  font-size: 27px;
+  text-align: center;
+}
+
 .boxContent {
   background-color: #eff5ff;
   height: 100vh;
+}
+
+.listContainer {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.tableCont {
+  width: 100%;
+  color: #686868;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-collapse: collapse;
+}
+
+.tableHeaderCont {
+  background-color: #f5f6fa;
+  width: 100%;
+  border-radius: 20px;
+  text-align: left;
+}
+.tableHeader {
+  padding: 10px 20px;
+}
+.firstHeader {
+  border-radius: 15px 0 0 15px;
+}
+.lastHeader {
+  border-radius: 0px 15px 15px 0;
+}
+
+.tbody > tr > td {
+  padding: 10px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.08px;
 }
 
 @media (max-width: 600px) {
