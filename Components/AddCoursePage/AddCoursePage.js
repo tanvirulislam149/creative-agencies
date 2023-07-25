@@ -35,19 +35,38 @@ const AddCoursePage = () => {
 
   const onSubmit = data => {
     setLoadingModal(true);
-    const result = { ...data, details: detailsField, requirements: requirementField }
-    axios.post(`http://localhost:5000/addProduct`, result)
-      .then(res => {
-        // handle success
-        console.log(res.data);
-        setSuccessModalOpen(true);
-        setSuccessMessage("Course Added Successfully");
-        setLoadingModal(false);
-        reset();
+    const image = data.picture[0];
+    const picture = new FormData();
+    picture.append("file", image);
+    picture.append("upload_preset", "creative_agencies")
+    picture.append("cloud_name", "tanvirulislam149")
+    axios.post("https://api.cloudinary.com/v1_1/tanvirulislam149/image/upload", picture)
+      .then(async res => {
+        // console.log(res);
+        if (res.data.url) {
+          console.log(res.data.url);
+          const finalData = { title: data.title, description: data.description, icon: res.data.url }
+          axios.post(`http://localhost:5000/addProduct`, finalData)
+            .then(res => {
+              if (res.acknowledged) {
+                console.log(res.data);
+                setSuccessModalOpen(true);
+                setSuccessMessage("Course Added Successfully");
+                setLoadingModal(false);
+                reset();
+              }
+            })
+            .catch(err => {
+              console.log(err);
+              setSuccessModalOpen(true);
+              setSuccessMessage("Add product failed");
+            })
+        }
       })
       .catch(err => {
-        // handle error
-        console.log(err);
+        // console.log(err.message);
+        setSuccessModalOpen(true);
+        setSuccessMessage("Image upload failed");
       })
   };
 
@@ -69,14 +88,15 @@ const AddCoursePage = () => {
                 <label htmlFor="title">Service Title</label><br />
                 <input placeholder='Enter title' {...register("title", { required: true, })} /> <br />
                 <label htmlFor="title">Description</label><br />
-                <textarea rows={5} placeholder='Enter Description' {...register("title", { required: true, })} /> <br />
+                <textarea rows={5} placeholder='Enter Description' {...register("description", { required: true, })} /> <br />
               </div>
               <div className={styles.leftColumn}>
                 <label htmlFor="title">Icon</label><br />
                 <label className={styles.picture}>
                   <img src="https://cdn-icons-png.flaticon.com/512/126/126477.png" />
                   <p>Upload Image</p>
-                  <input className={styles.pictureInput} type="file" name="" />
+                  {/* <input className={styles.pictureInput} type="file" name="" /> */}
+                  <input className={styles.pictureInput} type='file' {...register("picture", { required: true, })} />
                 </label>
               </div>
             </div>
