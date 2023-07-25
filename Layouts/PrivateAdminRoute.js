@@ -33,7 +33,9 @@ const PrivateAdminRoute = ({ children }) => {
     }
   }, [user])
 
-  return children;
+  if (admin) {
+    return children;
+  }
 
 }
 

@@ -20,15 +20,26 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUser, removeUser } from '../../Redux/features/Auth/userSlice';
 import { useEffect } from 'react';
 import { getAdmin } from '../../Redux/features/Auth/adminSlice';
+import axios from 'axios';
 
 function Navbar() {
   const [user, loading, error] = useAuthState(auth);
   const [signOut, signOutLoading, signOutError] = useSignOut(auth);
+  const admin = useSelector(state => state.admin.admin);
 
   const dispatch = useDispatch();
   useEffect(() => {
     if (user) {
       dispatch(getUser(user));
+      axios.get(`http://localhost:5000/isAdmin?email=${user.email}`)
+        .then(res => {
+          if (res.data) {
+            dispatch(getAdmin(res.data));
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        })
     }
   }, [user])
 
@@ -117,7 +128,7 @@ function Navbar() {
                 {
                   user ?
                     <MenuItem onClick={handleCloseNavMenu}>
-                      <Link href="/dashboard/myOrders"><Typography className={styles.link}>Dashboard</Typography></Link>
+                      <Link href={admin ? "/dashboard/addService" : "/dashboard/addOrder"}><Typography className={styles.link}>Dashboard</Typography></Link>
                     </MenuItem> : ""
                 }
                 <div style={{ display: "flex", justifyContent: "center" }}>
@@ -160,7 +171,7 @@ function Navbar() {
               </Link>
               {
                 user ?
-                  <Link href="/dashboard/addService">
+                  <Link href={admin ? "/dashboard/addService" : "/dashboard/addOrder"}>
                     <p
                       className={styles.link}
                       onClick={handleCloseNavMenu}

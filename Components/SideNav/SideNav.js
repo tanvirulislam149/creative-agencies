@@ -84,7 +84,7 @@ const SideNav = (props) => {
           </Link>
         </List> :
         <List>
-          <Link href="/dashboard/order">
+          <Link href="/dashboard/addOrder">
             <ListItem disablePadding>
               <ListItemButton>
                 <MdShoppingCart />
@@ -94,7 +94,7 @@ const SideNav = (props) => {
               </ListItemButton>
             </ListItem>
           </Link>
-          <Link href="/dashboard/orderList">
+          <Link href="/dashboard/myOrders">
             <ListItem disablePadding>
               <ListItemButton>
                 <CgProfile />
