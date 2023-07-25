@@ -9,7 +9,6 @@ const PrivateUserRoute = ({ children }) => {
   const [user, userLoading, error] = useAuthState(auth);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
-  console.log(user);
 
   useEffect(() => {
     if (!user && !userLoading) {
@@ -26,7 +25,9 @@ const PrivateUserRoute = ({ children }) => {
     )
   }
 
-  return children;
+  if (user) {
+    return children;
+  }
 }
 
 export default PrivateUserRoute 

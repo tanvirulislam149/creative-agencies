@@ -16,7 +16,7 @@ const PrivateAdminRoute = ({ children }) => {
   const router = useRouter();
 
   useEffect(() => {
-    if (!user) {
+    if (!user && !userLoading) {
       router.push('/login')
     }
     else if (user) {
@@ -45,7 +45,7 @@ const PrivateAdminRoute = ({ children }) => {
     )
   }
 
-  if (user) {
+  if (admin) {
     return children;
   }
 
