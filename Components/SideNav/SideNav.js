@@ -52,22 +52,22 @@ const SideNav = (props) => {
       </div>
       {admin ?
         <List>
-          <Link href="/dashboard/allServiceList">
-            <ListItem disablePadding>
-              <ListItemButton>
-                <MdList />
-                <ListItemText>
-                  Service List
-                </ListItemText>
-              </ListItemButton>
-            </ListItem>
-          </Link>
           <Link href="/dashboard/addService">
             <ListItem disablePadding>
               <ListItemButton>
                 <GrAddCircle />
                 <ListItemText>
                   Add Service
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </Link>
+          <Link href="/dashboard/allServiceList">
+            <ListItem disablePadding>
+              <ListItemButton>
+                <MdList />
+                <ListItemText>
+                  Service List
                 </ListItemText>
               </ListItemButton>
             </ListItem>

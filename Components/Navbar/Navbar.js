@@ -159,16 +159,15 @@ function Navbar() {
                 </p>
               </Link>
               {
-                // user ?
-                <Link href="/dashboard/addService">
-                  <p
-                    className={styles.link}
-                    onClick={handleCloseNavMenu}
-                  >
-                    Dashboard
-                  </p>
-                </Link>
-                // : ""
+                user ?
+                  <Link href="/dashboard/addService">
+                    <p
+                      className={styles.link}
+                      onClick={handleCloseNavMenu}
+                    >
+                      Dashboard
+                    </p>
+                  </Link> : ""
               }
               {
                 user ? <Avatar alt="" src={user.photoURL} /> :

@@ -12,7 +12,7 @@
 
 .sideNav > div {
   background-color: transparent;
-  margin-top: 90px;
+  /* margin-top: 90px; */
   border: none;
 }
 
@@ -25,6 +25,7 @@
 
 .boxContent {
   background-color: #f4f7fc;
+  height: 100vh;
 }
 
 .addCourse {
@@ -136,6 +137,38 @@
   width: 80%;
 }
 
+.picture {
+  border-radius: 5px;
+  border: 1px solid #009444;
+  background: #deffed;
+  color: #009444;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 10px;
+  width: 70%;
+  display: flex;
+  align-items: center;
+}
+
+.picture > img {
+  width: 25px;
+  height: 25px;
+}
+.picture > p {
+  margin: 0;
+  padding: 0px 15px 0 5px;
+}
+.pictureInput {
+  width: 50%;
+}
+.pictureInput::-webkit-file-upload-button {
+  display: none;
+  /* color: red; */
+}
+
 @media (max-width: 600px) {
   .menuBar {
     background-color: pink;
@@ -145,7 +178,7 @@
     display: block;
   }
   .boxContainer {
-    margin-top: 80px;
+    margin-top: 20px;
   }
   .formContainer {
     display: block;
