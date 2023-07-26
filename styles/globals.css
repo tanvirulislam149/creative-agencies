@@ -46,6 +46,24 @@ a {
   color: #dbb450;
 }
 
+.css-m5hdmq-MuiInputBase-root-MuiInput-root-MuiSelect-root:before {
+  border-bottom: 0px;
+  content: none;
+}
+
+.css-m5hdmq-MuiInputBase-root-MuiInput-root-MuiSelect-root:after {
+  border-bottom: 0px;
+}
+
+.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input:focus {
+  /* padding-left: 3px; */
+  background-color: transparent;
+}
+
+.css-m5hdmq-MuiInputBase-root-MuiInput-root-MuiSelect-root {
+  border-bottom: 0px !important;
+}
+
 @media (prefers-color-scheme: white) {
   html {
     color-scheme: white;
