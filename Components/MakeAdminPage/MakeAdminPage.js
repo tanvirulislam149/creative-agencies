@@ -20,7 +20,7 @@ const MakeAdminPage = () => {
 
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/users`)
+    axios.get(`http://localhost:5000/user/users`)
       .then(res => {
         // handle success
         setUser(res.data)
