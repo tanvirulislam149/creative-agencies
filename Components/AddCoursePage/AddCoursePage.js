@@ -46,7 +46,7 @@ const AddCoursePage = () => {
         if (res.data.url) {
           console.log(res.data.url);
           const finalData = { title: data.title, description: data.description, icon: res.data.url }
-          axios.post(`http://localhost:5000/addProduct`, finalData)
+          axios.post(`http://localhost:5000/course/addCourse`, finalData)
             .then(res => {
               if (res.acknowledged) {
                 console.log(res.data);
@@ -59,6 +59,7 @@ const AddCoursePage = () => {
             .catch(err => {
               console.log(err);
               setSuccessModalOpen(true);
+              setLoadingModal(false);
               setSuccessMessage("Add product failed");
             })
         }

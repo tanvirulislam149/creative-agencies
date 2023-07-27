@@ -14,7 +14,7 @@ const Services = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/courses')
+    axios.get('http://localhost:5000/course/getCourses')
       .then(res => {
         // handle success
         setCourses(res.data)
