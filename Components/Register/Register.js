@@ -63,9 +63,9 @@ const Register = () => {
     );
   }
   if (user) {
-    // router.push('/')
+    router.push('/')
     const data = { name: user.user.displayName, email: user.user.email }
-    axios.post(`http://localhost:5000/addUser`, data)
+    axios.post(`http://localhost:5000/user/addUser`, data)
       .then(res => {
         // handle success
         console.log(res.data);

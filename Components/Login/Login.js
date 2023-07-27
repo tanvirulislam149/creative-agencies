@@ -53,7 +53,7 @@ const Login = () => {
   if (googleUser) {
     router.push("/");
     const data = { name: googleUser.user.displayName, email: googleUser.user.email }
-    axios.post(`http://localhost:5000/addUser`, data)
+    axios.post(`http://localhost:5000/user/addUser`, data)
       .then(res => {
         console.log(res.data);
       })

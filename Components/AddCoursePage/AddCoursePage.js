@@ -48,7 +48,7 @@ const AddCoursePage = () => {
           const finalData = { title: data.title, description: data.description, icon: res.data.url }
           axios.post(`http://localhost:5000/course/addCourse`, finalData)
             .then(res => {
-              if (res.acknowledged) {
+              if (res.data._id) {
                 console.log(res.data);
                 setSuccessModalOpen(true);
                 setSuccessMessage("Course Added Successfully");

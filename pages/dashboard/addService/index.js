@@ -10,13 +10,13 @@ const AddCourse = () => {
   return (
     <div>
       {/* <NavbarLayout> */}
-      <PrivateUserRoute>
-        <PrivateAdminRoute>
-          <DashboardLayout>
-            <AddService />
-          </DashboardLayout>
-        </PrivateAdminRoute>
-      </PrivateUserRoute>
+      {/* <PrivateUserRoute>
+        <PrivateAdminRoute> */}
+      <DashboardLayout>
+        <AddService />
+      </DashboardLayout>
+      {/* </PrivateAdminRoute>
+      </PrivateUserRoute> */}
       {/* </NavbarLayout> */}
     </div>
   )
