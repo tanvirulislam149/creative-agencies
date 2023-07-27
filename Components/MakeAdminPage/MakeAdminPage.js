@@ -33,7 +33,7 @@ const MakeAdminPage = () => {
 
   const handleSubmit = () => {
     setLoadingModal(true);
-    axios.patch(`http://localhost:5000/makeAdmin`, { email: selectedUser })
+    axios.patch(`http://localhost:5000/user/makeAdmin`, { email: selectedUser })
       .then(res => {
         // handle success
         if (res.data.acknowledged) {
