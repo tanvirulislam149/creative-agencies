@@ -31,7 +31,7 @@ function Navbar() {
   useEffect(() => {
     if (user) {
       dispatch(getUser(user));
-      axios.get(`http://localhost:5000/isAdmin?email=${user.email}`)
+      axios.get(`http://localhost:5000/user/isAdmin?email=${user.email}`)
         .then(res => {
           if (res.data) {
             dispatch(getAdmin(res.data));
