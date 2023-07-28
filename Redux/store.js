@@ -1,14 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit'
 import userReducer from './features/Auth/userSlice'
 import adminReducer from "./features/Auth/adminSlice"
+import { getCoursesApi } from './Services/getCourses'
 
 export const store = configureStore({
   reducer: {
     user: userReducer,
-    admin: adminReducer
+    admin: adminReducer,
+    [getCoursesApi.reducerPath]: getCoursesApi.reducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: false,
-    }),
+    }).concat(getCoursesApi.middleware),
 })

@@ -5,15 +5,15 @@ import styles from "./Loading.module.css"
 
 const Loading = () => {
   return (
-    <div>
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "200px" }}>
       <Box>
         <CircularProgress
           sx={{
             color: "#fbd062",
             animationDuration: '2000ms',
-            position: 'absolute',
-            left: "50%",
-            top: "50%"
+            // position: 'absolute',
+            // left: "50%",
+            // top: "50%"
           }}
           size={50}
           thickness={8}
