@@ -27,7 +27,7 @@ import { MdPersonAddAlt1, MdList, MdShoppingCart, MdMessage } from "react-icons/
 import { CgProfile } from "react-icons/cg";
 import { useSelector } from "react-redux";
 
-const drawerWidth = 200;
+const drawerWidth = 250;
 
 const SideNav = (props) => {
   const { window } = props;

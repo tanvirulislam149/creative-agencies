@@ -1,0 +1,165 @@
+.boxContent {
+  background-color: #f4f7fc;
+}
+
+.myProfile {
+  font-size: 27px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.formContainer {
+  padding: 30px;
+}
+
+.leftColumn > input {
+  margin-bottom: 10px;
+  margin-top: 5px;
+  border: none;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3.33333px;
+  font-family: "Poppins";
+  padding: 10px;
+  width: 60%;
+  font-size: 15px;
+  color: black;
+}
+
+.priceCont {
+  display: flex;
+  align-items: center;
+}
+
+.priceCont > input {
+  margin-right: 15px;
+  border: none;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3.33333px;
+  font-family: "Poppins";
+  padding: 11px;
+  width: 15%;
+  font-size: 15px;
+  color: black;
+}
+
+.leftColumn > textarea {
+  margin-bottom: 15px;
+  margin-top: 5px;
+  border: none;
+  background: #ffffff;
+  font-family: "Poppins";
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3.33333px;
+  padding: 10px;
+  width: 60%;
+  font-size: 15px;
+  color: black;
+}
+
+.picture {
+  border-radius: 5px;
+  border: 1px solid #009444;
+  background: #deffed;
+  color: #009444;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 10px;
+  width: 43%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.picture > img {
+  width: 25px;
+  height: 25px;
+}
+.picture > p {
+  margin: 0;
+  padding: 0px 15px 0 5px;
+}
+.pictureInput {
+  width: 50%;
+}
+.pictureInput::-webkit-file-upload-button {
+  display: none;
+}
+
+.submitBtn {
+  margin-top: 20px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  background: #111430;
+  border-radius: 5px;
+  color: #ffffff;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+/* placeholder color change */
+.leftColumn > input::placeholder,
+.leftColumn > textarea::placeholder,
+.priceCont > input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.396px; /* Firefox */
+}
+
+.leftColumn > input:-ms-input-placeholder,
+.leftColumn > textarea:-ms-input-placeholder,
+.priceCont > input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(0, 0, 0, 0.3);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.396px;
+}
+
+.leftColumn > input::-ms-input-placeholder,
+.leftColumn > textarea::-ms-input-placeholder,
+.priceCont > input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgba(0, 0, 0, 0.3);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.396px;
+}
+
+@media (max-width: 600px) {
+  .boxContainer {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 900px) {
+  .leftColumn > input,
+  .picture,
+  .leftColumn > textarea {
+    width: 100%;
+  }
+  .priceCont > input {
+    width: 40%;
+  }
+  .formContainer {
+    padding: 10px;
+  }
+}

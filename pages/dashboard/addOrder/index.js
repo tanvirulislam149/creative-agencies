@@ -1,5 +1,5 @@
 import React from 'react'
-import MyProfile from '../../../Components/MyProfile/MyProfile'
+import AddOrder from '../../../Components/AddOrder/AddOrder'
 import PrivateUserRoute from '../../../Layouts/PrivateUserRoute'
 import DashboardLayout from '../../../Layouts/DashboardLayout'
 
@@ -8,7 +8,7 @@ const myProfile = () => {
     <div>
       <PrivateUserRoute>
         <DashboardLayout>
-          <MyProfile />
+          <AddOrder />
         </DashboardLayout>
       </PrivateUserRoute>
     </div>
