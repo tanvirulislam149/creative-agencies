@@ -21,15 +21,13 @@ export default function Home() {
       </Head>
 
       <main>
-        <NavbarLayout>
-          <Banner />
-          <CompanyName />
-          <Services />
-          <Works />
-          <Feedback />
-          <Contact />
-          <Footer />
-        </NavbarLayout>
+        <Banner />
+        <CompanyName />
+        <Services />
+        <Works />
+        <Feedback />
+        <Contact />
+        <Footer />
       </main>
     </div>
   )

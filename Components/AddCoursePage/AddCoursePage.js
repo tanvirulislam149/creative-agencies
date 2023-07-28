@@ -7,6 +7,8 @@ import axios from 'axios';
 import SuccessModal from '../SuccessModal/SuccessModal';
 import LoadingModal from "../LoadingModal/LoadingModal"
 import { useSelector } from 'react-redux';
+import { useAddCourseMutation } from '../../Redux/Services/courses';
+import { useEffect } from 'react';
 
 const drawerWidth = 200;
 
@@ -27,11 +29,29 @@ const AddCoursePage = () => {
   const admin = useSelector((state) => state.admin.admin);
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const [loadingModal, setLoadingModal] = React.useState(false);
+  const [addCourse, { isLoading, isSuccess, isError }] = useAddCourseMutation();
 
   // modal
   const [successModalOpen, setSuccessModalOpen] = React.useState(false);
   const [successMessage, setSuccessMessage] = React.useState("");
 
+  useEffect(() => {
+    if (isLoading) {
+      setLoadingModal(true);
+    }
+    if (isSuccess) {
+      setSuccessModalOpen(true);
+      setSuccessMessage("Course Added Successfully");
+      setLoadingModal(false);
+      reset();
+    }
+    if (isError) {
+      console.log(err);
+      setSuccessModalOpen(true);
+      setLoadingModal(false);
+      setSuccessMessage("Add product failed");
+    }
+  }, [isLoading, isSuccess, isError])
 
   const onSubmit = data => {
     setLoadingModal(true);
@@ -46,22 +66,24 @@ const AddCoursePage = () => {
         if (res.data.url) {
           console.log(res.data.url);
           const finalData = { title: data.title, description: data.description, icon: res.data.url }
-          axios.post(`http://localhost:5000/course/addCourse`, finalData)
-            .then(res => {
-              if (res.data._id) {
-                console.log(res.data);
-                setSuccessModalOpen(true);
-                setSuccessMessage("Course Added Successfully");
-                setLoadingModal(false);
-                reset();
-              }
-            })
-            .catch(err => {
-              console.log(err);
-              setSuccessModalOpen(true);
-              setLoadingModal(false);
-              setSuccessMessage("Add product failed");
-            })
+          addCourse(finalData);
+          // axios.post(`http://localhost:5000/course/addCourse`, finalData)
+          //   .then(res => {
+          //     if (res.data._id) {
+          //       console.log(res.data);
+          //       setSuccessModalOpen(true);
+          //       setSuccessMessage("Course Added Successfully");
+          //       setLoadingModal(false);
+          //       reset();
+          //     }
+          //   })
+          //   .catch(err => {
+          //     console.log(err);
+          //     setSuccessModalOpen(true);
+          //     setLoadingModal(false);
+          //     setSuccessMessage("Add product failed");
+          //   })
+
         }
       })
       .catch(err => {

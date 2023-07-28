@@ -6,8 +6,15 @@ export const getCoursesApi = createApi({
   endpoints: (builder) => ({
     getCourses: builder.query({
       query: () => "/getCourses",
+    }),
+    addCourse: builder.mutation({
+      query: (data) => ({
+        url: "/addCourse",
+        method: "POST",
+        body: data
+      })
     })
   })
 })
 
-export const { useGetCoursesQuery } = getCoursesApi;
+export const { useGetCoursesQuery, useAddCourseMutation } = getCoursesApi;

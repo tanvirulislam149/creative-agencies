@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import userReducer from './features/Auth/userSlice'
 import adminReducer from "./features/Auth/adminSlice"
-import { getCoursesApi } from './Services/getCourses'
+import { getCoursesApi } from './Services/courses'
 
 export const store = configureStore({
   reducer: {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from "./Services.module.css"
 import ServiceCard from "../ServiceCard/ServiceCard"
-import { useGetCoursesQuery } from '../../Redux/Services/getCourses';
+import { useGetCoursesQuery } from '../../Redux/Services/courses';
 import Loading from '../Loading/Loading';
 const axios = require('axios').default;
 
