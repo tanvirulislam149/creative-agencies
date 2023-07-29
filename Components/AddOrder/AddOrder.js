@@ -33,7 +33,7 @@ const AddOrder = () => {
               <div className={styles.leftColumn}>
                 <input type='text' placeholder="Your name / company's name" {...register("name", { required: true, })} /> <br />
                 <input type='email' placeholder="Your email address" {...register("email", { required: true, })} /> <br />
-                <FormControl sx={{ marginBottom: "10px", marginTop: "5px", width: "60%", background: "white" }}>
+                <FormControl className={styles.selectCont} sx={{ marginBottom: "10px", marginTop: "5px", background: "white" }}>
                   <Select
                     required
                     value={age}

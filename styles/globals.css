@@ -64,6 +64,15 @@ a {
   border-bottom: 0px !important;
 }
 
+.AddOrder_selectCont__umcWx > div > fieldset {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: #000000;
+}
+
 @media (prefers-color-scheme: white) {
   html {
     color-scheme: white;

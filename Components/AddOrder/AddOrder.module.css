@@ -26,6 +26,10 @@
   color: black;
 }
 
+.selectCont {
+  width: 60%;
+}
+
 .priceCont {
   display: flex;
   align-items: center;
@@ -166,5 +170,8 @@
   }
   .formContainer {
     padding: 10px;
+  }
+  .selectCont {
+    width: 100%;
   }
 }
