@@ -1,8 +1,6 @@
-.boxContainer {
-  margin-top: 20px;
-}
 .boxContent {
   background-color: #f4f7fc;
+  min-height: 100vh;
 }
 
 .addReview {
@@ -10,8 +8,101 @@
   text-align: center;
 }
 
+.formContainer {
+  padding: 30px;
+}
+
+.leftColumn > input {
+  margin-bottom: 10px;
+  margin-top: 5px;
+  border: none;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3.33333px;
+  font-family: "Poppins";
+  padding: 10px;
+  width: 60%;
+  font-size: 15px;
+  color: black;
+}
+
+.leftColumn > textarea {
+  margin-bottom: 15px;
+  margin-top: 5px;
+  border: none;
+  background: #ffffff;
+  font-family: "Poppins";
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3.33333px;
+  padding: 10px;
+  width: 60%;
+  font-size: 15px;
+  color: black;
+}
+
+.submitBtn {
+  margin-top: 0px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  background: #111430;
+  border-radius: 5px;
+  color: #ffffff;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+/* placeholder color change */
+.leftColumn > input::placeholder,
+.leftColumn > textarea::placeholder,
+.priceCont > input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.396px; /* Firefox */
+}
+
+.leftColumn > input:-ms-input-placeholder,
+.leftColumn > textarea:-ms-input-placeholder,
+.priceCont > input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(0, 0, 0, 0.3);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.396px;
+}
+
+.leftColumn > input::-ms-input-placeholder,
+.leftColumn > textarea::-ms-input-placeholder,
+.priceCont > input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgba(0, 0, 0, 0.3);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.396px;
+}
+
 @media (max-width: 600px) {
   .boxContainer {
     margin-top: 50px;
+  }
+  .leftColumn > input,
+  .leftColumn > textarea {
+    width: 100%;
+  }
+  .formContainer {
+    padding: 10px;
   }
 }
