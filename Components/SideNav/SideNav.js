@@ -140,7 +140,7 @@ const SideNav = (props) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Admin Dashboard
+            {admin ? "Admin Dashboard" : "User Dashboard"}
           </Typography>
         </Toolbar>
       </AppBar>
