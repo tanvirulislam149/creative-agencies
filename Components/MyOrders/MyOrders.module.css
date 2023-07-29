@@ -1,8 +1,6 @@
-.boxContainer {
-  margin-top: 20px;
-}
 .boxContent {
   background-color: #f4f7fc;
+  min-height: 100vh;
 }
 
 .myOrders {
@@ -10,8 +8,102 @@
   text-align: center;
 }
 
+.orderCardCont {
+  display: grid;
+  justify-content: start;
+  grid-template-columns: 40% 40%;
+  grid-gap: 30px;
+  padding: 20px;
+}
+
+.card {
+  border-radius: 20px;
+  background: #fff;
+  /* width: 80%; */
+  padding: 20px;
+}
+
+.icon {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+}
+
+.imgCont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pendingStatus {
+  border-radius: 5px;
+  background: #ffe3e3;
+  color: #ff4545;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.onGoingStatus {
+  border-radius: 5px;
+  background: #ffbb3e3f;
+  color: #ffa600;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.doneStatus {
+  border-radius: 5px;
+  background: #c6ffe0;
+  color: #009444;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.pendingStatus p,
+.doneStatus p,
+.onGoingStatus p {
+  margin: 10px 25px;
+}
+
+.title {
+  color: #111430;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px; /* 80% */
+  letter-spacing: 0.396px;
+}
+
+.description {
+  color: rgba(0, 0, 0, 0.7);
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px; /* 175% */
+  letter-spacing: 0.396px;
+}
+
 @media (max-width: 600px) {
   .boxContainer {
     margin-top: 80px;
+  }
+  .orderCardCont {
+    grid-template-columns: 100%;
+  }
+}
+@media (max-width: 1200px) {
+  .orderCardCont {
+    grid-template-columns: 100%;
   }
 }
