@@ -2,10 +2,20 @@ import React from 'react'
 import styles from "./MyOrders.module.css"
 import { Box, Toolbar } from '@mui/material'
 import SideNav from '../SideNav/SideNav'
+import { useGetMyCoursesQuery } from '../../Redux/Services/orders';
+import { useSelector } from 'react-redux';
+import Loading from "../Loading/Loading"
 
 const drawerWidth = 200;
 
 const MyOrders = () => {
+  const userEmail = useSelector(state => state.user.user.email);
+  const { data, error, isLoading } = useGetMyCoursesQuery(userEmail);
+  console.log(data);
+  if (isLoading) {
+    return <Loading />
+  }
+
   return (
     <Box className={styles.boxContainer} sx={{ display: 'flex' }}>
       <Box
@@ -16,36 +26,22 @@ const MyOrders = () => {
         <div>
           <p className={styles.myOrders}>Service List</p>
           <div className={styles.orderCardCont}>
-            <div className={styles.card}>
-              <div className={styles.imgCont}>
-                <img className={styles.icon} src="https://i.ibb.co/D7msbHw/aboutme.jpg" alt="" />
-                <div className={styles.onGoingStatus}>
-                  <p>On going</p>
+            {
+              data.length ? data.map(d =>
+                <div key={d._id}>
+                  <div className={styles.card}>
+                    <div className={styles.imgCont}>
+                      <img className={styles.icon} src={d.serviceImg} alt="" />
+                      <div className={d.status === "pending" ? styles.pendingStatus : d.status === "onGoing" ? styles.onGoingStatus : styles.doneStatus}>
+                        <p>{d.status === "pending" ? "Pending" : d.status === "onGoing" ? "On going" : "Done"}</p>
+                      </div>
+                    </div>
+                    <p className={styles.title}>{d.service}</p>
+                    <p className={styles.description}>{d.serviceDescription}</p>
+                  </div>
                 </div>
-              </div>
-              <p className={styles.title}>Web & Mobile design</p>
-              <p className={styles.description}>We craft stunning and amazing web UI, using a well drrafted UX to fit your product.</p>
-            </div>
-            <div className={styles.card}>
-              <div className={styles.imgCont}>
-                <img className={styles.icon} src="https://i.ibb.co/D7msbHw/aboutme.jpg" alt="" />
-                <div className={styles.pendingStatus}>
-                  <p>Pending</p>
-                </div>
-              </div>
-              <p className={styles.title}>Web & Mobile design</p>
-              <p className={styles.description}>We craft stunning and amazing web UI, using a well drrafted UX to fit your product.</p>
-            </div>
-            <div className={styles.card}>
-              <div className={styles.imgCont}>
-                <img className={styles.icon} src="https://i.ibb.co/D7msbHw/aboutme.jpg" alt="" />
-                <div className={styles.doneStatus}>
-                  <p>Done</p>
-                </div>
-              </div>
-              <p className={styles.title}>Web & Mobile design</p>
-              <p className={styles.description}>We craft stunning and amazing web UI, using a well drrafted UX to fit your product.</p>
-            </div>
+              ) : <p>No orders found.</p>
+            }
           </div>
         </div>
       </Box>

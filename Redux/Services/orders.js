@@ -5,19 +5,19 @@ export const orderApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/order" }),
   tagTypes: ["Orders"],
   endpoints: (builder) => ({
-    // getCourses: builder.query({
-    //   query: () => "/getCourses",
-    //   providesTags: ['Course'],
-    // }),
+    getMyCourses: builder.query({
+      query: (data) => `/getMyCourses?email=${data}`,
+      providesTags: ['Orders'],
+    }),
     addOrder: builder.mutation({
       query: (data) => ({
         url: "/addOrder",
         method: "POST",
         body: data
       }),
-      // invalidatesTags: ['Course'],
+      invalidatesTags: ['Orders'],
     })
   })
 })
 
-export const { useAddOrderMutation } = orderApi
+export const { useAddOrderMutation, useGetMyCoursesQuery } = orderApi

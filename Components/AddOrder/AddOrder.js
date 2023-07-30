@@ -17,7 +17,7 @@ const AddOrder = () => {
   const userEmail = useSelector(state => state.user.user.email);
   const [loadingModal, setLoadingModal] = React.useState(false);
   const [addOrder, { isLoading, isSuccess, isError, error }] = useAddOrderMutation();
-  console.log(error);
+  // console.log(age);
 
 
   // modal
@@ -66,7 +66,7 @@ const AddOrder = () => {
         // console.log(res);
         if (res.data.url) {
           console.log(res.data.url);
-          const finalData = { ...data, service: age, price: Number(data.price), fileUrl: res.data.url, status: "pending" }
+          const finalData = { ...data, price: Number(data.price), fileUrl: res.data.url, status: "pending", service: age.title, serviceImg: age.icon, serviceDescription: age.description }
           console.log(finalData);
           addOrder(finalData);
         }
@@ -105,7 +105,7 @@ const AddOrder = () => {
                     </MenuItem>
                     {
                       option.length ? option.map(o =>
-                        <MenuItem key={o._id} value={o.title}><span className={styles.selectOption}>{o.title}</span></MenuItem>
+                        <MenuItem key={o._id} value={o}><span className={styles.selectOption}>{o.title}</span></MenuItem>
                       ) : ""
                     }
                   </Select>
