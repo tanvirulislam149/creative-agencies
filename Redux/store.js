@@ -14,5 +14,5 @@ export const store = configureStore({
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: false,
-    }).concat(getCoursesApi.middleware),
+    }).concat([getCoursesApi.middleware, orderApi.middleware]),
 })

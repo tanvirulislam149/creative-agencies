@@ -46,7 +46,6 @@ const AddCoursePage = () => {
       reset();
     }
     if (isError) {
-      console.log(err);
       setSuccessModalOpen(true);
       setLoadingModal(false);
       setSuccessMessage("Add product failed");
@@ -67,27 +66,9 @@ const AddCoursePage = () => {
           console.log(res.data.url);
           const finalData = { title: data.title, description: data.description, icon: res.data.url }
           addCourse(finalData);
-          // axios.post(`http://localhost:5000/course/addCourse`, finalData)
-          //   .then(res => {
-          //     if (res.data._id) {
-          //       console.log(res.data);
-          //       setSuccessModalOpen(true);
-          //       setSuccessMessage("Course Added Successfully");
-          //       setLoadingModal(false);
-          //       reset();
-          //     }
-          //   })
-          //   .catch(err => {
-          //     console.log(err);
-          //     setSuccessModalOpen(true);
-          //     setLoadingModal(false);
-          //     setSuccessMessage("Add product failed");
-          //   })
-
         }
       })
       .catch(err => {
-        // console.log(err.message);
         setSuccessModalOpen(true);
         setSuccessMessage("Image upload failed");
       })
