@@ -41,6 +41,11 @@
   color: #000000;
 }
 
+.active {
+  color: #00b454;
+  background-color: #f4f7fc;
+}
+
 @media (max-width: 600px) {
   .menuBar {
     background-color: white;

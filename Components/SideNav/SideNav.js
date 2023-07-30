@@ -26,6 +26,7 @@ import { GrAddCircle } from "react-icons/gr";
 import { MdPersonAddAlt1, MdList, MdShoppingCart, MdMessage } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
 
 const drawerWidth = 250;
 
@@ -33,6 +34,7 @@ const SideNav = (props) => {
   const { window } = props;
   const admin = useSelector((state) => state.admin.admin);
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const { pathname } = useRouter();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -54,30 +56,30 @@ const SideNav = (props) => {
         <List>
           <Link href="/dashboard/addService">
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton className={pathname === "/dashboard/addService" ? styles.active : ""}>
                 <GrAddCircle />
                 <ListItemText>
-                  Add Service
+                  <span className={pathname === "/dashboard/addService" ? styles.active : ""}>Add Service</span>
                 </ListItemText>
               </ListItemButton>
             </ListItem>
           </Link>
           <Link href="/dashboard/allServiceList">
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton className={pathname === "/dashboard/allServiceList" ? styles.active : ""}>
                 <MdList />
                 <ListItemText>
-                  Service List
+                  <span className={pathname === "/dashboard/allServiceList" ? styles.active : ""}>Service List</span>
                 </ListItemText>
               </ListItemButton>
             </ListItem>
           </Link>
           <Link href="/dashboard/makeAdmin">
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton className={pathname === "/dashboard/makeAdmin" ? styles.active : ""}>
                 <MdPersonAddAlt1 />
                 <ListItemText>
-                  Make Admin
+                  <span className={pathname === "/dashboard/makeAdmin" ? styles.active : ""}>Make Admin</span>
                 </ListItemText>
               </ListItemButton>
             </ListItem>
@@ -86,30 +88,30 @@ const SideNav = (props) => {
         <List>
           <Link href="/dashboard/addOrder">
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton className={pathname === "/dashboard/addOrder" ? styles.active : ""}>
                 <MdShoppingCart />
                 <ListItemText>
-                  Order
+                  <span className={pathname === "/dashboard/addOrder" ? styles.active : ""}>Order</span>
                 </ListItemText>
               </ListItemButton>
             </ListItem>
           </Link>
           <Link href="/dashboard/myOrders">
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton className={pathname === "/dashboard/myOrders" ? styles.active : ""}>
                 <CgProfile />
                 <ListItemText>
-                  Service List
+                  <span className={pathname === "/dashboard/myOrders" ? styles.active : ""}>Service List</span>
                 </ListItemText>
               </ListItemButton>
             </ListItem>
           </Link>
           <Link href="/dashboard/addReview">
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton className={pathname === "/dashboard/addReview" ? styles.active : ""}>
                 <MdMessage />
                 <ListItemText>
-                  Add Review
+                  <span className={pathname === "/dashboard/addReview" ? styles.active : ""}>Add Review</span>
                 </ListItemText>
               </ListItemButton>
             </ListItem>

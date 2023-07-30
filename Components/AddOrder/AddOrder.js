@@ -2,12 +2,14 @@ import React from 'react'
 import styles from "./AddOrder.module.css"
 import { Box, FormControl, MenuItem, Select, Toolbar } from '@mui/material'
 import { useForm } from 'react-hook-form';
+import { useSelector } from 'react-redux';
 
 const drawerWidth = 200;
 
 const AddOrder = () => {
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const [age, setAge] = React.useState('');
+  const userEmail = useSelector(state => state.user.user.email);
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -15,7 +17,7 @@ const AddOrder = () => {
 
 
   const onSubmit = (data) => {
-    const finalData = { ...data, service: age }
+    const finalData = { ...data, service: age, price: Number(data.price) }
     console.log(finalData);
   }
 
@@ -32,7 +34,7 @@ const AddOrder = () => {
             <div className={styles.formContainer}>
               <div className={styles.leftColumn}>
                 <input type='text' placeholder="Your name / company's name" {...register("name", { required: true, })} /> <br />
-                <input type='email' placeholder="Your email address" {...register("email", { required: true, })} /> <br />
+                <input type='email' value={userEmail} placeholder="Your email address" {...register("email", { required: true, })} /> <br />
                 <FormControl className={styles.selectCont} sx={{ marginBottom: "10px", marginTop: "5px", background: "white" }}>
                   <Select
                     required
