@@ -19,6 +19,7 @@ const AddOrder = () => {
   const onSubmit = (data) => {
     const finalData = { ...data, service: age, price: Number(data.price) }
     console.log(finalData);
+
   }
 
   return (
