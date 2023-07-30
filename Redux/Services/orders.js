@@ -16,8 +16,11 @@ export const orderApi = createApi({
         body: data
       }),
       invalidatesTags: ['Orders'],
-    })
+    }),
+    getAllOrders: builder.query({
+      query: () => `/getAllOrders`,
+    }),
   })
 })
 
-export const { useAddOrderMutation, useGetMyCoursesQuery } = orderApi
+export const { useAddOrderMutation, useGetMyCoursesQuery, useGetAllOrdersQuery } = orderApi

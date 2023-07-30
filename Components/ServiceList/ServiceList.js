@@ -3,16 +3,23 @@ import { Box } from '@mui/system';
 import React from 'react'
 import SideNav from '../SideNav/SideNav';
 import styles from "./ServiceList.module.css"
+import { useGetAllOrdersQuery } from '../../Redux/Services/orders';
+import Loading from "../Loading/Loading"
+import ServiceSelect from '../ServiceSelect/ServiceSelect';
 
 const drawerWidth = 200;
 
 const ServiceList = () => {
-  const [age, setAge] = React.useState('');
+  // const [age, setAge] = React.useState('');
+  const { data, isLoading, error } = useGetAllOrdersQuery();
+  if (isLoading) {
+    return <Loading></Loading>
+  }
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-  console.log(age);
+  // const handleChange = (event) => {
+  //   setAge(event.target.value);
+  // };
+  // console.log(age);
 
   return (
     <Box className={styles.boxContainer} sx={{ display: 'flex' }}>
@@ -35,116 +42,36 @@ const ServiceList = () => {
               </tr>
             </thead>
             <tbody className={styles.tbody}>
-              <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, nostrum?</td>
-                <td>
-                  <FormControl variant="standard" sx={{ minWidth: 120, backgroundColor: "#f5f6fa", paddingLeft: "5px" }}>
-                    <Select
-                      labelId="demo-simple-select-standard-label"
-                      id="demo-simple-select-standard"
-                      value={age}
-                      onChange={handleChange}
-                      label="Age"
-                    >
-                      {/* <MenuItem value="">
+              {
+                data.length ?
+                  data.map(d =>
+                    <tr key={d._id}>
+                      <td>{d.name}</td>
+                      <td>{d.email}</td>
+                      <td>{d.service}</td>
+                      <td>{d.description}</td>
+                      <td>
+                        <ServiceSelect status={d.status} />
+                        {/* <FormControl variant="standard" sx={{ minWidth: 120, backgroundColor: "#f5f6fa", paddingLeft: "5px" }}>
+                          <Select
+                            labelId="demo-simple-select-standard-label"
+                            id="demo-simple-select-standard"
+                            value={age}
+                            onChange={handleChange}
+                            label="Age"
+                          >
+                            <MenuItem value="">
                         <em>Select</em>
-                      </MenuItem> */}
-                      <MenuItem value={10}>Pending</MenuItem>
-                      <MenuItem value={20}>Done</MenuItem>
-                      <MenuItem value={30}>On Going</MenuItem>
-                    </Select>
-                  </FormControl>
-                </td>
-              </tr>
-              <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td>Mexico</td>
-                <td>Mexico</td>
-                <td>
-                  <FormControl variant="standard" sx={{ minWidth: 120, backgroundColor: "#f5f6fa", paddingLeft: "5px" }}>
-                    <Select
-                      labelId="demo-simple-select-standard-label"
-                      id="demo-simple-select-standard"
-                      value={age}
-                      onChange={handleChange}
-                      label="Age"
-                    >
-                      {/* <MenuItem value="">
-                        <em>Select</em>
-                      </MenuItem> */}
-                      <MenuItem value={10}>Pending</MenuItem>
-                      <MenuItem value={20}>Done</MenuItem>
-                      <MenuItem value={30}>On Going</MenuItem>
-                    </Select>
-                  </FormControl>
-                </td>
-              </tr>
-              <tr>
-                <td>Ernst Handel</td>
-                <td>Roland Mendel</td>
-                <td>Austria</td>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, labore.</td>
-                <td>
-                  <FormControl variant="standard" sx={{ minWidth: 120, backgroundColor: "#f5f6fa", paddingLeft: "5px" }}>
-                    <Select
-                      labelId="demo-simple-select-standard-label"
-                      id="demo-simple-select-standard"
-                      value={age}
-                      onChange={handleChange}
-                      label="Age"
-                    >
-                      {/* <MenuItem value="">
-                        <em>Select</em>
-                      </MenuItem> */}
-                      <MenuItem value={10}>Pending</MenuItem>
-                      <MenuItem value={20}>Done</MenuItem>
-                      <MenuItem value={30}>On Going</MenuItem>
-                    </Select>
-                  </FormControl>
-                </td>
-              </tr>
-              <tr>
-                <td>Island Trading</td>
-                <td>Helen Bennett</td>
-                <td>Helen Bennett</td>
-                <td>Helen Bennett</td>
-                <td>
-                  <FormControl variant="standard" sx={{ minWidth: 120, backgroundColor: "#f5f6fa", paddingLeft: "5px" }}>
-                    <Select
-                      labelId="demo-simple-select-standard-label"
-                      id="demo-simple-select-standard"
-                      value={age}
-                      onChange={handleChange}
-                      label="Age"
-                    >
-                      {/* <MenuItem value="">
-                        <em>Select</em>
-                      </MenuItem> */}
-                      <MenuItem value={10}>Pending</MenuItem>
-                      <MenuItem value={20}>Done</MenuItem>
-                      <MenuItem value={30}>On Going</MenuItem>
-                    </Select>
-                  </FormControl>
-                </td>
-              </tr>
-              <tr>
-                <td>Laughing Bacchus Winecellars</td>
-                <td>Yoshi Tannamuri</td>
-                <td>Yoshi Tannamuri</td>
-                <td>Yoshi Tannamuri</td>
-                <td>Canada</td>
-              </tr>
-              <tr>
-                <td>Magazzini Alimentari Riuniti</td>
-                <td>Giovanni Rovelli</td>
-                <td>Giovanni Rovelli</td>
-                <td>Giovanni Rovelli</td>
-                <td>Italy</td>
-              </tr>
+                      </MenuItem>
+                            <MenuItem value={10}>Pending</MenuItem>
+                            <MenuItem value={20}>Done</MenuItem>
+                            <MenuItem value={30}>On Going</MenuItem>
+                          </Select>
+                        </FormControl> */}
+                      </td>
+                    </tr>
+                  ) : <p>No Records Found.</p>
+              }
             </tbody>
           </table>
         </div>
