@@ -1,0 +1,9 @@
+.pending {
+  color: #ff4545;
+}
+.done {
+  color: #009444;
+}
+.onGoing {
+  color: #ffbd3e;
+}

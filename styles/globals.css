@@ -73,6 +73,13 @@ a {
   border-color: #000000;
 }
 
+.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input {
+  font-family: "Poppins";
+}
+.css-6hp17o-MuiList-root-MuiMenu-list li {
+  font-family: "Poppins";
+}
+
 @media (prefers-color-scheme: white) {
   html {
     color-scheme: white;
