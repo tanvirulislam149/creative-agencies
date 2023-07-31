@@ -1,12 +1,15 @@
 import { FormControl, MenuItem, Select } from '@mui/material';
 import React, { useState } from 'react'
+import { useUpdateOrderStatusMutation } from '../../Redux/Services/orders';
 
-const ServiceSelect = ({ status }) => {
-  const [age, setAge] = useState(status);
+const ServiceSelect = ({ data }) => {
+  const [age, setAge] = useState(data.status);
+  const [updateOrderStatus] = useUpdateOrderStatusMutation();
 
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
+  const handleChange = (e) => {
+    setAge(e.target.value);
+    updateOrderStatus({ _id: data._id, status: e.target.value });
   };
   console.log(age);
 

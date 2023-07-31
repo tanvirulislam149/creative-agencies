@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const orderApi = createApi({
   reducerPath: "orderApi",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/order" }),
-  tagTypes: ["Orders"],
+  tagTypes: ["Orders", "AllOrders"],
   endpoints: (builder) => ({
     getMyCourses: builder.query({
       query: (data) => `/getMyCourses?email=${data}`,
@@ -19,8 +19,17 @@ export const orderApi = createApi({
     }),
     getAllOrders: builder.query({
       query: () => `/getAllOrders`,
+      providesTags: ["AllOrders"]
     }),
+    updateOrderStatus: builder.mutation({
+      query: (data) => ({
+        url: "/updateOrderStatus",
+        method: "POST",
+        body: data
+      }),
+      invalidatesTags: ["AllOrders"]
+    })
   })
 })
 
-export const { useAddOrderMutation, useGetMyCoursesQuery, useGetAllOrdersQuery } = orderApi
+export const { useAddOrderMutation, useGetMyCoursesQuery, useGetAllOrdersQuery, useUpdateOrderStatusMutation } = orderApi

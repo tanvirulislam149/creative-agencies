@@ -51,7 +51,7 @@ const ServiceList = () => {
                       <td>{d.service}</td>
                       <td>{d.description}</td>
                       <td>
-                        <ServiceSelect status={d.status} />
+                        <ServiceSelect data={d} />
                         {/* <FormControl variant="standard" sx={{ minWidth: 120, backgroundColor: "#f5f6fa", paddingLeft: "5px" }}>
                           <Select
                             labelId="demo-simple-select-standard-label"
