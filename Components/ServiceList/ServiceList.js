@@ -10,16 +10,10 @@ import ServiceSelect from '../ServiceSelect/ServiceSelect';
 const drawerWidth = 200;
 
 const ServiceList = () => {
-  // const [age, setAge] = React.useState('');
   const { data, isLoading, error } = useGetAllOrdersQuery();
   if (isLoading) {
     return <Loading></Loading>
   }
-
-  // const handleChange = (event) => {
-  //   setAge(event.target.value);
-  // };
-  // console.log(age);
 
   return (
     <Box className={styles.boxContainer} sx={{ display: 'flex' }}>
@@ -52,22 +46,6 @@ const ServiceList = () => {
                       <td>{d.description}</td>
                       <td>
                         <ServiceSelect data={d} />
-                        {/* <FormControl variant="standard" sx={{ minWidth: 120, backgroundColor: "#f5f6fa", paddingLeft: "5px" }}>
-                          <Select
-                            labelId="demo-simple-select-standard-label"
-                            id="demo-simple-select-standard"
-                            value={age}
-                            onChange={handleChange}
-                            label="Age"
-                          >
-                            <MenuItem value="">
-                        <em>Select</em>
-                      </MenuItem>
-                            <MenuItem value={10}>Pending</MenuItem>
-                            <MenuItem value={20}>Done</MenuItem>
-                            <MenuItem value={30}>On Going</MenuItem>
-                          </Select>
-                        </FormControl> */}
                       </td>
                     </tr>
                   ) : <p>No Records Found.</p>

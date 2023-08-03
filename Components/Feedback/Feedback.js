@@ -13,7 +13,6 @@ const Feedback = () => {
       <h1 className={styles.header}>Clients <span>Feedback</span></h1>
       <div className={styles.cardContainer}>
         {
-          // data.map(d => <FeedbackCard key={d.id} data={d} />)
           isLoading ? <Loading /> : data.map(d => <FeedbackCard key={d._id} data={d} />)
         }
       </div>
