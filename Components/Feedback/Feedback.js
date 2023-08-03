@@ -4,12 +4,6 @@ import styles from "./Feedback.module.css"
 import { useGetReviewsQuery } from '../../Redux/Services/Review'
 import Loading from '../Loading/Loading'
 
-// const data = [
-//   { id: 1, name: "Karen Page", img: "https://i.ibb.co/CvPtzXR/customer-1.png", company: "CEO, Manpol", des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat" },
-//   { id: 2, name: "Walter White", img: "https://i.ibb.co/zfrNbVF/customer-2.png", company: "CEO, Manpol", des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat" },
-//   { id: 3, name: "Soul Goodman", img: "https://i.ibb.co/B3K14sp/customer-3.png", company: "CEO, Manpol", des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat" },
-// ]
-
 const Feedback = () => {
   const { data, isLoading, error } = useGetReviewsQuery();
 
