@@ -3,19 +3,21 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const reviewsApi = createApi({
   reducerPath: "reviewsApi",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/reviews" }),
-  tagTypes: ["", ""],
+  tagTypes: ["Reviews"],
   endpoints: (builder) => ({
-    // getMyCourses: builder.query({
-    //   query: (data) => `/getMyCourses?email=${data}`,
-    // }),
+    getReviews: builder.query({
+      query: () => `/getReviews`,
+      providesTags: ['Reviews'],
+    }),
     addReview: builder.mutation({
       query: (data) => ({
         url: "/addReview",
         method: "POST",
         body: data
       }),
+      invalidatesTags: ["Reviews"]
     })
   })
 })
 
-export const { useAddReviewMutation } = reviewsApi
+export const { useAddReviewMutation, useGetReviewsQuery } = reviewsApi

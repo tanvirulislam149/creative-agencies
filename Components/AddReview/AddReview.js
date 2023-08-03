@@ -6,10 +6,12 @@ import { useForm } from 'react-hook-form';
 import { useAddReviewMutation } from '../../Redux/Services/Review';
 import LoadingModal from "../LoadingModal/LoadingModal"
 import SuccessModal from '../SuccessModal/SuccessModal';
+import { useSelector } from 'react-redux';
 
 const drawerWidth = 200;
 
 const AddReview = () => {
+  const userImg = useSelector(state => state.user.user.photoURL);
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const [addReview, { isLoading, isSuccess, isError, error }] = useAddReviewMutation();
   const [successModalOpen, setSuccessModalOpen] = useState(false);
@@ -25,7 +27,8 @@ const AddReview = () => {
 
 
   const onSubmit = (data) => {
-    addReview(data);
+    const finalData = { ...data, reviewerImg: userImg }
+    addReview(finalData);
     reset();
   }
 
