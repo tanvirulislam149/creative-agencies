@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const getCoursesApi = createApi({
   reducerPath: "getCourses",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/course" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://creative-agencies-server.onrender.com/course" }),
   tagTypes: ["Course"],
   endpoints: (builder) => ({
     getCourses: builder.query({

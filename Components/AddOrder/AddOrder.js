@@ -29,7 +29,7 @@ const AddOrder = () => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/course/getCourseName")
+    axios.get("https://creative-agencies-server.onrender.com/course/getCourseName")
       .then(res => setOption(res.data))
       .catch(err => console.log(err))
   }, [])

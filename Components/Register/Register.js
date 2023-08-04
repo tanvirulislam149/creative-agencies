@@ -67,7 +67,7 @@ const Register = () => {
     router.push('/')
     Cookies.set('user', 'true', { expires: 1 })
     const data = { name: user.user.displayName, email: user.user.email }
-    axios.post(`http://localhost:5000/user/addUser`, data)
+    axios.post(`https://creative-agencies-server.onrender.com/user/addUser`, data)
       .then(res => {
         // handle success
         console.log(res.data);

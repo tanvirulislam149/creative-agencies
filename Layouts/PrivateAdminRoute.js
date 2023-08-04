@@ -18,7 +18,7 @@ const PrivateAdminRoute = ({ children }) => {
       router.push('/login')
     }
     else if (user && !admin) {
-      axios.get(`http://localhost:5000/isAdmin?email=${user.email}`)
+      axios.get(`https://creative-agencies-server.onrender.com/isAdmin?email=${user.email}`)
         .then(res => {
           if (res.data) {
             dispatch(getAdmin(res.data));

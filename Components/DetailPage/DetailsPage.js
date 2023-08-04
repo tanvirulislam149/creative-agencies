@@ -37,7 +37,7 @@ const DetailsPage = () => {
   const handleCourseModalClose = () => setCourseModal(false);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/courses/${id}`)
+    axios.get(`https://creative-agencies-server.onrender.com/courses/${id}`)
       .then(res => {
         // handle success
         setCourse(res.data)

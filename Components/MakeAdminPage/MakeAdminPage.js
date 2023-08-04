@@ -20,7 +20,7 @@ const MakeAdminPage = () => {
 
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/user/users`)
+    axios.get(`https://creative-agencies-server.onrender.com/user/users`)
       .then(res => {
         // handle success
         setUser(res.data)
@@ -33,7 +33,7 @@ const MakeAdminPage = () => {
 
   const handleSubmit = () => {
     setLoadingModal(true);
-    axios.patch(`http://localhost:5000/user/makeAdmin`, { email: selectedUser })
+    axios.patch(`https://creative-agencies-server.onrender.com/user/makeAdmin`, { email: selectedUser })
       .then(res => {
         // handle success
         if (res.data.acknowledged) {

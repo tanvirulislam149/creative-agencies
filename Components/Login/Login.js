@@ -56,7 +56,7 @@ const Login = () => {
     router.push("/");
     Cookies.set('user', 'true', { expires: 1 })
     const data = { name: googleUser.user.displayName, email: googleUser.user.email }
-    axios.post(`http://localhost:5000/user/addUser`, data)
+    axios.post(`https://creative-agencies-server.onrender.com/user/addUser`, data)
       .then(res => {
         console.log(res.data);
       })
