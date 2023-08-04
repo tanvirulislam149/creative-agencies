@@ -135,10 +135,10 @@ function Navbar() {
                   <Link href="/"><Typography className={styles.link}>Home</Typography></Link>
                 </MenuItem>
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Link href="/"><Typography className={styles.link}>Contact</Typography></Link>
+                  <Link href="/#contact"><Typography className={styles.link}>Contact</Typography></Link>
                 </MenuItem>
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Link href="/"><Typography className={styles.link}>About</Typography></Link>
+                  <Link href="/#services"><Typography className={styles.link}>Services</Typography></Link>
                 </MenuItem>
                 {
                   user ?
@@ -168,7 +168,7 @@ function Navbar() {
                   Home
                 </p>
               </Link>
-              <Link href="/">
+              <Link href="/#contact">
                 <p
                   className={styles.link}
                   onClick={handleCloseNavMenu}
@@ -176,12 +176,12 @@ function Navbar() {
                   Contact
                 </p>
               </Link>
-              <Link href="/dashboard/addService">
+              <Link href="/#services">
                 <p
                   className={styles.link}
                   onClick={handleCloseNavMenu}
                 >
-                  About
+                  Services
                 </p>
               </Link>
               {

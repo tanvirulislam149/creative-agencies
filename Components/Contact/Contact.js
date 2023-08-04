@@ -3,7 +3,7 @@ import styles from "./Contact.module.css"
 
 const Contact = () => {
   return (
-    <div className={styles.container}>
+    <div id='contact' className={styles.container}>
       <div className={styles.header}>
         <p className={styles.mainHeader}>Let us handle your project, professionally.</p>
         <p className={styles.secondHeader}>With well written codes, we build amazing apps for all platforms, mobile and web apps in general.</p>
