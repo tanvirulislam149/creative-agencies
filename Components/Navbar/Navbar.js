@@ -19,13 +19,16 @@ import { Avatar } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser, removeUser } from '../../Redux/features/Auth/userSlice';
 import { useEffect } from 'react';
-import { getAdmin } from '../../Redux/features/Auth/adminSlice';
+import { getAdmin, removeAdmin } from '../../Redux/features/Auth/adminSlice';
 import axios from 'axios';
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/router';
 
 function Navbar() {
   const [user, loading, error] = useAuthState(auth);
   const [signOut, signOutLoading, signOutError] = useSignOut(auth);
-  const admin = useSelector(state => state.admin.admin);
+  const admin = useSelector(state => state?.admin?.admin);
+  const router = useRouter();
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -35,6 +38,7 @@ function Navbar() {
         .then(res => {
           if (res.data) {
             dispatch(getAdmin(res.data));
+            Cookies.set('admin', 'true', { expires: 1 })
           }
         })
         .catch(err => {
@@ -70,6 +74,17 @@ function Navbar() {
   if (error || signOutError) {
     console.log(error?.message || signOutError?.message);
   }
+
+  const handleSignOut = async () => {
+    dispatch(removeUser())
+    dispatch(removeAdmin())
+    await signOut();
+    Cookies.remove('user')
+    Cookies.remove('admin')
+    router.push("/");
+  }
+
+
 
   return (
     <AppBar className={styles.container} position="fixed">
@@ -138,7 +153,7 @@ function Navbar() {
                   }
                 </div>
                 <MenuItem onClick={handleCloseNavMenu}>
-                  {user ? <button onClick={async () => { dispatch(removeUser()); await signOut() }} className={styles.button}>Log Out</button> :
+                  {user ? <button onClick={handleSignOut} className={styles.button}>Log Out</button> :
                     <Link href="/login"><Typography className={styles.button} textAlign="center">Login</Typography></Link>
                   }
                 </MenuItem>
@@ -161,7 +176,7 @@ function Navbar() {
                   Contact
                 </p>
               </Link>
-              <Link href="/">
+              <Link href="/dashboard/addService">
                 <p
                   className={styles.link}
                   onClick={handleCloseNavMenu}
@@ -184,7 +199,7 @@ function Navbar() {
                 user ? <Avatar alt="" src={user.photoURL} /> :
                   <Avatar style={{ backgroundColor: "black" }} alt="" src="" />
               }
-              {user ? <button onClick={async () => { dispatch(removeUser()); await signOut() }} className={styles.button}>Log Out</button> :
+              {user ? <button onClick={handleSignOut} className={styles.button}>Log Out</button> :
                 <Link href="/login">
                   <p
                     className={styles.button}

@@ -14,13 +14,13 @@ const MakeAdmin = () => {
   return (
     <div>
       {/* <NavbarLayout> */}
-      <PrivateUserRoute>
-        <PrivateAdminRoute>
-          <DashboardLayout>
-            <MakeAdminPage />
-          </DashboardLayout>
-        </PrivateAdminRoute>
-      </PrivateUserRoute>
+      {/* <PrivateUserRoute>
+        <PrivateAdminRoute> */}
+      <DashboardLayout>
+        <MakeAdminPage />
+      </DashboardLayout>
+      {/* </PrivateAdminRoute>
+      </PrivateUserRoute> */}
       {/* </NavbarLayout> */}
     </div>
   )

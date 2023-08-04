@@ -9,7 +9,7 @@ import Loading from "../Loading/Loading"
 const drawerWidth = 200;
 
 const MyOrders = () => {
-  const userEmail = useSelector(state => state.user.user.email);
+  const userEmail = useSelector(state => state?.user?.user?.email);
   const { data, error, isLoading } = useGetMyCoursesQuery(userEmail);
   console.log(data);
   if (isLoading) {

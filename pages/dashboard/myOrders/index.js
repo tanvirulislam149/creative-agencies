@@ -6,11 +6,11 @@ import DashboardLayout from '../../../Layouts/DashboardLayout'
 const myOrders = () => {
   return (
     <div>
-      <PrivateUserRoute>
-        <DashboardLayout>
-          <MyOrders />
-        </DashboardLayout>
-      </PrivateUserRoute>
+      {/* <PrivateUserRoute> */}
+      <DashboardLayout>
+        <MyOrders />
+      </DashboardLayout>
+      {/* </PrivateUserRoute> */}
     </div>
   )
 }

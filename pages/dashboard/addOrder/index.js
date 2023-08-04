@@ -6,11 +6,11 @@ import DashboardLayout from '../../../Layouts/DashboardLayout'
 const myProfile = () => {
   return (
     <div>
-      <PrivateUserRoute>
-        <DashboardLayout>
-          <AddOrder />
-        </DashboardLayout>
-      </PrivateUserRoute>
+      {/* <PrivateUserRoute> */}
+      <DashboardLayout>
+        <AddOrder />
+      </DashboardLayout>
+      {/* </PrivateUserRoute> */}
     </div>
   )
 }

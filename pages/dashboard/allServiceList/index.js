@@ -14,13 +14,13 @@ const ServiceListPage = () => {
   return (
     <div>
       {/* <NavbarLayout> */}
-      <PrivateUserRoute>
-        <PrivateAdminRoute>
-          <DashboardLayout>
-            <ServiceList />
-          </DashboardLayout>
-        </PrivateAdminRoute>
-      </PrivateUserRoute>
+      {/* <PrivateUserRoute>
+        <PrivateAdminRoute> */}
+      <DashboardLayout>
+        <ServiceList />
+      </DashboardLayout>
+      {/* </PrivateAdminRoute>
+      </PrivateUserRoute> */}
       {/* </NavbarLayout> */}
     </div>
   )

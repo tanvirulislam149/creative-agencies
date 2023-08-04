@@ -14,7 +14,7 @@ const AddOrder = () => {
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const [age, setAge] = React.useState('');
   const [option, setOption] = useState([]);
-  const userEmail = useSelector(state => state.user.user.email);
+  const userEmail = useSelector(state => state?.user?.user?.email);
   const [loadingModal, setLoadingModal] = React.useState(false);
   const [addOrder, { isLoading, isSuccess, isError, error }] = useAddOrderMutation();
   // console.log(age);

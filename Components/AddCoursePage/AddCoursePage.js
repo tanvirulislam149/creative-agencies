@@ -26,7 +26,7 @@ const style = {
 };
 
 const AddCoursePage = () => {
-  const admin = useSelector((state) => state.admin.admin);
+  const admin = useSelector((state) => state?.admin?.admin);
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const [loadingModal, setLoadingModal] = React.useState(false);
   const [addCourse, { isLoading, isSuccess, isError }] = useAddCourseMutation();

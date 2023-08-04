@@ -11,6 +11,7 @@ import ErrorModal from '../ErrorModal/ErrorModal';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import { usePreviousUrl } from '../../pages/_app';
+import Cookies from 'js-cookie';
 
 const Login = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
@@ -48,10 +49,12 @@ const Login = () => {
 
   if (user) {
     router.push("/");
+    Cookies.set('user', 'true', { expires: 1 })
   }
 
   if (googleUser) {
     router.push("/");
+    Cookies.set('user', 'true', { expires: 1 })
     const data = { name: googleUser.user.displayName, email: googleUser.user.email }
     axios.post(`http://localhost:5000/user/addUser`, data)
       .then(res => {

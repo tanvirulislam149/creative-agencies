@@ -9,6 +9,7 @@ import Loading from '../Loading/Loading';
 import ErrorModal from '../ErrorModal/ErrorModal';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
@@ -64,6 +65,7 @@ const Register = () => {
   }
   if (user) {
     router.push('/')
+    Cookies.set('user', 'true', { expires: 1 })
     const data = { name: user.user.displayName, email: user.user.email }
     axios.post(`http://localhost:5000/user/addUser`, data)
       .then(res => {

@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 const drawerWidth = 200;
 
 const AddReview = () => {
-  const userImg = useSelector(state => state.user.user.photoURL);
+  const userImg = useSelector(state => state?.user?.user?.photoURL);
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const [addReview, { isLoading, isSuccess, isError, error }] = useAddReviewMutation();
   const [successModalOpen, setSuccessModalOpen] = useState(false);
