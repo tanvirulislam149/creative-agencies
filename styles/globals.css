@@ -19,45 +19,45 @@ a {
 }
 
 .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-  border: 2px solid #fbd062;
+  border: 2px solid #fbd062 !important;
 }
 
 .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
-  color: black;
+  color: black !important;
 }
 .css-tlelie-MuiListItemText-root {
-  padding: 5px 10px;
+  padding: 5px 10px !important;
 }
 .css-10hburv-MuiTypography-root {
-  text-decoration: none;
-  color: black;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #000000;
+  text-decoration: none !important;
+  color: black !important;
+  font-family: "Poppins" !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  color: #000000 !important;
 }
 .css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root {
-  padding-left: 55px;
+  padding-left: 55px !important;
 }
 
 .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
-  color: #dbb450;
+  color: #dbb450 !important;
 }
 
 .css-m5hdmq-MuiInputBase-root-MuiInput-root-MuiSelect-root:before {
-  border-bottom: 0px;
-  content: none;
+  border-bottom: 0px !important;
+  content: none !important;
 }
 
 .css-m5hdmq-MuiInputBase-root-MuiInput-root-MuiSelect-root:after {
-  border-bottom: 0px;
+  border-bottom: 0px !important;
 }
 
 .css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input:focus {
   /* padding-left: 3px; */
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
 .css-m5hdmq-MuiInputBase-root-MuiInput-root-MuiSelect-root {
@@ -65,19 +65,19 @@ a {
 }
 
 .AddOrder_selectCont__umcWx > div > fieldset {
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
 .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused
   .MuiOutlinedInput-notchedOutline {
-  border-color: #000000;
+  border-color: #000000 !important;
 }
 
 .css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input {
-  font-family: "Poppins";
+  font-family: "Poppins" !important;
 }
 .css-6hp17o-MuiList-root-MuiMenu-list li {
-  font-family: "Poppins";
+  font-family: "Poppins" !important;
 }
 
 @media (prefers-color-scheme: white) {
