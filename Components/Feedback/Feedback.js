@@ -11,11 +11,14 @@ const Feedback = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.header}>Clients <span>Feedback</span></h1>
-      <div className={styles.cardContainer}>
-        {
-          isLoading ? <Loading /> : data?.length ? data.map(d => <FeedbackCard key={d._id} data={d} />) : ""
-        }
-      </div>
+      {
+        isLoading ? <Loading /> :
+          <div className={styles.cardContainer}>
+            {
+              data?.length ? data.map(d => <FeedbackCard key={d._id} data={d} />) : ""
+            }
+          </div>
+      }
     </div>
   )
 }
