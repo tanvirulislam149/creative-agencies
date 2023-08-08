@@ -118,6 +118,8 @@ const SideNav = (props) => {
     </div>
   );
 
+  // looks all ok
+
   const container = window !== undefined ? () => window().document.body : undefined;
 
 
