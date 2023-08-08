@@ -2,7 +2,7 @@ import { Toolbar, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useEffect, useState } from 'react'
 import SideNav from '../SideNav/SideNav'
-import styles from "./adminMakingPage.module.css"
+import styles from "./MakeAdminPage.module.css"
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import axios from 'axios'
