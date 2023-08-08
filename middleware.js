@@ -4,7 +4,7 @@ export function middleware(request) {
   const user = request.cookies.get('user')?.value;
   const admin = request.cookies.get('admin')?.value;
 
-  if (request.nextUrl.pathname === "/dashboard/addService" || request.nextUrl.pathname === "/dashboard/makeAdmin" || request.nextUrl.pathname === "/dashboard/allServiceList") {
+  if (request.nextUrl.pathname === "/dashboard/addService" || request.nextUrl.pathname === "/dashboard/adminMaking" || request.nextUrl.pathname === "/dashboard/allServiceList") {
     if (!(user && admin)) {
       return NextResponse.redirect(new URL('/login', request.url))
     }

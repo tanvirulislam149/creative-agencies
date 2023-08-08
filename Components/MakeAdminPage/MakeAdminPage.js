@@ -2,7 +2,7 @@ import { Toolbar, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useEffect, useState } from 'react'
 import SideNav from '../SideNav/SideNav'
-import styles from "./MakeAdminPage.module.css"
+import styles from "./adminMakingPage.module.css"
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import axios from 'axios'
@@ -33,7 +33,7 @@ const MakeAdminPage = () => {
 
   const handleSubmit = () => {
     setLoadingModal(true);
-    axios.patch(`https://creative-agencies-server.onrender.com/user/makeAdmin`, { email: selectedUser })
+    axios.patch(`https://creative-agencies-server.onrender.com/user/adminMaking`, { email: selectedUser })
       .then(res => {
         // handle success
         if (res.data.acknowledged) {

@@ -71,12 +71,12 @@ const SideNav = (props) => {
               </ListItemButton>
             </ListItem>
           </Link>
-          <Link href="/dashboard/makeAdmin">
+          <Link href="/dashboard/adminMaking">
             <ListItem disablePadding>
-              <ListItemButton className={pathname === "/dashboard/makeAdmin" ? styles.active : ""}>
+              <ListItemButton className={pathname === "/dashboard/adminMaking" ? styles.active : ""}>
                 <MdPersonAddAlt1 />
                 <ListItemText>
-                  <span className={pathname === "/dashboard/makeAdmin" ? styles.active : ""}>Make Admin</span>
+                  <span className={pathname === "/dashboard/adminMaking" ? styles.active : ""}>Make Admin</span>
                 </ListItemText>
               </ListItemButton>
             </ListItem>

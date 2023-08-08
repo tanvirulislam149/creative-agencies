@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import MakeAdminPage from '../../../Components/MakeAdminPage/MakeAdminPage'
+import MakeAdminPage from '../../../Components/adminMakingPage/adminMakingPage'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useRouter } from 'next/router';
