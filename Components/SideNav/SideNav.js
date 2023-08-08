@@ -24,6 +24,7 @@ import { MdPersonAddAlt1, MdList, MdShoppingCart, MdMessage } from "react-icons/
 import { CgProfile } from "react-icons/cg";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
+import { MdAddCircleOutline } from "react-icons/md";
 
 const drawerWidth = 250;
 
@@ -52,9 +53,9 @@ const SideNav = (props) => {
       {admin ?
         <List>
           <Link href="/dashboard/addService">
-            <ListItem disablePadding>
+            <ListItem disablePadding className={styles.link}>
               <ListItemButton className={pathname === "/dashboard/addService" ? styles.active : ""}>
-                <GrAddCircle />
+                <MdAddCircleOutline />
                 <ListItemText>
                   <span className={pathname === "/dashboard/addService" ? styles.active : ""}>Add Service</span>
                 </ListItemText>
@@ -62,7 +63,7 @@ const SideNav = (props) => {
             </ListItem>
           </Link>
           <Link href="/dashboard/allServiceList">
-            <ListItem disablePadding>
+            <ListItem disablePadding className={styles.link}>
               <ListItemButton className={pathname === "/dashboard/allServiceList" ? styles.active : ""}>
                 <MdList />
                 <ListItemText>
@@ -72,7 +73,7 @@ const SideNav = (props) => {
             </ListItem>
           </Link>
           <Link href="/dashboard/adminMaking">
-            <ListItem disablePadding>
+            <ListItem disablePadding className={styles.link}>
               <ListItemButton className={pathname === "/dashboard/adminMaking" ? styles.active : ""}>
                 <MdPersonAddAlt1 />
                 <ListItemText>
@@ -84,7 +85,7 @@ const SideNav = (props) => {
         </List> :
         <List>
           <Link href="/dashboard/addOrder">
-            <ListItem disablePadding>
+            <ListItem disablePadding className={styles.link}>
               <ListItemButton className={pathname === "/dashboard/addOrder" ? styles.active : ""}>
                 <MdShoppingCart />
                 <ListItemText>
@@ -94,7 +95,7 @@ const SideNav = (props) => {
             </ListItem>
           </Link>
           <Link href="/dashboard/myOrders">
-            <ListItem disablePadding>
+            <ListItem disablePadding className={styles.link}>
               <ListItemButton className={pathname === "/dashboard/myOrders" ? styles.active : ""}>
                 <CgProfile />
                 <ListItemText>
@@ -104,7 +105,7 @@ const SideNav = (props) => {
             </ListItem>
           </Link>
           <Link href="/dashboard/addReview">
-            <ListItem disablePadding>
+            <ListItem disablePadding className={styles.link}>
               <ListItemButton className={pathname === "/dashboard/addReview" ? styles.active : ""}>
                 <MdMessage />
                 <ListItemText>
