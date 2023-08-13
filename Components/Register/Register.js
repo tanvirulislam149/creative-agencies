@@ -45,20 +45,21 @@ const Register = () => {
             setPassError("");
             await createUserWithEmailAndPassword(email, password);
             await updateProfile({ displayName: name, photoURL: res.data.url });
-            // setPhotoURL(res.data.url);
+            setModal(false);
           }
         })
         .catch(err => {
           // console.log(err.message);
           if (err.message === "Request failed with status code 401") {
             setPassError("Image upload failed. Please try again.");
+            setModal(false);
           }
         })
     }
     else {
       setPassError("Password didn't match")
+      setModal(false);
     }
-    setModal(false);
   }
 
 
