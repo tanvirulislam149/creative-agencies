@@ -10,6 +10,7 @@ import ErrorModal from '../ErrorModal/ErrorModal';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import LoadingModal from '../LoadingModal/LoadingModal';
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
@@ -19,8 +20,10 @@ const Register = () => {
   const [passError, setPassError] = useState("");
   const [open, setOpen] = useState(true);
   const [photoURL, setPhotoURL] = useState();
+  const [modal, setModal] = useState(false);
 
   const handleRegister = async (e) => {
+    setModal(true);
     setOpen(true);
     setPhotoURL("");
     setPassError("");
@@ -55,6 +58,7 @@ const Register = () => {
     else {
       setPassError("Password didn't match")
     }
+    setModal(false);
   }
 
 
@@ -118,6 +122,7 @@ const Register = () => {
           <input className={styles.loginBtn} type="submit" value="Register" />
         </form>
         {passError ? <ErrorModal open={open} setOpen={setOpen} passError={passError}></ErrorModal> : ""}
+        <LoadingModal loadingModal={modal}></LoadingModal>
       </div>
     </div>
   )
