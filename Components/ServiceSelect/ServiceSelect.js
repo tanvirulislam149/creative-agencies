@@ -15,7 +15,7 @@ const ServiceSelect = ({ data }) => {
 
   return (
     <div>
-      <FormControl variant="standard" sx={{ minWidth: 100, backgroundColor: "white", paddingLeft: "5px" }}>
+      <FormControl variant="standard" sx={{ minWidth: 110, backgroundColor: "white", paddingLeft: "5px" }}>
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"

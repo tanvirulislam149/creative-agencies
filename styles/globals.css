@@ -27,6 +27,21 @@ a {
   font-weight: 700;
 }
 
+.css-o3ukdw {
+  font-family: "Poppins" !important;
+}
+
+.css-o3ukdw::before {
+  border-bottom: none !important;
+}
+
+.css-o3ukdw::after {
+  border-bottom: none !important;
+}
+.css-o3ukdw:hover {
+  border-bottom: none !important;
+}
+
 .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
   color: black !important;
 }
