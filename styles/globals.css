@@ -22,6 +22,11 @@ a {
   border: 2px solid #fbd062 !important;
 }
 
+.css-1ald77x.Mui-focused {
+  color: #fbd062 !important;
+  font-weight: 700;
+}
+
 .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
   color: black !important;
 }
