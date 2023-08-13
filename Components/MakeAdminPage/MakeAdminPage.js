@@ -70,7 +70,7 @@ const MakeAdminPage = () => {
                 onChange={(event, value) => setSelectedUser(value)}
                 value={selectedUser}
                 options={user}
-                sx={{ width: 300 }}
+                sx={{ width: "100%", maxWidth: 300 }}
                 renderInput={(params) => <TextField {...params} label="Select Email" />}
               />
               <button onClick={handleSubmit} className={styles.submitBtn}>Submit</button>
