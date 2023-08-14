@@ -16,45 +16,79 @@ const ServiceList = () => {
   }
 
   return (
-    <Box className={styles.boxContainer} sx={{ display: 'flex' }}>
-      <Box
-        className={styles.boxContent}
-        component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
-      >
-        {/* <Toolbar /> */}
-        <p className={styles.header}>All Orders List</p>
-        <div className={styles.listContainer}>
-          <table className={styles.tableCont}>
-            <thead className={styles.tableHeaderCont}>
-              <tr>
-                <th className={`${styles.tableHeader} ${styles.firstHeader}`}>Name</th>
-                <th className={styles.tableHeader}>Email Id</th>
-                <th className={styles.tableHeader}>Service</th>
-                <th className={`${styles.tableHeader} ${styles.detailsHeader}`}>Project Details</th>
-                <th className={`${styles.tableHeader} ${styles.lastHeader}`}>Status</th>
-              </tr>
-            </thead>
-            <tbody className={styles.tbody}>
-              {
-                data.length ?
-                  data.map(d =>
-                    <tr key={d._id}>
-                      <td>{d.name}</td>
-                      <td>{d.email}</td>
-                      <td>{d.service}</td>
-                      <td>{d.description}</td>
-                      <td>
-                        <ServiceSelect data={d} />
-                      </td>
-                    </tr>
-                  ) : <p>No Records Found.</p>
-              }
-            </tbody>
-          </table>
-        </div>
-      </Box>
-    </Box>
+    // <Box className={styles.boxContainer} sx={{ display: 'flex' }}>
+    //   <Box
+    //     className={styles.boxContent}
+    //     component="main"
+    //     sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+    //   >
+    //     {/* <Toolbar /> */}
+    //     <p className={styles.header}>All Orders List</p>
+    //     <div className={styles.listContainer}>
+    //       <table className={styles.tableCont}>
+    //         <thead className={styles.tableHeaderCont}>
+    //           <tr>
+    //             <th className={`${styles.tableHeader} ${styles.firstHeader}`}>Name</th>
+    //             <th className={styles.tableHeader}>Email Id</th>
+    //             <th className={styles.tableHeader}>Service</th>
+    //             <th className={`${styles.tableHeader} ${styles.detailsHeader}`}>Project Details</th>
+    //             <th className={`${styles.tableHeader} ${styles.lastHeader}`}>Status</th>
+    //           </tr>
+    //         </thead>
+    //         <tbody className={styles.tbody}>
+    //           {
+    //             data.length ?
+    //               data.map(d =>
+    //                 <tr key={d._id}>
+    //                   <td>{d.name}</td>
+    //                   <td>{d.email}</td>
+    //                   <td>{d.service}</td>
+    //                   <td>{d.description}</td>
+    //                   <td>
+    //                     <ServiceSelect data={d} />
+    //                   </td>
+    //                 </tr>
+    //               ) : <p>No Records Found.</p>
+    //           }
+    //         </tbody>
+    //       </table>
+    //     </div>
+    //   </Box>
+    // </Box>
+    <div className={styles.boxContainer}>
+      {/* <div className={styles.boxContent}> */}
+      <p className={styles.header}>All Orders List</p>
+      <div className={styles.listContainer}>
+        <table className={styles.tableCont}>
+          <thead className={styles.tableHeaderCont}>
+            <tr>
+              <th className={`${styles.tableHeader} ${styles.firstHeader}`}>Name</th>
+              <th className={styles.tableHeader}>Email Id</th>
+              <th className={styles.tableHeader}>Service</th>
+              <th className={`${styles.tableHeader} ${styles.detailsHeader}`}>Project Details</th>
+              <th className={`${styles.tableHeader} ${styles.lastHeader}`}>Status</th>
+            </tr>
+          </thead>
+          <tbody className={styles.tbody}>
+            {
+              data.length ?
+                data.map(d =>
+                  <tr key={d._id}>
+                    <td>{d.name}</td>
+                    <td>{d.email}</td>
+                    <td>{d.service}</td>
+                    <td>{d.description}</td>
+                    <td>
+                      <ServiceSelect data={d} />
+                    </td>
+                  </tr>
+                ) : <p>No Records Found.</p>
+            }
+          </tbody>
+        </table>
+      </div>
+      {/* </div> */}
+    </div>
   )
 }
 

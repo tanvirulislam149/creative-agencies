@@ -6,9 +6,11 @@
   display: none;
 }
 
-/* .boxContainer {
-  margin-top: 20px;
-} */
+.boxContainer {
+  padding-top: 20px;
+  background-color: #eff5ff;
+  height: 100vh;
+}
 
 .sideNav > div {
   background-color: transparent;
@@ -26,18 +28,21 @@
 .header {
   font-size: 27px;
   text-align: center;
+  margin: 0;
 }
 
-.boxContent {
+/* .boxContent {
   background-color: #eff5ff;
   height: 100vh;
-}
+  margin: 20px;
+} */
 
 .listContainer {
   background-color: white;
   padding: 15px;
   border-radius: 20px;
-  margin: 0px;
+  margin: 20px;
+  overflow-x: auto;
 }
 
 .tableCont {

@@ -165,8 +165,12 @@
   .leftColumn > textarea {
     width: 100%;
   }
+  .priceCont {
+    display: block;
+  }
   .priceCont > input {
-    width: 40%;
+    width: 100%;
+    margin-bottom: 20px;
   }
   .formContainer {
     padding: 10px;
