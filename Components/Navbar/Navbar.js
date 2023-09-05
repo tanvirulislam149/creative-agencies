@@ -39,6 +39,7 @@ function Navbar() {
           if (res.data) {
             dispatch(getAdmin(res.data));
             Cookies.set('admin', 'true', { expires: 1 })
+            Cookies.set('user', 'true', { expires: 1 })
           }
         })
         .catch(err => {
