@@ -34,12 +34,12 @@ function Navbar() {
   useEffect(() => {
     if (user) {
       dispatch(getUser(user));
+      Cookies.set('user', 'true', { expires: 1 })
       axios.get(`https://creative-agencies-server.onrender.com/user/isAdmin?email=${user.email}`)
         .then(res => {
           if (res.data) {
             dispatch(getAdmin(res.data));
             Cookies.set('admin', 'true', { expires: 1 })
-            Cookies.set('user', 'true', { expires: 1 })
           }
         })
         .catch(err => {
