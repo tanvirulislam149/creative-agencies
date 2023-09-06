@@ -4,7 +4,7 @@ export function middleware(request) {
   const user = request.cookies.get('user')?.value;
   const admin = request.cookies.get('admin')?.value;
 
-  if (request.nextUrl.pathname === "/dashboard/addService" || request.nextUrl.pathname === "/dashboard/adminMaking" || request.nextUrl.pathname === "/dashboard/allServiceList") {
+  if (request.nextUrl.pathname === "/dashboard/addService" || request.nextUrl.pathname === "/dashboard/adminMaking" || request.nextUrl.pathname === "/dashboard/allServiceList" || request.nextUrl.pathname === "/dashboard/deleteService") {
     if (!(user && admin)) {
       return NextResponse.redirect(new URL('/login', request.url))
     }
@@ -17,16 +17,3 @@ export function middleware(request) {
   }
 
 }
-
-
-//   if (!userToken) {
-//     return NextResponse.redirect(new URL('/login', request.url))
-//   }
-//   // else {
-//   //   return NextResponse.redirect(new URL('/desired-route', request.url))
-//   // }
-// }
-
-// export const config = {
-//   matcher: '/dashboard/:path*',
-// }
