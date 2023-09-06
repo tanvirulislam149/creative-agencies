@@ -19,8 +19,7 @@ import Typography from '@mui/material/Typography';
 import logo from "../../images/logos/logo.png"
 import Image from 'next/image';
 import Link from "next/link";
-import { GrAddCircle } from "react-icons/gr";
-import { MdPersonAddAlt1, MdList, MdShoppingCart, MdMessage } from "react-icons/md";
+import { MdPersonAddAlt1, MdList, MdShoppingCart, MdMessage, MdDeleteOutline } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
@@ -78,6 +77,16 @@ const SideNav = (props) => {
                 <MdPersonAddAlt1 />
                 <ListItemText>
                   <span className={pathname === "/dashboard/adminMaking" ? styles.active : ""}>Make Admin</span>
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </Link>
+          <Link href="/dashboard/deleteService">
+            <ListItem disablePadding className={styles.link}>
+              <ListItemButton className={pathname === "/dashboard/deleteService" ? styles.active : ""}>
+                <MdDeleteOutline />
+                <ListItemText>
+                  <span className={pathname === "/dashboard/deleteService" ? styles.active : ""}>Delete Service</span>
                 </ListItemText>
               </ListItemButton>
             </ListItem>
