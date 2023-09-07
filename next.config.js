@@ -10,7 +10,7 @@ const nextConfig = {
     NEXT_PUBLIC_appId: "1:892197459152:web:8a2163e3357915e9417ad5",
   },
   images: {
-    domains: ['i.ibb.co'],
+    domains: ['i.ibb.co', "res.cloudinary.com"],
   },
 }
 

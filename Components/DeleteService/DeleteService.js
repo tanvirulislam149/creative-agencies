@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./DeleteService.module.css"
-import { useGetCoursesQuery } from '../../Redux/Services/courses';
-import { useSelector } from 'react-redux';
+import { useDeleteCourseMutation, useGetCoursesQuery } from '../../Redux/Services/courses';
 import Image from 'next/image';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import LoadingModal from '../LoadingModal/LoadingModal';
+import SuccessModal from '../SuccessModal/SuccessModal';
 
 const style = {
   position: 'absolute',
@@ -21,14 +20,47 @@ const style = {
 };
 
 const DeleteServiceComponent = () => {
+  const [id, setId] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [successModalOpen, setSuccessModalOpen] = useState(false);
 
-  const { data: courses, error, isLoading } = useGetCoursesQuery();
+  const { data: courses } = useGetCoursesQuery();
 
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+
+  const [deleteCourses, { isLoading, isSuccess, isError, error }] = useDeleteCourseMutation();
+
+  const handleDelete = (id) => {
+    handleOpen();
+    setId(id);
+  }
+
+  const handleDeleteYes = () => {
+    setLoading(true);
+    handleClose();
+    deleteCourses(id);
+  }
+
+  useEffect(() => {
+    if (isLoading) {
+      setLoading(true);
+    }
+    if (isSuccess) {
+      setLoading(false);
+      setSuccessModalOpen(true);
+      setSuccessMessage("Course deleted successfully.");
+    }
+    if (isError) {
+      setLoading(false);
+      setSuccessModalOpen(true);
+      setSuccessMessage("Course deletion failed.");
+    }
+  }, [isError, isLoading, isSuccess]);
 
 
 
@@ -60,7 +92,7 @@ const DeleteServiceComponent = () => {
                       </td>
                       <td>{d.title}</td>
                       <td>
-                        <button onClick={handleOpen} className={styles.deleteBtn}>
+                        <button onClick={() => handleDelete(d._id)} className={styles.deleteBtn}>
                           Delete
                         </button>
                       </td>
@@ -84,13 +116,15 @@ const DeleteServiceComponent = () => {
           <Box sx={style}>
             <p className={styles.confirmText}>Are you sure you want to delete?</p>
             <div className={styles.btnCont}>
-              <button onClick={handleClose} className={styles.modalDeleteBtn}>
+              <button onClick={handleDeleteYes} className={styles.modalDeleteBtn}>
                 Yes
               </button>
             </div>
           </Box>
         </Modal>
       </div>
+      <LoadingModal loadingModal={loading} />
+      <SuccessModal successMessage={successMessage} successModalOpen={successModalOpen} setSuccessModalOpen={setSuccessModalOpen}></SuccessModal>
     </div>
   )
 }

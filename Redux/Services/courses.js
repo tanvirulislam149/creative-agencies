@@ -16,8 +16,15 @@ export const getCoursesApi = createApi({
         body: data
       }),
       invalidatesTags: ['Course'],
+    }),
+    deleteCourse: builder.mutation({
+      query: (data) => ({
+        url: `/deleteCourse/${data}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ['Course'],
     })
   })
 })
 
-export const { useGetCoursesQuery, useAddCourseMutation } = getCoursesApi;
+export const { useGetCoursesQuery, useAddCourseMutation, useDeleteCourseMutation } = getCoursesApi;
