@@ -56,7 +56,6 @@ const ServiceList = () => {
     //   </Box>
     // </Box>
     <div className={styles.boxContainer}>
-      {/* <div className={styles.boxContent}> */}
       <p className={styles.header}>All Orders List</p>
       <div className={styles.listContainer}>
         <table className={styles.tableCont}>
@@ -87,7 +86,6 @@ const ServiceList = () => {
           </tbody>
         </table>
       </div>
-      {/* </div> */}
     </div>
   )
 }

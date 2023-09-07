@@ -1,0 +1,151 @@
+.boxContent {
+  background-color: #eff5ff;
+  height: 100vh;
+}
+
+.title {
+  font-size: 27px;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 50px;
+}
+
+.menuBar {
+  background-color: transparent;
+  box-shadow: none;
+  margin-top: 80px;
+  color: black;
+  display: none;
+}
+
+.boxContainer {
+  padding-top: 20px;
+  background-color: #eff5ff;
+  height: 100vh;
+}
+
+.sideNav > div {
+  background-color: transparent;
+  margin-top: 90px;
+  border: none;
+}
+
+.logo {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.header {
+  font-size: 27px;
+  text-align: center;
+}
+
+/* .boxContent {
+  background-color: #eff5ff;
+  height: 100vh;
+  margin: 20px;
+} */
+
+.listContainer {
+  background-color: white;
+  padding: 15px;
+  border-radius: 20px;
+  margin: 20px;
+  overflow-x: auto;
+}
+
+.tableCont {
+  width: 100%;
+  color: #686868;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-collapse: collapse;
+}
+
+.tableHeaderCont {
+  background-color: #f5f6fa;
+  width: 100%;
+  border-radius: 20px;
+  text-align: left;
+}
+.tableHeader {
+  padding: 10px;
+  width: 20%;
+}
+.firstHeader {
+  border-radius: 15px 0 0 15px;
+}
+.detailsHeader {
+  width: 25%;
+}
+
+.lastHeader {
+  border-radius: 0px 15px 15px 0;
+  width: 15%;
+}
+
+.tbody > tr > td {
+  padding: 10px;
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.08px;
+}
+
+.noService {
+  text-align: center;
+  font-weight: bold;
+}
+
+.deleteBtn {
+  background-color: black;
+  font-family: Poppins;
+  font-size: 16px;
+  border-radius: 5px;
+  color: white;
+  border: 0;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.confirmText {
+  color: black;
+  text-align: center;
+}
+
+.btnCont {
+  display: flex;
+  justify-content: center;
+}
+
+.modalDeleteBtn {
+  background-color: black;
+  font-family: Poppins;
+  font-size: 16px;
+  border-radius: 5px;
+  color: white;
+  border: 0;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .menuBar {
+    background-color: pink;
+    display: block;
+  }
+  .logo {
+    display: block;
+  }
+  .boxContainer {
+    margin-top: 50px;
+  }
+}

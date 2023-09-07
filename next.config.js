@@ -8,7 +8,10 @@ const nextConfig = {
     NEXT_PUBLIC_storageBucket: "creative-agencies-75119.appspot.com",
     NEXT_PUBLIC_messagingSenderId: "892197459152",
     NEXT_PUBLIC_appId: "1:892197459152:web:8a2163e3357915e9417ad5",
-  }
+  },
+  images: {
+    domains: ['i.ibb.co'],
+  },
 }
 
 
