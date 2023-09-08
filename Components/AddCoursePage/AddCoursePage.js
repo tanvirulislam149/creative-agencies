@@ -41,7 +41,7 @@ const AddCoursePage = () => {
     }
     if (isSuccess) {
       setSuccessModalOpen(true);
-      setSuccessMessage("Course Added Successfully");
+      setSuccessMessage("Service Added Successfully");
       setLoadingModal(false);
       reset();
     }

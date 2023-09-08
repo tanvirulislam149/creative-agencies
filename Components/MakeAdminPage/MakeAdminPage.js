@@ -33,7 +33,7 @@ const MakeAdminPage = () => {
 
   const handleSubmit = () => {
     setLoadingModal(true);
-    axios.patch(`https://creative-agencies-server.onrender.com/user/adminMaking`, { email: selectedUser })
+    axios.patch(`https://creative-agencies-server.onrender.com/user/makeAdmin`, { email: selectedUser })
       .then(res => {
         // handle success
         if (res.data.acknowledged) {
