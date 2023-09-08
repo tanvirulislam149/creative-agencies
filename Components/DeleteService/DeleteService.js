@@ -53,12 +53,12 @@ const DeleteServiceComponent = () => {
     if (isSuccess) {
       setLoading(false);
       setSuccessModalOpen(true);
-      setSuccessMessage("Course deleted successfully.");
+      setSuccessMessage("Service deleted successfully.");
     }
     if (isError) {
       setLoading(false);
       setSuccessModalOpen(true);
-      setSuccessMessage("Course deletion failed.");
+      setSuccessMessage("Service deletion failed.");
     }
   }, [isError, isLoading, isSuccess]);
 
