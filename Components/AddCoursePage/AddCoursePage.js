@@ -41,14 +41,14 @@ const AddCoursePage = () => {
     }
     if (isSuccess) {
       setSuccessModalOpen(true);
-      setSuccessMessage("Order successful.");
+      setSuccessMessage("Course Added Successfully");
       setLoadingModal(false);
       reset();
     }
     if (isError) {
       setSuccessModalOpen(true);
       setLoadingModal(false);
-      setSuccessMessage("Order failed.");
+      setSuccessMessage("Add product failed");
     }
   }, [isLoading, isSuccess, isError])
 

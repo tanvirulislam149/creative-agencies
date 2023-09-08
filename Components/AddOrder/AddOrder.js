@@ -42,14 +42,14 @@ const AddOrder = () => {
     if (isSuccess) {
       setAge("");
       setSuccessModalOpen(true);
-      setSuccessMessage("Course Added Successfully");
+      setSuccessMessage("Order Added Successfully");
       setLoadingModal(false);
       reset();
     }
     if (isError) {
       setSuccessModalOpen(true);
       setLoadingModal(false);
-      setSuccessMessage("Add product failed");
+      setSuccessMessage("Order add failed");
     }
   }, [isLoading, isSuccess, isError])
 
