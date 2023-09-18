@@ -12,7 +12,7 @@ const Contact = () => {
         <input className={styles.inputField} type="email" name="email" id="" placeholder='Your email address' /> <br />
         <input className={styles.inputField} type="name" name="name" id="" placeholder='Your name / company name' /> <br />
         <textarea className={styles.inputField} name="message" id="" cols="30" rows="10" placeholder='Your message'></textarea> <br />
-        <button className={styles.button}>Send</button>
+        <button onClick={() => alert("No action added")} className={styles.button}>Send</button>
       </div>
     </div>
   )
