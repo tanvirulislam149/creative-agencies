@@ -55,7 +55,10 @@
   border: none;
   padding: 10px 60px;
   border-radius: 5px;
-  margin-top: 20px;
+}
+
+.loremText {
+  padding-bottom: 30px;
 }
 @media (max-width: 576px) {
   .container {

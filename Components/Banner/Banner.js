@@ -8,8 +8,8 @@ const Banner = () => {
     <div className={styles.container}>
       <div className={styles.banner_text}>
         <h1>Let's Grow Your Brand To The Next Level</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat </p>
-        <button className={styles.button}>Hire Us</button>
+        <p className={styles.loremText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat </p>
+        <a href='/#contact' className={styles.button}>Hire Us</a>
       </div>
       <div className={styles.banner_img}>
         <Image
